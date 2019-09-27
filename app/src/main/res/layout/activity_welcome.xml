@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/bg_gradient_light_red" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="30dp" android:textColor="@color/white" android:gravity="center" android:id="@+id/label_top_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/welcome"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            <ImageView android:layout_width="150dp" android:layout_height="150dp" android:src="@drawable/ic_app_icon_big"/>
+            <TextView android:textSize="24dp" android:textColor="@color/white" android:gravity="center" android:id="@+id/label_below_logo" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:text="@string/minimalistic_timer"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            <Button android:textSize="19dp" android:id="@+id/btn_start" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="4dp" android:text="@string/start" style="@style/ButtonStandard.Green"/>
+            <Button android:textSize="19dp" android:textColor="@color/gray_dark" android:id="@+id/btn_language" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:text="English" style="@style/ButtonStandard.Gray"/>
+            <TextView android:textColor="@color/white" android:gravity="center" android:id="@+id/eula_link" android:background="@drawable/clickable_background_black_15" android:paddingLeft="16dp" android:paddingTop="12dp" android:paddingRight="16dp" android:paddingBottom="12dp" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="@string/eula_link"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

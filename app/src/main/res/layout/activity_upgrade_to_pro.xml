@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/bg_gradient_light_red" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.5"/>
+            <TextView android:textSize="@dimen/buy_pro_header_size" android:textColor="@color/white" android:gravity="center" android:id="@+id/label_top_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/upgrade_to_pro_header"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.5"/>
+            <ImageView android:layout_width="@dimen/buy_pro_pomodoro_icon_size" android:layout_height="@dimen/buy_pro_pomodoro_icon_size" android:src="@drawable/ic_pomodoro_pro"/>
+            <TextView android:textSize="@dimen/buy_pro_sub_header_size" android:textColor="@color/white" android:gravity="center" android:id="@+id/label_app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/upgrade_to_pro_app_name"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="16dp">
+                <LinearLayout style="@style/BuyPremiumItemBox">
+                    <ImageView android:src="@drawable/ic_pro_tasks" style="@style/BuyPremiumItemIcon"/>
+                    <TextView android:id="@+id/label_tasks" android:text="@string/upgrade_to_pro_tasks" style="@style/BuyPremiumItemText"/>
+                </LinearLayout>
+                <LinearLayout style="@style/BuyPremiumItemBox">
+                    <ImageView android:src="@drawable/ic_pro_chart" style="@style/BuyPremiumItemIcon"/>
+                    <TextView android:id="@+id/label_stats" android:text="@string/upgrade_to_pro_stats" style="@style/BuyPremiumItemText"/>
+                </LinearLayout>
+                <LinearLayout style="@style/BuyPremiumItemBox">
+                    <ImageView android:src="@drawable/ic_pro_heart" style="@style/BuyPremiumItemIcon"/>
+                    <TextView android:id="@+id/label_support" android:text="@string/upgrade_to_pro_support" style="@style/BuyPremiumItemText"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            <Button android:id="@+id/button_upgrade_to_premium" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="4dp" android:text="@string/upgrade_to_pro_upgrade_btn" style="@style/ButtonStandard.Green"/>
+            <Button android:id="@+id/button_maybe_later" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:text="@string/upgrade_to_pro_later_btn" style="@style/ButtonStandard.Red"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

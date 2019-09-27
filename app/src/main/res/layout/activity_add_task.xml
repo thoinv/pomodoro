@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/bg_gradient_red" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:id="@+id/title_box" android:layout_width="match_parent" android:layout_height="@dimen/activity_title_bar_height">
+        <TextView android:id="@+id/text_header" android:text="@string/header_create_task" style="@style/ActivityHeader"/>
+    </RelativeLayout>
+    <View style="@style/Delimiter"/>
+    <ScrollView android:background="@color/page_content_background_color" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:padding="32dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/task_name_label" android:text="@string/task_name" style="@style/SettingsLabel"/>
+            <android.support.p044v7.widget.AppCompatEditText android:id="@+id/edit_text_task_name" android:paddingTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/task_name_hint" android:maxLength="40" android:inputType="textCapSentences" style="@style/WhiteEditText"/>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32dp">
+                <TextView android:id="@+id/expected_pomodoros_label" android:text="@string/expected_pomodoros" android:layout_weight="1" style="@style/SettingsLabel"/>
+                <TextView android:textSize="20dp" android:textColor="@color/white" android:id="@+id/text_expected_pomodoros" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="8"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seek_bar_expected_pomodoros" android:max="7" android:progress="3" style="@style/VolumeBar"/>
+            <Button android:layout_gravity="center_horizontal" android:id="@+id/btn_save" android:visibility="visible" android:layout_height="wrap_content" android:text="@string/save" style="@style/ButtonStandard.Green"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

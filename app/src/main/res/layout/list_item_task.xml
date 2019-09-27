@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/list_activities_background_selector" android:paddingRight="16dp" android:layout_width="match_parent" android:layout_height="66dp">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@+id/drag_handle" android:background="@drawable/ic_move_list_items" android:layout_width="36dp" android:layout_height="66dp"/>
+        <CheckBox android:id="@+id/isDone" android:focusable="false" android:layout_width="40dp" android:layout_height="40dp" android:button="@drawable/checkbox_tasks"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_weight="1">
+            <TextView android:textSize="18sp" android:textColor="@color/dark_brown" android:id="@+id/taskName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="This is task name" android:lines="1"/>
+        </LinearLayout>
+        <TextView android:textSize="18sp" android:textColor="@color/dark_brown" android:id="@+id/doneExpectedTextBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/8"/>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#1c7011</color>
+    <color name="colorPrimary">#cc190f</color>
+    <color name="colorPrimaryDark">#861314</color>
+    <color name="seek_bar_background">#aaffffff</color>
+    <color name="seek_bar_progress">#ffffff</color>
+    <color name="seek_bar_thumb">#ffffff</color>
+    <color name="stats_text_gray">#6f6f6f</color>
+    <color name="stats_text_light_gray">#8f8f8f</color>
+    <color name="stats_text_red">#ad2418</color>
+    <color name="status_bar_green">#1c7011</color>
+    <color name="status_bar_red">#861314</color>
+    <color name="switch_thumb_disabled_material_dark">#ff616161</color>
+    <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
+    <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
+    <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="tasks_activity">#fdfeb2</color>
+    <color name="tasks_list_delimiter_color">#bfd2e0</color>
+    <color name="tooltip_background_dark">#e6616161</color>
+    <color name="tooltip_background_light">#e6ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="dark_brown">#753400</color>
+    <color  name="light_brown">#c1997e</color>
+    <color name="notification_red">#cc190f</color>
+    <color name="notification_green">#128e24</color>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/StatsBar">
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/StatsLabel"
+        android:text="Today" />
+
+    <TextView
+        android:id="@+id/number"
+        style="@style/StatsNumber"
+        android:text="8" />
+</RelativeLayout>

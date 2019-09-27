@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="long_breaks">
+        <item>@string/ten_minutes</item>
+        <item>@string/fifteen_minutes</item>
+        <item>@string/twenty_minutes</item>
+        <item>@string/twenty_five_minutes</item>
+        <item>@string/thirty_minutes</item>
+    </array>
+    <array name="long_breaks_values">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </array>
+    <array name="pomodoro_duration">
+        <item>@string/fifteen_minutes</item>
+        <item>@string/twenty_minutes</item>
+        <item>@string/twenty_five_minutes</item>
+        <item>@string/thirty_minutes</item>
+        <item>@string/thirty_five_minutes</item>
+        <item>@string/forty_minutes</item>
+        <item>@string/forty_five_minutes</item>
+    </array>
+    <array name="pomodoro_duration_values">
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+    </array>
+    <array name="ringing_sounds_array">
+        <item>@string/ringing_1</item>
+        <item>@string/ringing_2</item>
+        <item>@string/ringing_3</item>
+        <item>@string/ringing_4</item>
+        <item>@string/ringing_5</item>
+    </array>
+    <array name="short_breaks">
+        <item>@string/three_minutes</item>
+        <item>@string/four_minutes</item>
+        <item>@string/five_minutes</item>
+    </array>
+    <array name="short_breaks_values">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+    <array name="task_long_press_options">
+        <item>Edit Task</item>
+        <item>Duplicate Task</item>
+        <item>Delete Task</item>
+    </array>
+    <array name="ticking_sounds_array">
+        <item>@string/ticking_1</item>
+        <item>@string/ticking_2</item>
+        <item>@string/ticking_3</item>
+        <item>@string/ticking_4</item>
+    </array>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/image_dialog_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/break_image_1" />
+
+        <TextView
+            android:id="@+id/text_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/break_header_v1"
+            android:textColor="#0c9f32"
+            android:textSize="27dp" />
+
+        <TextView
+            android:id="@+id/text_dialog_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/break_dialog_body_short_break"
+            android:textColor="#676767"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/button_secondary"
+            style="@style/ButtonText"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:text="@string/button_short_break" />
+
+        <Button
+            android:id="@+id/button_skip"
+            style="@style/ButtonText"
+            android:layout_width="match_parent"
+            android:text="@string/button_skip_break" />
+
+        <Button
+            android:id="@+id/button_primary"
+            style="@style/ButtonStandard.Green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/button_short_break" />
+    </LinearLayout>
+</LinearLayout>
