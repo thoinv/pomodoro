@@ -2,13 +2,14 @@ package com.tatkovlab.pomodoro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.p044v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.afollestad.materialdialogs.C1164b;
-import com.afollestad.materialdialogs.C1169f;
-import com.afollestad.materialdialogs.C1169f.C1174a;
+import com.afollestad.materialdialogs.MaterialDialog.C1174a;
 import com.afollestad.materialdialogs.C1169f.C1178e;
 import com.afollestad.materialdialogs.C1169f.C1183j;
 import com.afollestad.materialdialogs.C1194i;
@@ -39,10 +40,10 @@ public class TasksActivity extends C2204a {
     public C2205a f6466k;
 
     /* renamed from: l */
-    private C1169f f6467l;
+    private MaterialDialog f6467l;
 
     /* renamed from: m */
-    private C1169f f6468m;
+    private MaterialDialog f6468m;
 
     /* renamed from: n */
     private View f6469n;
@@ -145,7 +146,7 @@ public class TasksActivity extends C2204a {
     public void m10094c(final C2223f fVar) {
         this.f6467l = new C1174a(this).mo5488a((CharSequence) fVar.mo7898c()).mo5487a(C1194i.LIGHT).mo5501e(R.array.task_long_press_options).mo5485a((C1178e) new C1178e() {
             /* renamed from: a */
-            public void mo5518a(C1169f fVar, View view, int i, CharSequence charSequence) {
+            public void mo5518a(MaterialDialog fVar, View view, int i, CharSequence charSequence) {
                 switch (i) {
                     case 0:
                         TasksActivity.this.m10099e(fVar);
@@ -165,9 +166,9 @@ public class TasksActivity extends C2204a {
 
     /* renamed from: a */
     public void mo7845a(final C2223f fVar) {
-        this.f6468m = new C1174a(this).mo5488a((CharSequence) getString(R.string.delete_task_confirmation_header)).mo5494b((CharSequence) getString(R.string.delete_task_confirmation_body, new Object[]{fVar.mo7898c()})).mo5499d((int) R.drawable.dialog_delete).mo5504h(R.string.delete_task_confirmation_confirm).mo5502f(R.string.delete_task_confirmation_cancel).mo5487a(C1194i.LIGHT).mo5486a((C1183j) new C1183j() {
+        this.f6468m = new MaterialDialog(this).mo5488a((CharSequence) getString(R.string.delete_task_confirmation_header)).mo5494b((CharSequence) getString(R.string.delete_task_confirmation_body, new Object[]{fVar.mo7898c()})).mo5499d((int) R.drawable.dialog_delete).mo5504h(R.string.delete_task_confirmation_confirm).mo5502f(R.string.delete_task_confirmation_cancel).mo5487a(C1194i.LIGHT).mo5486a((C1183j) new C1183j() {
             /* renamed from: a */
-            public void mo5522a(C1169f fVar, C1164b bVar) {
+            public void mo5522a(MaterialDialog fVar, C1164b bVar) {
                 TasksActivity.this.m10097d(fVar);
             }
         }).mo5498c();

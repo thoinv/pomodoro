@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
-import android.support.p031v4.p032a.C0447a;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -23,6 +22,9 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+
 import com.tatkovlab.pomodoro.p077c.C2232f;
 import com.tatkovlab.pomodoro.p078d.C2236b;
 import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
@@ -65,7 +67,7 @@ public class SettingsActivity extends C2204a {
 
         private C2188c(Context context, int i, String[] strArr) {
             super(context, i, strArr);
-            this.f6457b = C0447a.m1731c(context, R.color.dark_brown);
+            this.f6457b = ContextCompat.getColor(context, R.color.dark_brown);
         }
 
         public View getView(int i, View view, ViewGroup viewGroup) {
@@ -184,6 +186,7 @@ public class SettingsActivity extends C2204a {
     }
 
     /* renamed from: a */
+    @SuppressLint("ResourceType")
     private void m10043a(int i, int i2, final C2296a<Integer> aVar) {
         Spinner spinner = (Spinner) findViewById(i);
         C2188c cVar = new C2188c((Context) this, 17367048, i2);
@@ -221,7 +224,7 @@ public class SettingsActivity extends C2204a {
         final C2186a aVar3 = aVar2;
         final Spinner spinner2 = spinner;
         final C2296a<Integer> aVar4 = aVar;
-        C217313 r0 = new OnItemSelectedListener() {
+        OnItemSelectedListener r0 = new OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
 
@@ -301,6 +304,7 @@ public class SettingsActivity extends C2204a {
     }
 
     /* renamed from: q */
+    @SuppressLint("WrongConstant")
     private void m10056q() {
         if (!C2250f.m10263a().mo7966h().mo7937a()) {
             Button button = (Button) findViewById(R.id.button_upgrade_to_premium);

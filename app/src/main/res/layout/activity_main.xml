@@ -1,17 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/root_view" android:background="@drawable/bg_gradient_red" android:layout_width="match_parent" android:layout_height="match_parent">
-    <LinearLayout android:gravity="bottom" android:id="@+id/top_bar" android:layout_width="match_parent" android:layout_height="@dimen/top_bar_height" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
-        <ImageView android:id="@+id/time_line" android:layout_width="640dp" android:layout_height="70dp" android:src="@drawable/timeline_25"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_red">
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom">
+
+        <ImageView
+            android:id="@+id/time_line"
+            android:layout_width="640dp"
+            android:layout_height="70dp"
+            android:src="@drawable/timeline_25" />
     </LinearLayout>
-    <View android:id="@+id/top_bar_delimiter" android:layout_below="@+id/top_bar" style="@style/Delimiter"/>
-    <ImageView android:id="@+id/indicator_triangle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:src="@drawable/indicator_triangle" android:layout_below="@+id/top_bar_delimiter" android:layout_centerHorizontal="true"/>
-    <include layout="@layout/note_area"/>
-    <ImageButton android:textColor="@color/dark_brown" android:id="@+id/debug_button" android:background="@drawable/clickable_background_black_15" android:padding="16dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:src="@drawable/brown_circle" android:layout_below="@+id/indicator_triangle" android:layout_centerInParent="true"/>
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/bottom_buttons_box" android:layout_width="match_parent" android:layout_height="61dp" android:layout_marginBottom="18dp" android:layout_alignParentBottom="true">
-        <ImageButton android:id="@+id/button_stats" android:src="@drawable/button_stats" style="@style/ButtonAction"/>
-        <Button android:id="@+id/button_start_pomodoro" android:visibility="visible" android:text="@string/start_pomodoro" style="@style/ButtonStandard.Green"/>
-        <Button android:id="@+id/button_cancel_pomodoro" android:visibility="gone" android:text="@string/cancel_pomodoro" style="@style/ButtonStandard.Red"/>
-        <Button android:id="@+id/button_skip_break" android:visibility="gone" android:text="@string/button_skip_break" style="@style/ButtonStandard.Green"/>
-        <ImageButton android:id="@+id/button_settings" android:src="@drawable/button_settings" style="@style/ButtonAction"/>
+
+    <View
+        android:id="@+id/top_bar_delimiter"
+        style="@style/Delimiter"
+        android:layout_below="@+id/top_bar" />
+
+    <ImageView
+        android:id="@+id/indicator_triangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_bar_delimiter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/indicator_triangle" />
+
+    <include layout="@layout/note_area" />
+
+    <ImageButton
+        android:id="@+id/debug_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/indicator_triangle"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/clickable_background_black_15"
+        android:padding="16dp"
+        android:src="@drawable/brown_circle"
+        android:textColor="@color/dark_brown"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/bottom_buttons_box"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button_stats"
+            style="@style/ButtonAction"
+            android:src="@drawable/button_stats" />
+
+        <Button
+            android:id="@+id/button_start_pomodoro"
+            style="@style/ButtonStandard.Green"
+            android:text="@string/start_pomodoro"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button_cancel_pomodoro"
+            style="@style/ButtonStandard.Red"
+            android:text="@string/cancel_pomodoro"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button_skip_break"
+            style="@style/ButtonStandard.Green"
+            android:text="@string/button_skip_break"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/button_settings"
+            style="@style/ButtonAction"
+            android:src="@drawable/button_settings" />
     </LinearLayout>
 </RelativeLayout>

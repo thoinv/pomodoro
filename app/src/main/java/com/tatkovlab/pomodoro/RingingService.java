@@ -1,5 +1,6 @@
 package com.tatkovlab.pomodoro;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -22,9 +23,10 @@ public class RingingService extends Service {
     }
 
     /* renamed from: a */
+    @SuppressLint({"InvalidWakeLockTag", "WrongConstant"})
     private void m10041a() {
         Context baseContext = getBaseContext();
-        PowerManager powerManager = (PowerManager) baseContext.getSystemService("power");
+        @SuppressLint("WrongConstant") PowerManager powerManager = (PowerManager) baseContext.getSystemService("power");
         powerManager.newWakeLock(1, "RING_WAKE_LOCK").acquire(10000);
         powerManager.newWakeLock(805306394, "SCREEN_WAKE_LOCK").acquire(5000);
         final MediaPlayer create = MediaPlayer.create(baseContext, C2232f.m10213e().mo7931b());

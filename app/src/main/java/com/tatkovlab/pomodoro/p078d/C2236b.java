@@ -6,13 +6,9 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
-/* renamed from: com.tatkovlab.pomodoro.d.b */
 public class C2236b {
 
-    /* renamed from: a */
     private static Map<C2237a, Typeface> f6577a = new HashMap();
-
-    /* renamed from: com.tatkovlab.pomodoro.d.b$a */
     public enum C2237a {
         LATO_BOLD("Lato-Bold.ttf"),
         PANGOLIN_REGULAR("Pangolin-Regular.ttf");

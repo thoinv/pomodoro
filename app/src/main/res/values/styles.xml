@@ -76,6 +76,13 @@
     <style name="ButtonStandard.Red">
         <item name="android:background">@drawable/button_red</item>
     </style>
+
+    <style name="SettingsLabel">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
     <style name="StatsBar">
         <item name="android:background">@drawable/bg_white_bubble</item>
         <item name="android:paddingLeft">20dp</item>
@@ -104,5 +111,61 @@
     </style>
     <style name="StatsNumber.Small">
         <item name="android:textSize">12dp</item>
+    </style>
+    <style name="VolumeBar">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:saveEnabled">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:max">100</item>
+        <item name="android:progress">@null</item>
+        <item name="android:secondaryProgress">@null</item>
+        <item name="android:progressDrawable">@drawable/seek_bar_progress</item>
+        <item name="android:thumb">@drawable/seek_thumb_normal</item>
+    </style>
+    <style name="WhiteCheckBox">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+    <style name="Delimiter">
+        <item name="android:background">@color/delimiter_background_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/delimiter_height</item>
+    </style>
+    <style name="WhiteEditText">
+        <item name="android:theme">@style/WhiteEditTextTheme</item>
+    </style>
+    <style name="WhiteEditTextTheme">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+    <style name="WhiteSpinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
+    <style name="TextLinkFromSettings">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/clickable_background_black_15</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
     </style>
 </resources>

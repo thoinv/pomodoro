@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.afollestad.materialdialogs.C1169f;
-import com.afollestad.materialdialogs.C1169f.C1174a;
-import com.afollestad.materialdialogs.C1194i;
+
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.tatkovlab.pomodoro.p078d.C2236b;
 import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
 import com.tatkovlab.pomodoro.p078d.C2238c;
@@ -45,7 +44,7 @@ public class MainActivity extends C2204a {
     /* access modifiers changed from: private */
 
     /* renamed from: l */
-    public C1169f f6408l;
+    public MaterialDialog f6408l;
 
     /* renamed from: m */
     private Button f6409m;
@@ -280,7 +279,7 @@ public class MainActivity extends C2204a {
     /* renamed from: b */
     private void m10021b(boolean z) {
         if (this.f6408l == null || !this.f6408l.isShowing()) {
-            this.f6408l = new C1174a(this).mo5482a((int) R.layout.pop_up_time_for_break, true).mo5487a(C1194i.LIGHT).mo5491a(false).mo5498c();
+            this.f6408l = new C1174a(this).mo5482a((int) R.layout.pop_up_time_for_break, true).mo5487a(LIGHT).mo5491a(false).mo5498c();
             new C2280a(this.f6408l.mo5464f(), z, new C2284a() {
                 /* renamed from: a */
                 public void mo7804a() {

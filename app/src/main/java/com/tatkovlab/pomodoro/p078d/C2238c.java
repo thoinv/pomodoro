@@ -3,7 +3,9 @@ package com.tatkovlab.pomodoro.p078d;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.support.p044v7.app.C0786b.C0787a;
+
+import androidx.appcompat.app.AlertDialog;
+
 import com.tatkovlab.pomodoro.p077c.C2229c;
 import com.tatkovlab.pomodoro.p083i.C2295b;
 import com.tatkovlab.pomodorolite.R;
@@ -62,15 +64,17 @@ public class C2238c {
                 i = i2;
             }
         }
-        C0787a aVar = new C0787a(activity, 2131755081);
-        aVar.mo2813a((int) R.string.language);
-        aVar.mo2821a(strArr, i, new OnClickListener() {
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-                C2238c.m10222a(values[i].mo7920a());
-                activity.recreate();
-            }
-        });
-        aVar.mo2824b().show();
+
+//        AlertDialog aVar = new AlertDialog(activity, 2131755081);
+//        aVar.mo2813a(R.string.language);
+//        aVar.mo2821a(strArr, i, new OnClickListener() {
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                dialogInterface.dismiss();
+//                C2238c.m10222a(values[i].mo7920a());
+//                activity.recreate();
+//            }
+//        });
+//        aVar.mo2824b().show();
+
     }
 }

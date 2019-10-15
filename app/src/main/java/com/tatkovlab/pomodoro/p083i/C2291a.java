@@ -9,7 +9,6 @@ import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.support.p044v7.app.C0786b.C0787a;
 import android.widget.Toast;
 import com.tatkovlab.pomodorolite.R;
 

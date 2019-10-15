@@ -9,6 +9,8 @@ import android.media.AudioAttributes.Builder;
 import android.net.Uri;
 import android.os.Build;
 
+import androidx.annotation.RequiresApi;
+
 import com.tatkovlab.pomodorolite.R;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public enum C2263a {
     private int f6631e;
 
     private C2263a(String str, int i, int i2) {
-        this(r8, r9, str, i, i2, -1);
+        this(str, i, i2, -1);
     }
 
     private C2263a(String str, int i, int i2, int i3) {
@@ -61,6 +63,7 @@ public enum C2263a {
         return this.f6631e;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("WrongConstant")
     public static void m10368a(Context context, String str) {
         C2263a[] values;

@@ -2,9 +2,7 @@ package com.tatkovlab.pomodoro.p076b;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 
-/* renamed from: com.tatkovlab.pomodoro.b.f */
 public class C2223f implements Parcelable {
     public static final Creator<C2223f> CREATOR = new Creator<C2223f>() {
         /* renamed from: a */

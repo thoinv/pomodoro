@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black_transparent_15">#15000000</color>
+    <color name="black_transparent_20">#33000000</color>
+    <color name="black_transparent_30">#4d000000</color>
+    <color name="button_plain_text_color">#888888</color>
+    <color name="cardview_dark_background">#ff424242</color>
+    <color name="cardview_light_background">#ffffffff</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#1c7011</color>
     <color name="colorPrimary">#cc190f</color>
     <color name="colorPrimaryDark">#861314</color>
+    <color name="dark_brown">#753400</color>
+    <color name="delimiter_background_color">@color/black_transparent_30</color>
+    <color name="gray_dark">#3e3e3e</color>
+    <color name="light_brown">#c1997e</color>
+    <color name="md_btn_selected">#33969696</color>
+    <color name="md_btn_selected_dark">#40cbcbcb</color>
+    <color name="md_divider_black">#10000000</color>
+    <color name="md_divider_white">#10ffffff</color>
+    <color name="md_edittext_error">#dd2c00</color>
+    <color name="notification_green">#128e24</color>
+    <color name="notification_red">#cc190f</color>
+    <color name="page_content_background_color">@color/black_transparent_20</color>
     <color name="seek_bar_background">#aaffffff</color>
     <color name="seek_bar_progress">#ffffff</color>
     <color name="seek_bar_thumb">#ffffff</color>
@@ -11,17 +31,7 @@
     <color name="stats_text_red">#ad2418</color>
     <color name="status_bar_green">#1c7011</color>
     <color name="status_bar_red">#861314</color>
-    <color name="switch_thumb_disabled_material_dark">#ff616161</color>
-    <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
-    <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
-    <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="tasks_activity">#fdfeb2</color>
     <color name="tasks_list_delimiter_color">#bfd2e0</color>
-    <color name="tooltip_background_dark">#e6616161</color>
-    <color name="tooltip_background_light">#e6ffffff</color>
     <color name="white">#ffffff</color>
-    <color name="dark_brown">#753400</color>
-    <color  name="light_brown">#c1997e</color>
-    <color name="notification_red">#cc190f</color>
-    <color name="notification_green">#128e24</color>
 </resources>

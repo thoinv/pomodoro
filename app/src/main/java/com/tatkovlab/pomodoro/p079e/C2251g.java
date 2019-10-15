@@ -1,5 +1,6 @@
 package com.tatkovlab.pomodoro.p079e;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -219,6 +220,7 @@ class C2251g implements C2249a, C2271e {
     }
 
     /* renamed from: m */
+    @SuppressLint({"InvalidWakeLockTag", "WrongConstant"})
     private void m10282m() {
         ((PowerManager) this.f6600a.getSystemService("power")).newWakeLock(1, "POMODORO_MODULE_WAKE_LOCK").acquire(10000);
     }

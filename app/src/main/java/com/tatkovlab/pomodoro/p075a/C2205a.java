@@ -8,13 +8,14 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
+
 import com.tatkovlab.pomodoro.p076b.C2223f;
 import com.tatkovlab.pomodoro.p076b.C2223f.C2226b;
 import com.tatkovlab.pomodoro.p078d.C2236b;
 import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
 import com.tatkovlab.pomodorolite.R;
 import com.woxthebox.draglistview.DragItemAdapter;
-import com.woxthebox.draglistview.DragItemAdapter.ViewHolder;
+
 import java.util.List;
 
 /* renamed from: com.tatkovlab.pomodoro.a.a */
@@ -60,7 +61,7 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.a.a$c */
-    class C2209c extends ViewHolder {
+    public class C2209c extends DragItemAdapter.ViewHolder {
 
         /* renamed from: a */
         CheckBox f6495a;
@@ -128,9 +129,14 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     }
 
 
-    public long getItemId(int i) {
-        return ((C2223f) this.f6488c.get(i)).mo7891a();
+    @Override
+    public long getUniqueItemId(int position) {
+        return System.currentTimeMillis();
     }
+
+//    public long getItemId(int i) {
+//        return ((C2223f) this.f6488c.get(i)).mo7891a();
+//    }
 
     /* renamed from: a */
     private void m10123a(final C2209c cVar, C2223f fVar) {

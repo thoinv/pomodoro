@@ -134,7 +134,7 @@ public class C2295b {
 
     /* renamed from: a */
     private static void m10459a() {
-        int intValue = ((Integer) m10458a(f6709u)).intValue();
+        int intValue = m10458a(f6709u).intValue();
         if (intValue == 0) {
             m10461a(f6709u, Integer.valueOf(2));
             intValue = 2;

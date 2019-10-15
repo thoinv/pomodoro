@@ -1,40 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/bg_gradient_red" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/title_box" android:layout_width="match_parent" android:layout_height="@dimen/activity_title_bar_height">
-        <TextView android:id="@+id/text_header" android:text="@string/header_settings" style="@style/ActivityHeader"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_red"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_title_bar_height">
+
+        <TextView
+            android:id="@+id/text_header"
+            style="@style/ActivityHeader"
+            android:text="@string/header_settings" />
     </RelativeLayout>
-    <View style="@style/Delimiter"/>
-    <ScrollView android:background="@color/page_content_background_color" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-        <LinearLayout android:orientation="vertical" android:padding="32dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView android:id="@+id/label_ringing_volume" android:text="@string/ringing_volume" style="@style/SettingsLabel"/>
-            <SeekBar android:id="@+id/volume_bar_ringing" style="@style/VolumeBar"/>
-            <TextView android:id="@+id/label_ticking_volume" android:layout_marginTop="8dp" android:text="@string/ticking_volume" style="@style/SettingsLabel"/>
-            <SeekBar android:id="@+id/volume_bar_ticking" style="@style/VolumeBar"/>
-            <TextView android:id="@+id/label_ringing_sound" android:layout_marginTop="42dp" android:text="@string/ringing_sound" style="@style/SettingsLabel"/>
-            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <android.support.p044v7.widget.AppCompatSpinner android:id="@+id/spinner_ringing_sound" android:layout_weight="1" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat" style="@style/WhiteSpinner"/>
-                <ImageView android:id="@+id/play_ringing_sample_btn" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:src="@drawable/button_play"/>
+
+    <View style="@style/Delimiter" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_content_background_color"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/label_ringing_volume"
+                style="@style/SettingsLabel"
+                android:text="@string/ringing_volume" />
+
+            <SeekBar
+                android:id="@+id/volume_bar_ringing"
+                style="@style/VolumeBar" />
+
+            <TextView
+                android:id="@+id/label_ticking_volume"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="8dp"
+                android:text="@string/ticking_volume" />
+
+            <SeekBar
+                android:id="@+id/volume_bar_ticking"
+                style="@style/VolumeBar" />
+
+            <TextView
+                android:id="@+id/label_ringing_sound"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="42dp"
+                android:text="@string/ringing_sound" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.p044v7.widget.AppCompatSpinner
+                    android:id="@+id/spinner_ringing_sound"
+                    style="@style/WhiteSpinner"
+                    android:layout_weight="1"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat" />
+
+                <ImageView
+                    android:id="@+id/play_ringing_sample_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/button_play" />
             </LinearLayout>
-            <TextView android:id="@+id/label_ticking_sound" android:layout_marginTop="32dp" android:text="@string/ticking_sound" style="@style/SettingsLabel"/>
-            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <android.support.p044v7.widget.AppCompatSpinner android:id="@+id/spinner_ticking_sound" android:layout_weight="1" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat" style="@style/WhiteSpinner"/>
-                <ImageView android:id="@+id/play_ticking_sample_btn" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:src="@drawable/button_play"/>
+
+            <TextView
+                android:id="@+id/label_ticking_sound"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="32dp"
+                android:text="@string/ticking_sound" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.p044v7.widget.AppCompatSpinner
+                    android:id="@+id/spinner_ticking_sound"
+                    style="@style/WhiteSpinner"
+                    android:layout_weight="1"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat" />
+
+                <ImageView
+                    android:id="@+id/play_ticking_sample_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/button_play" />
             </LinearLayout>
-            <android.support.p044v7.widget.AppCompatCheckBox android:theme="@style/WhiteCheckBox" android:id="@+id/checkbox_vibrate" android:layout_marginTop="42dp" android:text="@string/vibrate" style="@style/WhiteCheckBox"/>
-            <android.support.p044v7.widget.AppCompatCheckBox android:theme="@style/WhiteCheckBox" android:id="@+id/checkbox_keep_screen_on" android:layout_marginTop="8dp" android:text="@string/keep_screen_on" style="@style/WhiteCheckBox"/>
-            <TextView android:id="@+id/label_short_break_duration" android:layout_marginTop="42dp" android:text="@string/short_break_duration" style="@style/SettingsLabel"/>
-            <android.support.p044v7.widget.AppCompatSpinner android:id="@+id/spinner_short_break_duration" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat" style="@style/WhiteSpinner"/>
-            <TextView android:id="@+id/label_long_break_duration" android:layout_marginTop="32dp" android:text="@string/long_break_duration" style="@style/SettingsLabel"/>
-            <android.support.p044v7.widget.AppCompatSpinner android:id="@+id/spinner_long_break_duration" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat" style="@style/WhiteSpinner"/>
-            <TextView android:id="@+id/label_pomodoro_duration" android:layout_marginTop="32dp" android:text="@string/pomodoro_duration" style="@style/SettingsLabel"/>
-            <android.support.p044v7.widget.AppCompatSpinner android:id="@+id/spinner_pomodoro_duration" app:popupTheme="@style/ThemeOverlay.AppCompat.Light" app:theme="@style/ThemeOverlay.AppCompat" style="@style/WhiteSpinner"/>
-            <TextView android:textSize="12sp" android:id="@+id/label_pomodoro_duration_below" android:layout_marginTop="4dp" android:text="@string/pomodoro_duration_recommendation" style="@style/SettingsLabel"/>
-            <TextView android:id="@+id/label_language" android:layout_marginTop="42dp" android:text="@string/language_label" style="@style/SettingsLabel"/>
-            <Button android:textSize="16sp" android:id="@+id/language_button" style="@style/WhiteSpinner"/>
-            <Button android:layout_gravity="center_horizontal" android:id="@+id/button_upgrade_to_premium" android:paddingTop="8dp" android:paddingBottom="8dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:text="@string/upgrade_to_pro_upgrade_btn" style="@style/ButtonStandard.Green"/>
-            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp">
-                <TextView android:id="@+id/terms_of_use" android:text="@string/terms_of_use" style="@style/TextLinkFromSettings"/>
-                <TextView android:id="@+id/privacy_policy" android:text="@string/privacy_policy" style="@style/TextLinkFromSettings"/>
+
+            <android.support.p044v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_vibrate"
+                style="@style/WhiteCheckBox"
+                android:layout_marginTop="42dp"
+                android:text="@string/vibrate"
+                android:theme="@style/WhiteCheckBox" />
+
+            <android.support.p044v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_keep_screen_on"
+                style="@style/WhiteCheckBox"
+                android:layout_marginTop="8dp"
+                android:text="@string/keep_screen_on"
+                android:theme="@style/WhiteCheckBox" />
+
+            <TextView
+                android:id="@+id/label_short_break_duration"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="42dp"
+                android:text="@string/short_break_duration" />
+
+            <android.support.p044v7.widget.AppCompatSpinner
+                android:id="@+id/spinner_short_break_duration"
+                style="@style/WhiteSpinner"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat" />
+
+            <TextView
+                android:id="@+id/label_long_break_duration"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="32dp"
+                android:text="@string/long_break_duration" />
+
+            <android.support.p044v7.widget.AppCompatSpinner
+                android:id="@+id/spinner_long_break_duration"
+                style="@style/WhiteSpinner"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat" />
+
+            <TextView
+                android:id="@+id/label_pomodoro_duration"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="32dp"
+                android:text="@string/pomodoro_duration" />
+
+            <android.support.p044v7.widget.AppCompatSpinner
+                android:id="@+id/spinner_pomodoro_duration"
+                style="@style/WhiteSpinner"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat" />
+
+            <TextView
+                android:id="@+id/label_pomodoro_duration_below"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="4dp"
+                android:text="@string/pomodoro_duration_recommendation"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/label_language"
+                style="@style/SettingsLabel"
+                android:layout_marginTop="42dp"
+                android:text="@string/language_label" />
+
+            <Button
+                android:id="@+id/language_button"
+                style="@style/WhiteSpinner"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button_upgrade_to_premium"
+                style="@style/ButtonStandard.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/upgrade_to_pro_upgrade_btn"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/terms_of_use"
+                    style="@style/TextLinkFromSettings"
+                    android:text="@string/terms_of_use" />
+
+                <TextView
+                    android:id="@+id/privacy_policy"
+                    style="@style/TextLinkFromSettings"
+                    android:text="@string/privacy_policy" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -6,6 +6,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.p031v4.app.C0547x.C0550c;
+
+import androidx.core.app.NotificationCompat;
+
 import com.tatkovlab.pomodoro.MainActivity;
 import com.tatkovlab.pomodoro.p079e.C2248e.C2249a;
 import com.tatkovlab.pomodoro.p081g.C2271e;
@@ -47,7 +50,7 @@ class C2254h implements C2247d, C2249a {
 
     /* renamed from: f */
     private C0550c m10315f() {
-        C0550c cVar = new C0550c(this.f6612a, "pomodoro_timer");
+        NotificationCompat.Builder cVar = new NotificationCompat.Builder(this.f6612a, "pomodoro_timer");
         cVar.mo1930c(1).mo1920a(0);
         C2271e d = C2250f.m10263a().mo7962d();
         C2274c h = d.mo7976h();

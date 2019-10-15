@@ -1,5 +1,6 @@
 package com.tatkovlab.pomodoro;
 
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
@@ -39,6 +40,7 @@ public class SoundService extends Service {
         }
     }
 
+    @SuppressLint("WrongConstant")
     public int onStartCommand(Intent intent, int i, int i2) {
         if (mo7837a()) {
             return 1;
