@@ -39,7 +39,7 @@ public class C2279h {
     /* renamed from: a */
     public void mo8011a(C2270d dVar) {
         if (this.f6653a.containsKey(dVar.mo7930a())) {
-            ((C2268b) this.f6653a.remove(dVar.mo7930a())).mo8005b();
+            this.f6653a.remove(dVar.mo7930a()).mo8005b();
         }
     }
 
@@ -62,7 +62,7 @@ public class C2279h {
 
     /* renamed from: a */
     public void mo8013a(String str, int i) {
-        C2268b bVar = (C2268b) this.f6653a.get(str);
+        C2268b bVar = this.f6653a.get(str);
         if (bVar != null) {
             bVar.mo8003a(i);
         }

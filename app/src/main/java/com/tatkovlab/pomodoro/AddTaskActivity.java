@@ -17,7 +17,7 @@ import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p079e.C2258j;
 import com.tatkovlab.pomodorolite.R;
 
-public class AddTaskActivity extends C2204a {
+public class AddTaskActivity extends BaseActivity {
     /* access modifiers changed from: private */
 
     /* renamed from: j */

@@ -6,20 +6,18 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import java.util.Locale;
 
-public class C2204a extends Activity {
+public class BaseActivity extends Activity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        m10121k();
+        init();
     }
 
     /* renamed from: k */
-    private void m10121k() {
+    private void init() {
         if (C2238c.m10223a()) {
             Resources resources = getResources();
             DisplayMetrics displayMetrics = resources.getDisplayMetrics();

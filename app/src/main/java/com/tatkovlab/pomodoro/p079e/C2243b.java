@@ -7,17 +7,17 @@ import com.tatkovlab.pomodoro.p083i.C2295b;
 public class C2243b implements C2245c {
 
     /* renamed from: a */
-    private String f6586a = ((String) C2295b.getValue(C2295b.CURRENT_TASK_NAME));
+    private String f6586a = C2295b.getValue(C2295b.CURRENT_TASK_NAME);
     /* access modifiers changed from: private */
 
     /* renamed from: b */
-    public int f6587b = ((Integer) C2295b.getValue(C2295b.CURRENT_TASK_COUNT)).intValue();
+    public int f6587b = C2295b.getValue(C2295b.CURRENT_TASK_COUNT).intValue();
 
     /* renamed from: c */
     private C2246a f6588c;
 
     public C2243b() {
-        C2250f.m10263a().mo7962d().mo7969a((C2272a) new C2272a() {
+        C2250f.m10263a().mo7962d().mo7969a(new C2272a() {
             /* renamed from: a */
             public void mo7946a() {
                 C2243b.this.f6587b = C2243b.this.f6587b + 1;

@@ -1,6 +1,5 @@
 package com.tatkovlab.pomodoro;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,7 @@ import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p083i.C2295b;
 import com.tatkovlab.pomodorolite.R;
 
-public class WelcomeActivity extends C2204a {
+public class WelcomeActivity extends BaseActivity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -36,8 +35,8 @@ public class WelcomeActivity extends C2204a {
 
     /* renamed from: l */
     private void m10118l() {
-        Button button = (Button) findViewById(R.id.btn_start);
-        FontHelper.setTypeface((TextView) button, Fonts.LATO_BOLD);
+        Button button = findViewById(R.id.btn_start);
+        FontHelper.setTypeface(button, Fonts.LATO_BOLD);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 C2295b.save(C2295b.WAS_WELCOME_SCREEN_SHOWN, Boolean.valueOf(true));
@@ -50,19 +49,19 @@ public class WelcomeActivity extends C2204a {
 
     /* renamed from: m */
     private void m10119m() {
-        Button button = (Button) findViewById(R.id.btn_language);
+        Button button = findViewById(R.id.btn_language);
         button.setText(getResources().getString(C2238c.m10226c()));
-        FontHelper.setTypeface((TextView) button, Fonts.LATO_BOLD);
+        FontHelper.setTypeface(button, Fonts.LATO_BOLD);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                C2238c.m10221a((Activity) WelcomeActivity.this);
+                C2238c.m10221a(WelcomeActivity.this);
             }
         });
     }
 
     /* renamed from: n */
     private void m10120n() {
-        TextView textView = (TextView) findViewById(R.id.eula_link);
+        TextView textView = findViewById(R.id.eula_link);
         FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
         textView.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

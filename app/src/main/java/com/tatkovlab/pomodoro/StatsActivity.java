@@ -11,7 +11,7 @@ import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodorolite.R;
 
-public class StatsActivity extends C2204a {
+public class StatsActivity extends BaseActivity {
 
     /* renamed from: j */
     private ViewGroup f6463j;
@@ -19,9 +19,9 @@ public class StatsActivity extends C2204a {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_stats);
+        setContentView(R.layout.activity_stats);
         m10081k();
-        C2250f.m10263a().mo7965g().mo7982a((C2221d<C2233g>) new C2221d<C2233g>() {
+        C2250f.m10263a().mo7965g().mo7982a(new C2221d<C2233g>() {
             /* renamed from: a */
             public void mo7844a(C2233g gVar) {
                 StatsActivity.this.m10080a(gVar);
@@ -37,7 +37,7 @@ public class StatsActivity extends C2204a {
     /* access modifiers changed from: private */
     /* renamed from: a */
     public void m10080a(C2233g gVar) {
-        this.f6463j = (ViewGroup) findViewById(R.id.stats_box);
+        this.f6463j = findViewById(R.id.stats_box);
         LayoutInflater from = LayoutInflater.from(this);
         m10078a(from, R.string.stats_label_today, gVar.f6567a);
         LayoutInflater layoutInflater = from;
@@ -50,9 +50,9 @@ public class StatsActivity extends C2204a {
     /* renamed from: a */
     private void m10078a(LayoutInflater layoutInflater, int i, long j) {
         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_single_line, this.f6463j, false);
-        TextView textView = (TextView) viewGroup.findViewById(R.id.label);
+        TextView textView = viewGroup.findViewById(R.id.label);
         textView.setText(i);
-        TextView textView2 = (TextView) viewGroup.findViewById(R.id.number);
+        TextView textView2 = viewGroup.findViewById(R.id.number);
         textView2.setText(String.valueOf(j));
         FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
         FontHelper.setTypeface(textView2, Fonts.LATO_BOLD);
@@ -62,16 +62,16 @@ public class StatsActivity extends C2204a {
     /* renamed from: a */
     private void m10077a(LayoutInflater layoutInflater, int i, int i2, long j, long j2) {
         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_two_line, this.f6463j, false);
-        TextView textView = (TextView) viewGroup.findViewById(R.id.label_top);
+        TextView textView = viewGroup.findViewById(R.id.label_top);
         textView.setText(i);
-        TextView textView2 = (TextView) viewGroup.findViewById(R.id.label_bottom);
+        TextView textView2 = viewGroup.findViewById(R.id.label_bottom);
         textView2.setText(i2);
-        TextView textView3 = (TextView) viewGroup.findViewById(R.id.number_top);
+        TextView textView3 = viewGroup.findViewById(R.id.number_top);
         textView3.setText(String.valueOf(j));
-        TextView textView4 = (TextView) viewGroup.findViewById(R.id.number_bottom);
+        TextView textView4 = viewGroup.findViewById(R.id.number_bottom);
         StringBuilder sb = new StringBuilder();
         sb.append("(");
-        sb.append(String.valueOf(j2));
+        sb.append(j2);
         sb.append(")");
         textView4.setText(sb.toString());
         FontHelper.setTypeface(textView, Fonts.LATO_BOLD);

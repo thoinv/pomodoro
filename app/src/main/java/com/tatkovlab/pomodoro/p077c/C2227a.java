@@ -23,7 +23,7 @@ public enum C2227a {
     /* renamed from: l */
     private int f6543l;
 
-    private C2227a(int i, int i2) {
+    C2227a(int i, int i2) {
         this.f6542k = i;
         this.f6543l = i2;
     }

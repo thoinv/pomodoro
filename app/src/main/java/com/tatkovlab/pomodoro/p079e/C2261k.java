@@ -77,7 +77,7 @@ class C2261k implements C2248e {
     /* renamed from: d */
     @SuppressLint("WrongConstant")
     private PendingIntent m10355d() {
-        long longValue = ((Long) C2295b.getValue(C2295b.TIMER_STARTED_TIME)).longValue();
+        long longValue = C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue();
         Intent intent = new Intent(this.f6624d, TimerBackupAlarmReceiver.class);
         intent.putExtra("INTENT_EXTRA_TIMER_STARTED_TIME", longValue);
         return PendingIntent.getBroadcast(this.f6624d, 2, intent, 268435456);
@@ -93,7 +93,7 @@ class C2261k implements C2248e {
 
     /* renamed from: a */
     public void mo7953a(long j) {
-        if (j > 0 && j == ((Long) C2295b.getValue(C2295b.TIMER_STARTED_TIME)).longValue()) {
+        if (j > 0 && j == C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue()) {
             mo7951a();
             m10358f();
         }
@@ -143,7 +143,7 @@ class C2261k implements C2248e {
 
     /* renamed from: h */
     private int m10360h() {
-        long longValue = ((Long) C2295b.getValue(C2295b.TIMER_STARTED_TIME)).longValue() + ((Long) C2295b.getValue(C2295b.TIMER_DURATION_IN_MILLIS)).longValue();
+        long longValue = C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue() + C2295b.getValue(C2295b.TIMER_DURATION_IN_MILLIS).longValue();
         if (longValue > System.currentTimeMillis()) {
             return (int) ((longValue - System.currentTimeMillis()) / 1000);
         }

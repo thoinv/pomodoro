@@ -75,18 +75,18 @@ class C2251g implements C2249a, C2271e {
     C2251g(Context context) {
         this.f6600a = context.getApplicationContext();
         m10293x();
-        C2250f.m10263a().mo7960b().mo7954a((C2249a) this);
+        C2250f.m10263a().mo7960b().mo7954a(this);
         m10281l();
     }
 
     /* renamed from: l */
     private void m10281l() {
-        this.f6603d = C2274c.m10408a(((Integer) C2295b.getValue(C2295b.CURRENT_POMODORO_STATE)).intValue());
+        this.f6603d = C2274c.m10408a(C2295b.getValue(C2295b.CURRENT_POMODORO_STATE).intValue());
         if (this.f6603d == C2274c.POMODORO && !m10295z().mo7955b()) {
             m10276a(C2274c.IDLE);
         }
         if (this.f6608i.mo7922a()) {
-            this.f6604e = C2274c.m10408a(((Integer) C2295b.getValue(C2295b.NEXT_POMODORO_STATE)).intValue());
+            this.f6604e = C2274c.m10408a(C2295b.getValue(C2295b.NEXT_POMODORO_STATE).intValue());
             C2250f.m10263a().mo7966h().mo7941d();
         }
     }
@@ -187,7 +187,7 @@ class C2251g implements C2249a, C2271e {
     public void mo7968a(C2232f fVar, C2232f fVar2) {
         if (m10294y() && this.f6601b.mo7837a()) {
             m10275a(fVar2);
-            this.f6601b.mo7835a((C2270d) fVar);
+            this.f6601b.mo7835a(fVar);
         }
     }
 
@@ -286,7 +286,7 @@ class C2251g implements C2249a, C2271e {
 
     /* renamed from: a */
     private void m10275a(C2232f fVar) {
-        this.f6601b.mo7836a(fVar, ((Integer) C2295b.getValue(C2295b.tickingTag)).intValue());
+        this.f6601b.mo7836a(fVar, C2295b.getValue(C2295b.tickingTag).intValue());
     }
 
     /* renamed from: u */

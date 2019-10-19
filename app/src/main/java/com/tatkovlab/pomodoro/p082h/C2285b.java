@@ -26,7 +26,7 @@ public class C2285b {
         /* renamed from: d */
         private int f6671d;
 
-        private C2286a(int i, int i2) {
+        C2286a(int i, int i2) {
             this.f6670c = i;
             this.f6671d = i2;
         }

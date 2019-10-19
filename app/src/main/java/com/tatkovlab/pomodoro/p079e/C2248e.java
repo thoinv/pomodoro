@@ -4,7 +4,7 @@ package com.tatkovlab.pomodoro.p079e;
 public interface C2248e {
 
     /* renamed from: com.tatkovlab.pomodoro.e.e$a */
-    public interface C2249a {
+    interface C2249a {
         /* renamed from: a */
         void mo7957a(int i);
 

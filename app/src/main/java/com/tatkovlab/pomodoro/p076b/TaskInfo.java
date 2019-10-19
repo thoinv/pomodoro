@@ -69,7 +69,7 @@ public class TaskInfo implements Parcelable {
 
         final long intValue;
 
-        private TaskType(long intValue) {
+        TaskType(long intValue) {
             this.intValue = intValue;
         }
 

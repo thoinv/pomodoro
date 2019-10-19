@@ -21,7 +21,7 @@ public enum C2232f implements C2270d {
     /* renamed from: g */
     private int f6566g;
 
-    private C2232f(String str, int i, int i2) {
+    C2232f(String str, int i, int i2) {
         this.f6564e = str;
         this.f6565f = i;
         this.f6566g = i2;
@@ -45,7 +45,7 @@ public enum C2232f implements C2270d {
     /* renamed from: d */
     public static C2232f m10212d() {
         C2232f fVar = TICKING_1;
-        switch (((Integer) C2295b.getValue(C2295b.TICKING_SOUND_INDEX)).intValue()) {
+        switch (C2295b.getValue(C2295b.TICKING_SOUND_INDEX).intValue()) {
             case 0:
                 return TICKING_1;
             case 1:
@@ -58,7 +58,7 @@ public enum C2232f implements C2270d {
     /* renamed from: e */
     public static C2232f m10213e() {
         C2232f fVar = RINGING_1;
-        switch (((Integer) C2295b.getValue(C2295b.RINGING_SOUND_INDEX)).intValue()) {
+        switch (C2295b.getValue(C2295b.RINGING_SOUND_INDEX).intValue()) {
             case 0:
                 return RINGING_1;
             case 1:

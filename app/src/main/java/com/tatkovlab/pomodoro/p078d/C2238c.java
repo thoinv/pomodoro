@@ -25,12 +25,12 @@ public class C2238c {
 
     /* renamed from: b */
     public static String m10225b() {
-        String str = (String) C2295b.getValue(C2295b.PRESELECTED_LANG);
+        String str = C2295b.getValue(C2295b.PRESELECTED_LANG);
         if (str != null) {
             return str;
         }
         String language = Locale.getDefault().getLanguage();
-        return (language == null || language.equals("")) ? f6582a.mo7920a() : language;
+        return language.equals("") ? f6582a.mo7920a() : language;
     }
 
     /* renamed from: c */

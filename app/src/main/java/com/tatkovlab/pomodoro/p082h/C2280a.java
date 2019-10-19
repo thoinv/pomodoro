@@ -65,7 +65,7 @@ public class C2280a {
 
     /* renamed from: b */
     private void m10435b(final boolean z) {
-        Button button = (Button) this.f6659c.findViewById(R.id.button_primary);
+        Button button = this.f6659c.findViewById(R.id.button_primary);
         int i = R.string.button_long_break;
         button.setText(z ? R.string.button_short_break : R.string.button_long_break);
         button.setOnClickListener(new OnClickListener() {
@@ -77,7 +77,7 @@ public class C2280a {
                 }
             }
         });
-        Button button2 = (Button) this.f6659c.findViewById(R.id.button_secondary);
+        Button button2 = this.f6659c.findViewById(R.id.button_secondary);
         if (!z) {
             i = R.string.button_short_break;
         }
@@ -91,7 +91,7 @@ public class C2280a {
                 }
             }
         });
-        ((Button) this.f6659c.findViewById(R.id.button_skip)).setOnClickListener(new OnClickListener() {
+        this.f6659c.findViewById(R.id.button_skip).setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 C2280a.this.f6658b.mo7806c();
             }

@@ -6,7 +6,7 @@ import com.tatkovlab.pomodoro.p077c.C2232f;
 public interface C2271e {
 
     /* renamed from: com.tatkovlab.pomodoro.g.e$a */
-    public interface C2272a {
+    interface C2272a {
         /* renamed from: a */
         void mo7946a();
 
@@ -15,7 +15,7 @@ public interface C2271e {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.g.e$b */
-    public interface C2273b {
+    interface C2273b {
         /* renamed from: a */
         void mo7802a();
 
@@ -24,7 +24,7 @@ public interface C2271e {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.g.e$c */
-    public enum C2274c {
+    enum C2274c {
         IDLE(1),
         POMODORO(2),
         SHORT_BREAK(3),
@@ -34,7 +34,7 @@ public interface C2271e {
         /* renamed from: e */
         private int f6643e;
 
-        private C2274c(int i) {
+        C2274c(int i) {
             this.f6643e = i;
         }
 

@@ -19,7 +19,7 @@ public class App extends Application {
     /* renamed from: a */
     private void m10015a() {
         if (VERSION.SDK_INT >= 26) {
-            C2263a.m10368a(this, getPackageName());
+            C2263a.createNotificationChanel(this, getPackageName());
         }
     }
 

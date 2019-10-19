@@ -31,7 +31,7 @@ import com.tatkovlab.pomodoro.p083i.C2291a;
 import com.tatkovlab.pomodoro.p083i.C2295b;
 import com.tatkovlab.pomodorolite.R;
 
-public class MainActivity extends C2204a {
+public class MainActivity extends BaseActivity {
     /* access modifiers changed from: private */
 
     /* renamed from: j */

@@ -10,7 +10,7 @@ import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodorolite.R;
 
-public class UpgradeToProActivity extends C2204a {
+public class UpgradeToProActivity extends BaseActivity {
 
     private static final int[] labels = {R.id.label_top_header, R.id.label_app_name, R.id.label_tasks, R.id.label_stats, R.id.label_support};
 

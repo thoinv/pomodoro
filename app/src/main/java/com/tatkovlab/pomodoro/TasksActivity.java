@@ -29,7 +29,7 @@ import com.woxthebox.draglistview.DragListView.DragListListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TasksActivity extends C2204a {
+public class TasksActivity extends BaseActivity {
     /* access modifiers changed from: private */
 
     /* renamed from: j */
@@ -51,7 +51,7 @@ public class TasksActivity extends C2204a {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) R.layout.activity_tasks);
+        setContentView(R.layout.activity_tasks);
         m10101k();
         m10102l();
         m10104n();
@@ -109,7 +109,7 @@ public class TasksActivity extends C2204a {
 
     /* renamed from: o */
     private void m10105o() {
-        this.f6465j = (DragListView) findViewById(R.id.tasks_list);
+        this.f6465j = findViewById(R.id.tasks_list);
         this.f6465j.setLayoutManager(new LinearLayoutManager(this));
         this.f6465j.setCanDragHorizontally(false);
         this.f6466k = new C2205a(new ArrayList(), R.layout.list_item_task, R.id.drag_handle, false);
@@ -201,7 +201,7 @@ public class TasksActivity extends C2204a {
     /* access modifiers changed from: private */
     /* renamed from: a */
     public void m10088a(boolean z, int i) {
-        TaskInfo fVar = (TaskInfo) this.f6466k.getItemList().get(i);
+        TaskInfo fVar = this.f6466k.getItemList().get(i);
         fVar.mo7894a(z ? TaskStatus.FINISHED : TaskStatus.NEW);
         m10107q().mo7989e(fVar);
         this.f6466k.notifyDataSetChanged();
@@ -209,23 +209,23 @@ public class TasksActivity extends C2204a {
 
     /* renamed from: p */
     private void m10106p() {
-        m10107q().mo7984a((C2220c<TaskInfo>) new C2220c<TaskInfo>() {
+        m10107q().mo7984a(new C2220c<TaskInfo>() {
             /* renamed from: a */
             public void mo7850a(List<TaskInfo> list) {
                 TasksActivity.this.f6466k = new C2205a(list, R.layout.list_item_task, R.id.drag_handle, false);
-                TasksActivity.this.f6466k.mo7859a((C2207a) new C2207a() {
+                TasksActivity.this.f6466k.mo7859a(new C2207a() {
                     /* renamed from: a */
                     public void mo7851a(TaskInfo fVar) {
                         TasksActivity.this.m10091b(fVar);
                     }
                 });
-                TasksActivity.this.f6466k.mo7862b((C2207a) new C2207a() {
+                TasksActivity.this.f6466k.mo7862b(new C2207a() {
                     /* renamed from: a */
                     public void mo7851a(TaskInfo fVar) {
                         TasksActivity.this.m10094c(fVar);
                     }
                 });
-                TasksActivity.this.f6466k.mo7860a((C2208b) new C2208b() {
+                TasksActivity.this.f6466k.mo7860a(new C2208b() {
                     /* renamed from: a */
                     public void mo7852a(boolean z, int i) {
                         TasksActivity.this.m10088a(z, i);

@@ -28,7 +28,7 @@ public enum C2229c {
         f6553h = null;
     }
 
-    private C2229c(String str, int i) {
+    C2229c(String str, int i) {
         this.f6555i = str;
         this.f6556j = i;
     }
@@ -52,6 +52,6 @@ public enum C2229c {
                 f6553h.put(cVar.mo7920a(), cVar);
             }
         }
-        return (C2229c) f6553h.get(str);
+        return f6553h.get(str);
     }
 }

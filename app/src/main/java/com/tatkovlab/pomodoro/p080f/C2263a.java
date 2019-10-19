@@ -21,7 +21,7 @@ public enum C2263a {
 
 
     /* renamed from: b */
-    private String f6628b;
+    private String channelName;
 
     /* renamed from: c */
     private int f6629c;
@@ -32,20 +32,20 @@ public enum C2263a {
     /* renamed from: e */
     private int f6631e;
 
-    private C2263a(String str, int i, int i2) {
-        this(str, i, i2, -1);
+    C2263a(String channelName, int i, int i2) {
+        this(channelName, i, i2, -1);
     }
 
-    private C2263a(String str, int i, int i2, int i3) {
-        this.f6628b = str;
+    C2263a(String channelName, int i, int i2, int i3) {
+        this.channelName = channelName;
         this.f6629c = i;
         this.f6630d = i2;
         this.f6631e = i3;
     }
 
     /* renamed from: a */
-    public String mo7993a() {
-        return this.f6628b;
+    public String getChannelName() {
+        return this.channelName;
     }
 
     /* renamed from: b */
@@ -65,25 +65,24 @@ public enum C2263a {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("WrongConstant")
-    public static void m10368a(Context context, String str) {
-        C2263a[] values;
-        ArrayList arrayList = new ArrayList();
+    public static void createNotificationChanel(Context context, String str) {
+        ArrayList<NotificationChannel> listChannel = new ArrayList<>();
+
         for (C2263a aVar : values()) {
-            NotificationChannel notificationChannel = new NotificationChannel(aVar.mo7993a(), context.getResources().getString(aVar.mo7995c()), aVar.mo7994b());
+            NotificationChannel notificationChannel = new NotificationChannel(aVar.getChannelName(), context.getResources().getString(aVar.mo7995c()), aVar.mo7994b());
             notificationChannel.enableVibration(true);
             int d = aVar.mo7996d();
             if (d != -1) {
                 AudioAttributes build = new Builder().setUsage(5).build();
-                StringBuilder sb = new StringBuilder();
-                sb.append("android.resource://");
-                sb.append(str);
-                sb.append("/");
-                sb.append(d);
-                notificationChannel.setSound(Uri.parse(sb.toString()), build);
+                notificationChannel.setSound(Uri.parse("android.resource://" + str + "/" + d), build);
             }
             notificationChannel.setLockscreenVisibility(1);
-            arrayList.add(notificationChannel);
+            listChannel.add(notificationChannel);
         }
-        ((NotificationManager) context.getSystemService("notification")).createNotificationChannels(arrayList);
+        NotificationManager notification = (NotificationManager) context.getSystemService("notification");
+        if (notification == null) {
+            return;
+        }
+        notification.createNotificationChannels(listChannel);
     }
 }

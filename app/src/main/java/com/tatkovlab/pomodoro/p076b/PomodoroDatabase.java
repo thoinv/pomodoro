@@ -6,25 +6,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/* renamed from: com.tatkovlab.pomodoro.b.b */
-class C2219b extends SQLiteOpenHelper {
+class PomodoroDatabase extends SQLiteOpenHelper {
 
-    /* renamed from: a */
-    private static C2219b f6511a;
+    private static PomodoroDatabase instance;
 
-    /* renamed from: a */
-    static synchronized C2219b m10160a(Context context) {
-        C2219b bVar;
-        synchronized (C2219b.class) {
-            if (f6511a == null) {
-                f6511a = new C2219b(context.getApplicationContext());
+    static synchronized PomodoroDatabase getInstance(Context context) {
+        synchronized (PomodoroDatabase.class) {
+            if (instance == null) {
+                instance = new PomodoroDatabase(context.getApplicationContext());
             }
-            bVar = f6511a;
         }
-        return bVar;
+        return instance;
     }
 
-    private C2219b(Context context) {
+    private PomodoroDatabase(Context context) {
         super(context, "pomodoro_timer.db", null, 3);
     }
 
@@ -35,21 +30,20 @@ class C2219b extends SQLiteOpenHelper {
     }
 
     public void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
-        String name = C2219b.class.getName();
-        StringBuilder sb = new StringBuilder();
-        sb.append("Upgrading database from version ");
-        sb.append(i);
-        sb.append(" to ");
-        sb.append(i2);
-        Log.w(name, sb.toString());
+        String name = PomodoroDatabase.class.getName();
+        String sb = "Upgrading database from version " +
+                i +
+                " to " +
+                i2;
+        Log.w(name, sb);
         switch (i) {
             case 1:
                 sQLiteDatabase.execSQL("create table stats (_id integer primary key autoincrement, date_finished integer not null);");
                 sQLiteDatabase.execSQL("create index my_date_index on stats(date_finished);");
-                for (TaskInfo fVar : C2210a.m10136a(sQLiteDatabase.rawQuery("SELECT * FROM tasks", null))) {
-                    for (int i3 = 0; ((long) i3) < fVar.mo7903e(); i3++) {
+                for (TaskInfo taskInfo : C2210a.m10136a(sQLiteDatabase.rawQuery("SELECT * FROM tasks", null))) {
+                    for (int i3 = 0; ((long) i3) < taskInfo.mo7903e(); i3++) {
                         ContentValues contentValues = new ContentValues();
-                        contentValues.put("date_finished", Long.valueOf(fVar.mo7908h()));
+                        contentValues.put("date_finished", taskInfo.mo7908h());
                         sQLiteDatabase.insert("stats", null, contentValues);
                     }
                 }

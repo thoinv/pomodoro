@@ -15,7 +15,7 @@ import java.util.List;
 /* renamed from: com.tatkovlab.pomodoro.e.i */
 public class C2255i {
     C2255i() {
-        C2250f.m10263a().mo7962d().mo7969a((C2272a) new C2272a() {
+        C2250f.m10263a().mo7962d().mo7969a(new C2272a() {
             /* renamed from: b */
             public void mo7947b() {
             }
@@ -42,13 +42,13 @@ public class C2255i {
     public C2233g m10325a(C2234h hVar) {
         C2233g gVar = new C2233g();
         List<Long> list = hVar.f6575a;
-        gVar.f6567a = ((Long) list.get(0)).longValue();
-        gVar.f6568b = ((Long) list.get(1)).longValue();
-        gVar.f6569c = ((Long) list.get(2)).longValue();
-        gVar.f6570d = ((Long) hVar.f6575a.get(3)).longValue();
-        gVar.f6571e = ((Long) hVar.f6575a.get(4)).longValue();
-        gVar.f6572f = ((Long) hVar.f6575a.get(5)).longValue();
-        gVar.f6573g = ((Long) hVar.f6575a.get(6)).longValue();
+        gVar.f6567a = list.get(0).longValue();
+        gVar.f6568b = list.get(1).longValue();
+        gVar.f6569c = list.get(2).longValue();
+        gVar.f6570d = hVar.f6575a.get(3).longValue();
+        gVar.f6571e = hVar.f6575a.get(4).longValue();
+        gVar.f6572f = hVar.f6575a.get(5).longValue();
+        gVar.f6573g = hVar.f6575a.get(6).longValue();
         gVar.f6574h = hVar.f6576b;
         return gVar;
     }

@@ -16,15 +16,15 @@ import java.util.List;
 public class C2210a {
 
     /* renamed from: a */
-    private static C2219b f6499a;
+    private static PomodoroDatabase f6499a;
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$a */
     private static class C2211a extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
-        private C2219b f6500a;
+        private PomodoroDatabase f6500a;
 
-        C2211a(C2219b bVar) {
+        C2211a(PomodoroDatabase bVar) {
             this.f6500a = bVar;
         }
 
@@ -58,9 +58,9 @@ public class C2210a {
         private C2221d<TaskInfo> f6501a;
 
         /* renamed from: b */
-        private C2219b f6502b;
+        private PomodoroDatabase f6502b;
 
-        C2212b(C2219b bVar, C2221d<TaskInfo> dVar) {
+        C2212b(PomodoroDatabase bVar, C2221d<TaskInfo> dVar) {
             this.f6502b = bVar;
             this.f6501a = dVar;
         }
@@ -93,9 +93,9 @@ public class C2210a {
         private C2221d<C2234h> f6503a;
 
         /* renamed from: b */
-        private C2219b f6504b;
+        private PomodoroDatabase f6504b;
 
-        C2213c(C2219b bVar, C2221d<C2234h> dVar) {
+        C2213c(PomodoroDatabase bVar, C2221d<C2234h> dVar) {
             this.f6504b = bVar;
             this.f6503a = dVar;
         }
@@ -145,9 +145,9 @@ public class C2210a {
         private C2220c<TaskInfo> f6505a;
 
         /* renamed from: b */
-        private C2219b f6506b;
+        private PomodoroDatabase f6506b;
 
-        C2214d(C2219b bVar, C2220c<TaskInfo> cVar) {
+        C2214d(PomodoroDatabase bVar, C2220c<TaskInfo> cVar) {
             this.f6506b = bVar;
             this.f6505a = cVar;
         }
@@ -172,9 +172,9 @@ public class C2210a {
     private static class C2215e extends AsyncTask<Long, Void, Void> {
 
         /* renamed from: a */
-        private C2219b f6507a;
+        private PomodoroDatabase f6507a;
 
-        C2215e(C2219b bVar) {
+        C2215e(PomodoroDatabase bVar) {
             this.f6507a = bVar;
         }
 
@@ -196,9 +196,9 @@ public class C2210a {
     private static class C2216f extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
-        private C2219b f6508a;
+        private PomodoroDatabase f6508a;
 
-        C2216f(C2219b bVar) {
+        C2216f(PomodoroDatabase bVar) {
             this.f6508a = bVar;
         }
 
@@ -227,9 +227,9 @@ public class C2210a {
     private static class C2217g extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
-        private C2219b f6509a;
+        private PomodoroDatabase f6509a;
 
-        C2217g(C2219b bVar) {
+        C2217g(PomodoroDatabase bVar) {
             this.f6509a = bVar;
         }
 
@@ -258,9 +258,9 @@ public class C2210a {
     private static class C2218h extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
-        private C2219b f6510a;
+        private PomodoroDatabase f6510a;
 
-        C2218h(C2219b bVar) {
+        C2218h(PomodoroDatabase bVar) {
             this.f6510a = bVar;
         }
 
@@ -285,17 +285,17 @@ public class C2210a {
 
     /* renamed from: a */
     public static void m10138a(Context context) {
-        f6499a = C2219b.m10160a(context);
+        f6499a = PomodoroDatabase.getInstance(context);
     }
 
     /* renamed from: a */
     public static void m10141a(TaskInfo fVar) {
-        new C2216f(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
+        new C2216f(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, fVar);
     }
 
     /* renamed from: b */
     public static void m10144b(TaskInfo fVar) {
-        new C2218h(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
+        new C2218h(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, fVar);
     }
 
     /* renamed from: a */
@@ -305,12 +305,12 @@ public class C2210a {
 
     /* renamed from: c */
     public static void m10145c(TaskInfo fVar) {
-        new C2211a(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
+        new C2211a(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, fVar);
     }
 
     /* renamed from: d */
     public static void m10146d(TaskInfo fVar) {
-        new C2217g(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
+        new C2217g(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, fVar);
     }
 
     /* renamed from: a */
@@ -325,7 +325,7 @@ public class C2210a {
 
     /* renamed from: a */
     public static void m10137a(long j) {
-        new C2215e(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new Long[]{Long.valueOf(j)});
+        new C2215e(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, Long.valueOf(j));
     }
 
     /* renamed from: a */
