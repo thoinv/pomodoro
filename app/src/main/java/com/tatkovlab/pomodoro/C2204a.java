@@ -1,5 +1,6 @@
 package com.tatkovlab.pomodoro;
 
+import android.app.Activity;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import java.util.Locale;
 
-public class C2204a extends AppCompatActivity {
+public class C2204a extends Activity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);

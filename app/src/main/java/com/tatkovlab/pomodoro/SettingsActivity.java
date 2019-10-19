@@ -26,13 +26,13 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.tatkovlab.pomodoro.p077c.C2232f;
-import com.tatkovlab.pomodoro.p078d.C2236b;
-import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
+import com.tatkovlab.pomodoro.p078d.FontHelper;
+import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import com.tatkovlab.pomodoro.p078d.C2240d;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p083i.C2295b;
-import com.tatkovlab.pomodoro.p083i.C2295b.C2296a;
+import com.tatkovlab.pomodoro.p083i.C2295b.PreferenceValueObject;
 import com.tatkovlab.pomodorolite.R;
 
 public class SettingsActivity extends C2204a {
@@ -56,7 +56,7 @@ public class SettingsActivity extends C2204a {
     private static class C2188c extends ArrayAdapter<String> {
 
         /* renamed from: a */
-        private static final C2237a f6456a = C2237a.LATO_BOLD;
+        private static final Fonts f6456a = Fonts.LATO_BOLD;
 
         /* renamed from: b */
         private int f6457b;
@@ -72,13 +72,13 @@ public class SettingsActivity extends C2204a {
 
         public View getView(int i, View view, ViewGroup viewGroup) {
             TextView textView = (TextView) super.getView(i, view, viewGroup);
-            C2236b.m10219a(textView, f6456a);
+            FontHelper.setTypeface(textView, f6456a);
             return textView;
         }
 
         public View getDropDownView(int i, View view, ViewGroup viewGroup) {
             TextView textView = (TextView) super.getDropDownView(i, view, viewGroup);
-            C2236b.m10219a(textView, f6456a);
+            FontHelper.setTypeface(textView, f6456a);
             textView.setTextColor(this.f6457b);
             return textView;
         }
@@ -101,20 +101,20 @@ public class SettingsActivity extends C2204a {
 
     /* renamed from: k */
     private void m10050k() {
-        C2236b.m10219a((TextView) findViewById(R.id.text_header), C2237a.LATO_BOLD);
+        FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
     }
 
     /* renamed from: l */
     private void m10051l() {
         for (int findViewById : this.f6426j) {
-            C2236b.m10219a((TextView) findViewById(findViewById), C2237a.LATO_BOLD);
+            FontHelper.setTypeface((TextView) findViewById(findViewById), Fonts.LATO_BOLD);
         }
     }
 
     /* renamed from: m */
     private void m10052m() {
         SeekBar seekBar = (SeekBar) findViewById(R.id.volume_bar_ringing);
-        seekBar.setProgress(((Integer) C2295b.m10458a(C2295b.f6692d)).intValue());
+        seekBar.setProgress(((Integer) C2295b.getValue(C2295b.ringSoundTags)).intValue());
         seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
@@ -123,11 +123,11 @@ public class SettingsActivity extends C2204a {
             }
 
             public void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-                C2295b.m10461a(C2295b.f6692d, Integer.valueOf(i));
+                C2295b.save(C2295b.ringSoundTags, Integer.valueOf(i));
             }
         });
         SeekBar seekBar2 = (SeekBar) findViewById(R.id.volume_bar_ticking);
-        seekBar2.setProgress(((Integer) C2295b.m10458a(C2295b.f6693e)).intValue());
+        seekBar2.setProgress(((Integer) C2295b.getValue(C2295b.tickingTag)).intValue());
         seekBar2.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
@@ -136,7 +136,7 @@ public class SettingsActivity extends C2204a {
             }
 
             public void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-                C2295b.m10461a(C2295b.f6693e, Integer.valueOf(i));
+                C2295b.save(C2295b.tickingTag, Integer.valueOf(i));
                 C2250f.m10263a().mo7962d().mo7972b(i);
             }
         });
@@ -144,41 +144,41 @@ public class SettingsActivity extends C2204a {
 
     /* renamed from: n */
     private void m10053n() {
-        m10045a((int) R.id.checkbox_keep_screen_on, C2295b.f6695g);
-        m10045a((int) R.id.checkbox_vibrate, C2295b.f6694f);
+        m10045a((int) R.id.checkbox_keep_screen_on, C2295b.keepScreenOnTag);
+        m10045a((int) R.id.checkbox_vibrate, C2295b.isVibrationTag);
     }
 
     /* renamed from: a */
-    private void m10045a(int i, final C2296a<Boolean> aVar) {
+    private void m10045a(int i, final PreferenceValueObject<Boolean> aVar) {
         CheckBox checkBox = (CheckBox) findViewById(i);
-        C2236b.m10219a((TextView) checkBox, C2237a.LATO_BOLD);
-        checkBox.setChecked(((Boolean) C2295b.m10458a(aVar)).booleanValue());
+        FontHelper.setTypeface((TextView) checkBox, Fonts.LATO_BOLD);
+        checkBox.setChecked(((Boolean) C2295b.getValue(aVar)).booleanValue());
         checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                C2295b.m10461a(aVar, Boolean.valueOf(z));
+                C2295b.save(aVar, Boolean.valueOf(z));
             }
         });
     }
 
     /* renamed from: o */
     private void m10054o() {
-        m10043a((int) R.id.spinner_short_break_duration, (int) R.array.short_breaks, C2295b.f6696h);
-        m10043a((int) R.id.spinner_long_break_duration, (int) R.array.long_breaks, C2295b.f6697i);
-        m10043a((int) R.id.spinner_pomodoro_duration, (int) R.array.pomodoro_duration, C2295b.f6698j);
+        m10043a((int) R.id.spinner_short_break_duration, (int) R.array.short_breaks, C2295b.shortBreakTag);
+        m10043a((int) R.id.spinner_long_break_duration, (int) R.array.long_breaks, C2295b.longBreakTag);
+        m10043a((int) R.id.spinner_pomodoro_duration, (int) R.array.pomodoro_duration, C2295b.pomodoroDurationIndex);
         int i = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
         int i2 = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
-        m10042a(R.id.spinner_ringing_sound, R.array.ringing_sounds_array, i, C2295b.f6699k, new C2186a() {
+        m10042a(R.id.spinner_ringing_sound, R.array.ringing_sounds_array, i, C2295b.RINGING_SOUND_INDEX, new C2186a() {
             /* renamed from: a */
             public void mo7814a(int i) {
-                C2295b.m10461a(C2295b.f6699k, Integer.valueOf(i));
+                C2295b.save(C2295b.RINGING_SOUND_INDEX, Integer.valueOf(i));
             }
         });
-        m10042a(R.id.spinner_ticking_sound, R.array.ticking_sounds_array, i2, C2295b.f6700l, new C2186a() {
+        m10042a(R.id.spinner_ticking_sound, R.array.ticking_sounds_array, i2, C2295b.TICKING_SOUND_INDEX, new C2186a() {
             /* renamed from: a */
             public void mo7814a(int i) {
-                if (i != ((Integer) C2295b.m10458a(C2295b.f6700l)).intValue()) {
+                if (i != ((Integer) C2295b.getValue(C2295b.TICKING_SOUND_INDEX)).intValue()) {
                     C2232f d = C2232f.m10212d();
-                    C2295b.m10461a(C2295b.f6700l, Integer.valueOf(i));
+                    C2295b.save(C2295b.TICKING_SOUND_INDEX, Integer.valueOf(i));
                     C2250f.m10263a().mo7962d().mo7968a(d, C2232f.m10212d());
                 }
             }
@@ -187,25 +187,25 @@ public class SettingsActivity extends C2204a {
 
     /* renamed from: a */
     @SuppressLint("ResourceType")
-    private void m10043a(int i, int i2, final C2296a<Integer> aVar) {
+    private void m10043a(int i, int i2, final PreferenceValueObject<Integer> aVar) {
         Spinner spinner = (Spinner) findViewById(i);
         C2188c cVar = new C2188c((Context) this, 17367048, i2);
         cVar.setDropDownViewResource(17367049);
         spinner.setAdapter(cVar);
-        spinner.setSelection(((Integer) C2295b.m10458a(aVar)).intValue());
+        spinner.setSelection(((Integer) C2295b.getValue(aVar)).intValue());
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
 
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long j) {
-                C2295b.m10461a(aVar, Integer.valueOf(i));
+                C2295b.save(aVar, Integer.valueOf(i));
             }
         });
     }
 
     /* renamed from: a */
     @SuppressLint("ResourceType")
-    private void m10042a(int i, int i2, int i3, C2296a<Integer> aVar, C2186a aVar2) {
+    private void m10042a(int i, int i2, int i3, PreferenceValueObject<Integer> aVar, C2186a aVar2) {
         String string = getResources().getString(R.string.pro_in_brackets);
         String[] stringArray = getResources().getStringArray(i2);
         for (int i4 = i3; i4 < stringArray.length; i4++) {
@@ -219,11 +219,11 @@ public class SettingsActivity extends C2204a {
         C2188c cVar = new C2188c((Context) this, 17367048, stringArray);
         cVar.setDropDownViewResource(17367049);
         spinner.setAdapter(cVar);
-        spinner.setSelection(((Integer) C2295b.m10458a(aVar)).intValue());
+        spinner.setSelection(((Integer) C2295b.getValue(aVar)).intValue());
         final int i5 = i3;
         final C2186a aVar3 = aVar2;
         final Spinner spinner2 = spinner;
-        final C2296a<Integer> aVar4 = aVar;
+        final PreferenceValueObject<Integer> aVar4 = aVar;
         OnItemSelectedListener r0 = new OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
@@ -233,7 +233,7 @@ public class SettingsActivity extends C2204a {
                     aVar3.mo7814a(i);
                     return;
                 }
-                spinner2.setSelection(((Integer) C2295b.m10458a(aVar4)).intValue());
+                spinner2.setSelection(((Integer) C2295b.getValue(aVar4)).intValue());
                 SettingsActivity.this.m10057r();
             }
         };
@@ -273,7 +273,7 @@ public class SettingsActivity extends C2204a {
     public void m10044a(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {
-            float intValue = ((float) ((Integer) C2295b.m10458a(C2295b.f6692d)).intValue()) / 100.0f;
+            float intValue = ((float) ((Integer) C2295b.getValue(C2295b.ringSoundTags)).intValue()) / 100.0f;
             create.setVolume(intValue, intValue);
             create.start();
             create.setOnCompletionListener(new OnCompletionListener() {
@@ -290,7 +290,7 @@ public class SettingsActivity extends C2204a {
     public void m10048b(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {
-            float intValue = ((float) ((Integer) C2295b.m10458a(C2295b.f6693e)).intValue()) / 100.0f;
+            float intValue = ((float) ((Integer) C2295b.getValue(C2295b.tickingTag)).intValue()) / 100.0f;
             create.setVolume(intValue, intValue);
             create.seekTo(create.getDuration() - 4000);
             create.start();
@@ -308,7 +308,7 @@ public class SettingsActivity extends C2204a {
     private void m10056q() {
         if (!C2250f.m10263a().mo7966h().mo7937a()) {
             Button button = (Button) findViewById(R.id.button_upgrade_to_premium);
-            C2236b.m10219a((TextView) button, C2237a.LATO_BOLD);
+            FontHelper.setTypeface((TextView) button, Fonts.LATO_BOLD);
             button.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) {
                     SettingsActivity.this.m10057r();

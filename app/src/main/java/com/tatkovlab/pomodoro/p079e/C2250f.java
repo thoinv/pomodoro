@@ -7,13 +7,13 @@ import com.tatkovlab.pomodoro.p081g.C2271e;
 public class C2250f {
 
     /* renamed from: a */
-    private static C2250f f6590a = null;
+    private static C2250f instance = null;
 
     /* renamed from: j */
     private static boolean f6591j = false;
 
     /* renamed from: b */
-    private Context f6592b;
+    private Context context;
 
     /* renamed from: c */
     private C2248e f6593c = null;
@@ -37,20 +37,20 @@ public class C2250f {
     private C2242a f6599i;
 
     private C2250f(Context context) {
-        this.f6592b = context;
+        this.context = context;
     }
 
     /* renamed from: a */
-    public static void m10264a(Context context, boolean z) {
-        if (f6590a == null) {
+    public static void get(Context context, boolean z) {
+        if (instance == null) {
             f6591j = z;
-            f6590a = new C2250f(context);
-            f6590a.mo7962d();
-            f6590a.mo7961c();
-            f6590a.mo7966h();
-            f6590a.mo7963e();
-            f6590a.mo7964f();
-            f6590a.mo7965g();
+            instance = new C2250f(context);
+            instance.mo7962d();
+            instance.mo7961c();
+            instance.mo7966h();
+            instance.mo7963e();
+            instance.mo7964f();
+            instance.mo7965g();
             return;
         }
         throw new RuntimeException("Modules manager already installed.");
@@ -58,8 +58,8 @@ public class C2250f {
 
     /* renamed from: a */
     public static C2250f m10263a() {
-        if (f6590a != null) {
-            return f6590a;
+        if (instance != null) {
+            return instance;
         }
         throw new RuntimeException("Modules manager must be installed before this method can be called.");
     }
@@ -67,7 +67,7 @@ public class C2250f {
     /* renamed from: b */
     public C2248e mo7960b() {
         if (this.f6593c == null) {
-            this.f6593c = new C2261k(this.f6592b);
+            this.f6593c = new C2261k(this.context);
         }
         return this.f6593c;
     }
@@ -75,7 +75,7 @@ public class C2250f {
     /* renamed from: c */
     public C2247d mo7961c() {
         if (this.f6594d == null) {
-            this.f6594d = new C2254h(this.f6592b);
+            this.f6594d = new C2254h(this.context);
         }
         return this.f6594d;
     }
@@ -83,7 +83,7 @@ public class C2250f {
     /* renamed from: d */
     public C2271e mo7962d() {
         if (this.f6595e == null) {
-            this.f6595e = new C2251g(this.f6592b);
+            this.f6595e = new C2251g(this.context);
         }
         return this.f6595e;
     }
@@ -102,7 +102,7 @@ public class C2250f {
             return null;
         }
         if (this.f6597g == null) {
-            this.f6597g = new C2258j(this.f6592b);
+            this.f6597g = new C2258j(this.context);
         }
         return this.f6597g;
     }

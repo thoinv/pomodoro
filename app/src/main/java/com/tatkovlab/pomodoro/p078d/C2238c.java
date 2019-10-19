@@ -1,14 +1,10 @@
 package com.tatkovlab.pomodoro.p078d;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-
-import androidx.appcompat.app.AlertDialog;
 
 import com.tatkovlab.pomodoro.p077c.C2229c;
 import com.tatkovlab.pomodoro.p083i.C2295b;
-import com.tatkovlab.pomodorolite.R;
+
 import java.util.Locale;
 
 /* renamed from: com.tatkovlab.pomodoro.d.c */
@@ -19,17 +15,17 @@ public class C2238c {
 
     /* renamed from: a */
     public static void m10222a(String str) {
-        C2295b.m10461a(C2295b.f6707s, str);
+        C2295b.save(C2295b.PRESELECTED_LANG, str);
     }
 
     /* renamed from: a */
     public static boolean m10223a() {
-        return C2295b.m10458a(C2295b.f6707s) != null;
+        return C2295b.getValue(C2295b.PRESELECTED_LANG) != null;
     }
 
     /* renamed from: b */
     public static String m10225b() {
-        String str = (String) C2295b.m10458a(C2295b.f6707s);
+        String str = (String) C2295b.getValue(C2295b.PRESELECTED_LANG);
         if (str != null) {
             return str;
         }

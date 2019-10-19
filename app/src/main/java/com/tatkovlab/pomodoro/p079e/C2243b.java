@@ -1,6 +1,5 @@
 package com.tatkovlab.pomodoro.p079e;
 
-import com.tatkovlab.pomodoro.p079e.C2245c.C2246a;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2272a;
 import com.tatkovlab.pomodoro.p083i.C2295b;
 
@@ -8,11 +7,11 @@ import com.tatkovlab.pomodoro.p083i.C2295b;
 public class C2243b implements C2245c {
 
     /* renamed from: a */
-    private String f6586a = ((String) C2295b.m10458a(C2295b.f6701m));
+    private String f6586a = ((String) C2295b.getValue(C2295b.CURRENT_TASK_NAME));
     /* access modifiers changed from: private */
 
     /* renamed from: b */
-    public int f6587b = ((Integer) C2295b.m10458a(C2295b.f6702n)).intValue();
+    public int f6587b = ((Integer) C2295b.getValue(C2295b.CURRENT_TASK_COUNT)).intValue();
 
     /* renamed from: c */
     private C2246a f6588c;
@@ -22,7 +21,7 @@ public class C2243b implements C2245c {
             /* renamed from: a */
             public void mo7946a() {
                 C2243b.this.f6587b = C2243b.this.f6587b + 1;
-                C2295b.m10461a(C2295b.f6702n, Integer.valueOf(C2243b.this.f6587b));
+                C2295b.save(C2295b.CURRENT_TASK_COUNT, Integer.valueOf(C2243b.this.f6587b));
                 C2243b.this.m10238c();
             }
 
@@ -50,8 +49,8 @@ public class C2243b implements C2245c {
     public void mo7944a(String str, int i) {
         this.f6586a = str;
         this.f6587b = i;
-        C2295b.m10461a(C2295b.f6701m, str);
-        C2295b.m10461a(C2295b.f6702n, Integer.valueOf(0));
+        C2295b.save(C2295b.CURRENT_TASK_NAME, str);
+        C2295b.save(C2295b.CURRENT_TASK_COUNT, Integer.valueOf(0));
         m10238c();
     }
 

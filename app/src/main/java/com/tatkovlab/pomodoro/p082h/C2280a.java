@@ -6,8 +6,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.tatkovlab.pomodoro.p077c.C2227a;
-import com.tatkovlab.pomodoro.p078d.C2236b;
-import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
+import com.tatkovlab.pomodoro.p078d.FontHelper;
+import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodorolite.R;
 
 /* renamed from: com.tatkovlab.pomodoro.h.a */
@@ -47,7 +47,7 @@ public class C2280a {
     /* renamed from: a */
     private void m10432a() {
         for (int findViewById : this.f6657a) {
-            C2236b.m10219a((TextView) this.f6659c.findViewById(findViewById), C2237a.LATO_BOLD);
+            FontHelper.setTypeface((TextView) this.f6659c.findViewById(findViewById), Fonts.LATO_BOLD);
         }
     }
 

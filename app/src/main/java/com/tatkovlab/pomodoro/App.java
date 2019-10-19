@@ -11,8 +11,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         m10015a();
-        C2295b.m10460a(getApplicationContext());
-        C2250f.m10264a(getApplicationContext(), m10016b());
+        C2295b.init(getApplicationContext());
+        C2250f.get(getApplicationContext(), m10016b());
         C2291a.m10454a(this);
     }
 

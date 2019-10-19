@@ -62,20 +62,22 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <android.support.p044v7.widget.AppCompatSpinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spinner_ringing_sound"
                     style="@style/WhiteSpinner"
                     android:layout_weight="1"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat" />
+                    app:theme="@style/ThemeOverlay.AppCompat"
+                    android:layout_width="0dp" />
 
                 <ImageView
                     android:id="@+id/play_ringing_sample_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:clickable="true"
-                    android:src="@drawable/button_play" />
+                    android:src="@drawable/button_play"
+                    android:focusable="true" />
             </LinearLayout>
 
             <TextView
@@ -90,30 +92,32 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <android.support.p044v7.widget.AppCompatSpinner
+                <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spinner_ticking_sound"
                     style="@style/WhiteSpinner"
                     android:layout_weight="1"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat" />
+                    app:theme="@style/ThemeOverlay.AppCompat"
+                    android:layout_width="0dp" />
 
                 <ImageView
                     android:id="@+id/play_ticking_sample_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:clickable="true"
-                    android:src="@drawable/button_play" />
+                    android:src="@drawable/button_play"
+                    android:focusable="true" />
             </LinearLayout>
 
-            <android.support.p044v7.widget.AppCompatCheckBox
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/checkbox_vibrate"
                 style="@style/WhiteCheckBox"
                 android:layout_marginTop="42dp"
                 android:text="@string/vibrate"
                 android:theme="@style/WhiteCheckBox" />
 
-            <android.support.p044v7.widget.AppCompatCheckBox
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/checkbox_keep_screen_on"
                 style="@style/WhiteCheckBox"
                 android:layout_marginTop="8dp"
@@ -126,7 +130,7 @@
                 android:layout_marginTop="42dp"
                 android:text="@string/short_break_duration" />
 
-            <android.support.p044v7.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner_short_break_duration"
                 style="@style/WhiteSpinner"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -138,7 +142,7 @@
                 android:layout_marginTop="32dp"
                 android:text="@string/long_break_duration" />
 
-            <android.support.p044v7.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner_long_break_duration"
                 style="@style/WhiteSpinner"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -150,7 +154,7 @@
                 android:layout_marginTop="32dp"
                 android:text="@string/pomodoro_duration" />
 
-            <android.support.p044v7.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinner_pomodoro_duration"
                 style="@style/WhiteSpinner"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"

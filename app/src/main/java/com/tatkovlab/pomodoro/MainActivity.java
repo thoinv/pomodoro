@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.tatkovlab.pomodoro.p078d.C2236b;
-import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
+//import com.afollestad.materialdialogs.MaterialDialog;
+import com.tatkovlab.pomodoro.p078d.FontHelper;
+import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import com.tatkovlab.pomodoro.p079e.C2242a;
 import com.tatkovlab.pomodoro.p079e.C2245c;
@@ -22,12 +22,10 @@ import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p081g.C2271e;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2273b;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2274c;
-import com.tatkovlab.pomodoro.p082h.C2280a;
-import com.tatkovlab.pomodoro.p082h.C2280a.C2284a;
 import com.tatkovlab.pomodoro.p082h.C2285b;
 import com.tatkovlab.pomodoro.p082h.C2285b.C2286a;
 import com.tatkovlab.pomodoro.p082h.C2287c;
-import com.tatkovlab.pomodoro.p082h.C2289d;
+import com.tatkovlab.pomodoro.p082h.PomodoroTime;
 import com.tatkovlab.pomodoro.p082h.C2290e;
 import com.tatkovlab.pomodoro.p083i.C2291a;
 import com.tatkovlab.pomodoro.p083i.C2295b;
@@ -44,16 +42,16 @@ public class MainActivity extends C2204a {
     /* access modifiers changed from: private */
 
     /* renamed from: l */
-    public MaterialDialog f6408l;
+//    public MaterialDialog f6408l;
 
     /* renamed from: m */
-    private Button f6409m;
+    private Button btStartPomodoro;
 
     /* renamed from: n */
-    private Button f6410n;
+    private Button btCancelPomodoro;
 
     /* renamed from: o */
-    private Button f6411o;
+    private Button btSkipBreak;
 
     /* renamed from: p */
     private TextView f6412p;
@@ -71,12 +69,12 @@ public class MainActivity extends C2204a {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (!((Boolean) C2295b.m10458a(C2295b.f6708t)).booleanValue()) {
+        if (!C2295b.getValue(C2295b.WAS_WELCOME_SCREEN_SHOWN).booleanValue()) {
             startActivity(new Intent(this, WelcomeActivity.class));
             finish();
             return;
         }
-        setContentView((int) R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         this.f6414r = C2238c.m10225b();
         this.f6407k = new C2285b(this);
         m10030p();
@@ -92,7 +90,7 @@ public class MainActivity extends C2204a {
     }
 
     public void onDestroy() {
-        m10033s().mo7970a((C2273b) null);
+        m10033s().mo7970a(null);
         super.onDestroy();
     }
 
@@ -117,7 +115,7 @@ public class MainActivity extends C2204a {
 
     /* renamed from: a */
     private void m10019a(boolean z) {
-        if (z || !((Boolean) C2295b.m10458a(C2295b.f6695g)).booleanValue()) {
+        if (z || !C2295b.getValue(C2295b.keepScreenOnTag).booleanValue()) {
             getWindow().clearFlags(128);
         } else {
             getWindow().addFlags(128);
@@ -127,33 +125,34 @@ public class MainActivity extends C2204a {
     /* access modifiers changed from: protected */
     public void onStop() {
         super.onStop();
-        if (this.f6408l != null && this.f6408l.isShowing()) {
-            this.f6408l.dismiss();
-            this.f6408l = null;
-        }
+//        if (this.f6408l != null && this.f6408l.isShowing()) {
+//            this.f6408l.dismiss();
+//            this.f6408l = null;
+//        }
     }
 
     /* renamed from: l */
+    @SuppressLint("WrongConstant")
     private void m10026l() {
-        this.f6409m = (Button) findViewById(R.id.button_start_pomodoro);
-        C2236b.m10219a((TextView) this.f6409m, C2237a.LATO_BOLD);
-        this.f6409m.setOnClickListener(new OnClickListener() {
+        this.btStartPomodoro = findViewById(R.id.button_start_pomodoro);
+        FontHelper.setTypeface(this.btStartPomodoro, Fonts.LATO_BOLD);
+        this.btStartPomodoro.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 C2250f.m10263a().mo7962d().mo7967a();
                 MainActivity.this.m10027m();
             }
         });
-        this.f6410n = (Button) findViewById(R.id.button_cancel_pomodoro);
-        C2236b.m10219a((TextView) this.f6410n, C2237a.LATO_BOLD);
-        this.f6410n.setOnClickListener(new OnClickListener() {
+        this.btCancelPomodoro = findViewById(R.id.button_cancel_pomodoro);
+        FontHelper.setTypeface(this.btCancelPomodoro, Fonts.LATO_BOLD);
+        this.btCancelPomodoro.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 MainActivity.this.m10033s().mo7971b();
                 MainActivity.this.m10027m();
             }
         });
-        this.f6411o = (Button) findViewById(R.id.button_skip_break);
-        C2236b.m10219a((TextView) this.f6411o, C2237a.LATO_BOLD);
-        this.f6411o.setOnClickListener(new OnClickListener() {
+        this.btSkipBreak = findViewById(R.id.button_skip_break);
+        FontHelper.setTypeface(this.btSkipBreak, Fonts.LATO_BOLD);
+        this.btSkipBreak.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 MainActivity.this.m10033s().mo7975g();
                 MainActivity.this.m10027m();
@@ -184,9 +183,9 @@ public class MainActivity extends C2204a {
         if (h == C2274c.IDLE) {
             C2274c i = m10033s().mo7977i();
             if (i == C2274c.POMODORO) {
-                this.f6409m.setVisibility(0);
-                this.f6410n.setVisibility(8);
-                this.f6411o.setVisibility(8);
+                this.btStartPomodoro.setVisibility(0);
+                this.btCancelPomodoro.setVisibility(8);
+                this.btSkipBreak.setVisibility(8);
                 this.f6407k.mo8017a(C2286a.RED);
             } else if (i == C2274c.SHORT_BREAK) {
                 m10021b(true);
@@ -196,14 +195,14 @@ public class MainActivity extends C2204a {
             m10019a(true);
         } else {
             if (h == C2274c.POMODORO) {
-                this.f6409m.setVisibility(8);
-                this.f6410n.setVisibility(0);
-                this.f6411o.setVisibility(8);
+                this.btStartPomodoro.setVisibility(8);
+                this.btCancelPomodoro.setVisibility(0);
+                this.btSkipBreak.setVisibility(8);
                 this.f6407k.mo8017a(C2286a.RED);
             } else if (h == C2274c.SHORT_BREAK || h == C2274c.LONG_BREAK) {
-                this.f6409m.setVisibility(8);
-                this.f6410n.setVisibility(8);
-                this.f6411o.setVisibility(0);
+                this.btStartPomodoro.setVisibility(8);
+                this.btCancelPomodoro.setVisibility(8);
+                this.btSkipBreak.setVisibility(0);
                 this.f6407k.mo8017a(C2286a.GREEN);
             }
             m10019a(false);
@@ -213,9 +212,9 @@ public class MainActivity extends C2204a {
 
     /* renamed from: n */
     private void m10028n() {
-        this.f6413q = (ViewGroup) findViewById(R.id.box_completed_pomodoros_indicator);
-        this.f6412p = (TextView) findViewById(R.id.task_name_text);
-        C2236b.m10219a(this.f6412p, C2237a.PANGOLIN_REGULAR);
+        this.f6413q = findViewById(R.id.box_completed_pomodoros_indicator);
+        this.f6412p = findViewById(R.id.task_name_text);
+        FontHelper.setTypeface(this.f6412p, Fonts.PANGOLIN_REGULAR);
         findViewById(R.id.note_background).setOnClickListener(new C2287c());
         C2250f.m10263a().mo7963e().mo7943a(new C2246a() {
             /* renamed from: a */
@@ -253,17 +252,17 @@ public class MainActivity extends C2204a {
 
     /* renamed from: p */
     private void m10030p() {
-        this.f6406j = new C2290e(C2289d.MINUTES_25, (ImageView) findViewById(R.id.time_line));
+        this.f6406j = new C2290e(PomodoroTime.MINUTES_25, (ImageView) findViewById(R.id.time_line));
     }
 
     /* renamed from: q */
     private void m10031q() {
-        this.f6406j.mo8027a(C2289d.m10443a(m10033s().mo7979k()));
+        this.f6406j.mo8027a(PomodoroTime.m10443a(m10033s().mo7979k()));
     }
 
     /* renamed from: r */
     private void m10032r() {
-        m10033s().mo7970a((C2273b) new C2273b() {
+        m10033s().mo7970a(new C2273b() {
             /* renamed from: a */
             public void mo7802a() {
                 MainActivity.this.m10027m();
@@ -278,31 +277,31 @@ public class MainActivity extends C2204a {
 
     /* renamed from: b */
     private void m10021b(boolean z) {
-        if (this.f6408l == null || !this.f6408l.isShowing()) {
-            this.f6408l = new C1174a(this).mo5482a((int) R.layout.pop_up_time_for_break, true).mo5487a(LIGHT).mo5491a(false).mo5498c();
-            new C2280a(this.f6408l.mo5464f(), z, new C2284a() {
-                /* renamed from: a */
-                public void mo7804a() {
-                    MainActivity.this.m10033s().mo7973c();
-                    MainActivity.this.m10027m();
-                    MainActivity.this.f6408l.dismiss();
-                }
-
-                /* renamed from: b */
-                public void mo7805b() {
-                    MainActivity.this.m10033s().mo7974f();
-                    MainActivity.this.m10027m();
-                    MainActivity.this.f6408l.dismiss();
-                }
-
-                /* renamed from: c */
-                public void mo7806c() {
-                    MainActivity.this.m10033s().mo7975g();
-                    MainActivity.this.m10027m();
-                    MainActivity.this.f6408l.dismiss();
-                }
-            });
-        }
+//        if (this.f6408l == null || !this.f6408l.isShowing()) {
+//            this.f6408l = new C1174a(this).mo5482a((int) R.layout.pop_up_time_for_break, true).mo5487a(LIGHT).mo5491a(false).mo5498c();
+//            new C2280a(this.f6408l.mo5464f(), z, new C2284a() {
+//                /* renamed from: a */
+//                public void mo7804a() {
+//                    MainActivity.this.m10033s().mo7973c();
+//                    MainActivity.this.m10027m();
+//                    MainActivity.this.f6408l.dismiss();
+//                }
+//
+//                /* renamed from: b */
+//                public void mo7805b() {
+//                    MainActivity.this.m10033s().mo7974f();
+//                    MainActivity.this.m10027m();
+//                    MainActivity.this.f6408l.dismiss();
+//                }
+//
+//                /* renamed from: c */
+//                public void mo7806c() {
+//                    MainActivity.this.m10033s().mo7975g();
+//                    MainActivity.this.m10027m();
+//                    MainActivity.this.f6408l.dismiss();
+//                }
+//            });
+//        }
     }
 
     /* access modifiers changed from: private */

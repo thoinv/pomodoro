@@ -18,20 +18,20 @@ public class C2230d {
     /* renamed from: e */
     private int m10203e() {
         if (mo7922a()) {
-            return ((Integer) C2295b.m10458a(C2295b.f6705q)).intValue();
+            return C2295b.getValue(C2295b.LONG_BREAK_COUNTER_COMPLETED_POMODOROS);
         }
         return 0;
     }
 
     /* renamed from: a */
     public boolean mo7922a() {
-        return ((Long) C2295b.m10458a(C2295b.f6706r)).longValue() + 28800000 >= System.currentTimeMillis();
+        return C2295b.getValue(C2295b.LONG_BREAK_COUNTER_LAST_COMPLETED_POMODORO) + 28800000 >= System.currentTimeMillis();
     }
 
     /* renamed from: b */
     public void mo7923b() {
         m10202a(this.f6557a + 1);
-        C2295b.m10461a(C2295b.f6706r, Long.valueOf(System.currentTimeMillis()));
+        C2295b.save(C2295b.LONG_BREAK_COUNTER_LAST_COMPLETED_POMODORO, System.currentTimeMillis());
     }
 
     /* renamed from: c */
@@ -42,7 +42,7 @@ public class C2230d {
     /* renamed from: a */
     private void m10202a(int i) {
         this.f6557a = i;
-        C2295b.m10461a(C2295b.f6705q, Integer.valueOf(this.f6557a));
+        C2295b.save(C2295b.LONG_BREAK_COUNTER_COMPLETED_POMODOROS, this.f6557a);
     }
 
     /* renamed from: d */

@@ -10,7 +10,7 @@ import com.tatkovlab.pomodoro.p078d.C2241e;
 public class C2290e {
 
     /* renamed from: a */
-    private C2289d f6680a;
+    private PomodoroTime pomodoroTime;
 
     /* renamed from: b */
     private int f6681b;
@@ -24,24 +24,24 @@ public class C2290e {
     /* renamed from: e */
     private int f6684e;
 
-    public C2290e(C2289d dVar, ImageView imageView) {
+    public C2290e(PomodoroTime dVar, ImageView imageView) {
         this.f6683d = imageView;
         mo8027a(dVar);
     }
 
     /* renamed from: a */
-    public void mo8027a(C2289d dVar) {
-        this.f6680a = dVar;
-        this.f6683d.setImageResource(dVar.mo8025e());
-        this.f6683d.setLayoutParams(new LayoutParams(m10450c(dVar.mo8022b()), m10450c(dVar.mo8023c())));
+    public void mo8027a(PomodoroTime pomodoroTime) {
+        this.pomodoroTime = pomodoroTime;
+        this.f6683d.setImageResource(pomodoroTime.getTimeDrawableResId());
+        this.f6683d.setLayoutParams(new LayoutParams(m10450c(pomodoroTime.mo8022b()), m10450c(pomodoroTime.mo8023c())));
         this.f6684e = C2241e.m10228a(this.f6683d.getContext()) / 2;
-        this.f6681b = m10450c(dVar.mo8022b());
-        this.f6682c = m10450c(dVar.mo8024d());
+        this.f6681b = m10450c(pomodoroTime.mo8022b());
+        this.f6682c = m10450c(pomodoroTime.mo8024d());
     }
 
     /* renamed from: a */
     public void mo8026a(int i) {
-        m10449b((this.f6684e - this.f6682c) - ((int) ((((float) i) / ((float) this.f6680a.mo8021a())) * ((float) (this.f6681b - (this.f6682c * 2))))));
+        m10449b((this.f6684e - this.f6682c) - ((int) ((((float) i) / ((float) this.pomodoroTime.mo8021a())) * ((float) (this.f6681b - (this.f6682c * 2))))));
     }
 
     /* renamed from: b */

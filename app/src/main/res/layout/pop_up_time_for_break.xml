@@ -26,7 +26,7 @@
             android:gravity="center"
             android:text="@string/break_header_v1"
             android:textColor="#0c9f32"
-            android:textSize="27dp" />
+            android:textSize="27sp" />
 
         <TextView
             android:id="@+id/text_dialog_body"
@@ -36,7 +36,7 @@
             android:gravity="center"
             android:text="@string/break_dialog_body_short_break"
             android:textColor="#676767"
-            android:textSize="17dp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/button_secondary"

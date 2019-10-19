@@ -9,17 +9,19 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
-import com.tatkovlab.pomodoro.p076b.C2223f;
-import com.tatkovlab.pomodoro.p076b.C2223f.C2226b;
-import com.tatkovlab.pomodoro.p078d.C2236b;
-import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
+import androidx.core.content.ContextCompat;
+
+import com.tatkovlab.pomodoro.p076b.TaskInfo;
+import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
+import com.tatkovlab.pomodoro.p078d.FontHelper;
+import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodorolite.R;
 import com.woxthebox.draglistview.DragItemAdapter;
 
 import java.util.List;
 
 /* renamed from: com.tatkovlab.pomodoro.a.a */
-public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
+public class C2205a extends DragItemAdapter<TaskInfo, C2205a.C2209c> {
     /* access modifiers changed from: private */
 
     /* renamed from: a */
@@ -30,7 +32,7 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     /* access modifiers changed from: private */
 
     /* renamed from: c */
-    public List<C2223f> f6488c;
+    public List<TaskInfo> f6488c;
     /* access modifiers changed from: private */
 
     /* renamed from: d */
@@ -51,7 +53,7 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     /* renamed from: com.tatkovlab.pomodoro.a.a$a */
     public interface C2207a {
         /* renamed from: a */
-        void mo7851a(C2223f fVar);
+        void mo7851a(TaskInfo fVar);
     }
 
     /* renamed from: com.tatkovlab.pomodoro.a.a$b */
@@ -74,26 +76,26 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
 
         C2209c(View view) {
             super(view, C2205a.this.f6486a, C2205a.this.f6492g);
-            this.f6495a = (CheckBox) view.findViewById(R.id.isDone);
-            this.f6496b = (TextView) view.findViewById(R.id.taskName);
-            this.f6497c = (TextView) view.findViewById(R.id.doneExpectedTextBox);
+            this.f6495a = view.findViewById(R.id.isDone);
+            this.f6496b = view.findViewById(R.id.taskName);
+            this.f6497c = view.findViewById(R.id.doneExpectedTextBox);
         }
 
         public void onItemClicked(View view) {
             if (C2205a.this.f6490e != null) {
-                C2205a.this.f6490e.mo7851a((C2223f) C2205a.this.f6488c.get(getAdapterPosition()));
+                C2205a.this.f6490e.mo7851a(C2205a.this.f6488c.get(getAdapterPosition()));
             }
         }
 
         public boolean onItemLongClicked(View view) {
             if (C2205a.this.f6491f != null) {
-                C2205a.this.f6491f.mo7851a((C2223f) C2205a.this.f6488c.get(getAdapterPosition()));
+                C2205a.this.f6491f.mo7851a(C2205a.this.f6488c.get(getAdapterPosition()));
             }
             return false;
         }
     }
 
-    public C2205a(List<C2223f> list, int i, int i2, boolean z) {
+    public C2205a(List<TaskInfo> list, int i, int i2, boolean z) {
         this.f6492g = z;
         this.f6487b = i;
         this.f6486a = i2;
@@ -110,7 +112,7 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     /* renamed from: a */
     public void onBindViewHolder(C2209c cVar, int i) {
         super.onBindViewHolder(cVar, i);
-        m10123a(cVar, (C2223f) this.f6488c.get(i));
+        m10123a(cVar, this.f6488c.get(i));
     }
 
     /* renamed from: a */
@@ -135,23 +137,23 @@ public class C2205a extends DragItemAdapter<C2223f, C2205a.C2209c> {
     }
 
 //    public long getItemId(int i) {
-//        return ((C2223f) this.f6488c.get(i)).mo7891a();
+//        return ((C2223f) this.f6488c.getValue(i)).mo7891a();
 //    }
 
     /* renamed from: a */
-    private void m10123a(final C2209c cVar, C2223f fVar) {
+    private void m10123a(final C2209c cVar, TaskInfo fVar) {
         cVar.f6496b.setText(fVar.mo7898c());
         TextView textView = cVar.f6497c;
         StringBuilder sb = new StringBuilder();
-        sb.append(String.valueOf(fVar.mo7903e()));
+        sb.append(fVar.mo7903e());
         sb.append("/");
-        sb.append(String.valueOf(fVar.mo7900d()));
+        sb.append(fVar.mo7900d());
         textView.setText(sb.toString());
         cVar.f6495a.setOnCheckedChangeListener(null);
         Resources resources = cVar.f6496b.getContext().getResources();
-        C2236b.m10219a(cVar.f6496b, C2237a.PANGOLIN_REGULAR);
-        C2236b.m10219a(cVar.f6497c, C2237a.PANGOLIN_REGULAR);
-        if (fVar.mo7907g() == C2226b.FINISHED) {
+        FontHelper.setTypeface(cVar.f6496b, Fonts.PANGOLIN_REGULAR);
+        FontHelper.setTypeface(cVar.f6497c, Fonts.PANGOLIN_REGULAR);
+        if (fVar.getTaskStatus() == TaskStatus.FINISHED) {
             cVar.f6495a.setChecked(true);
             cVar.f6496b.setTextColor(resources.getColor(R.color.light_brown));
             cVar.f6496b.setBackgroundDrawable(resources.getDrawable(R.drawable.text_strikethrough));

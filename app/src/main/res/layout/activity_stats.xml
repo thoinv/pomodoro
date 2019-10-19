@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@drawable/bg_gradient_red" android:layout_width="match_parent" android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/title_box" android:layout_width="match_parent" android:layout_height="@dimen/activity_title_bar_height">
-        <TextView android:id="@+id/text_header" android:text="@string/header_stats" style="@style/ActivityHeader"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_red"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_title_bar_height">
+
+        <TextView
+            android:id="@+id/text_header"
+            style="@style/ActivityHeader"
+            android:text="@string/header_stats" />
     </RelativeLayout>
-    <View style="@style/Delimiter"/>
-    <ScrollView android:background="@color/page_content_background_color" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-        <LinearLayout android:orientation="vertical" android:id="@+id/stats_box" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <View style="@style/Delimiter" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_content_background_color"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/stats_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp" />
     </ScrollView>
 </LinearLayout>

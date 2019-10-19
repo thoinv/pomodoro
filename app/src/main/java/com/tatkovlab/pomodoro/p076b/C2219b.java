@@ -46,7 +46,7 @@ class C2219b extends SQLiteOpenHelper {
             case 1:
                 sQLiteDatabase.execSQL("create table stats (_id integer primary key autoincrement, date_finished integer not null);");
                 sQLiteDatabase.execSQL("create index my_date_index on stats(date_finished);");
-                for (C2223f fVar : C2210a.m10136a(sQLiteDatabase.rawQuery("SELECT * FROM tasks", null))) {
+                for (TaskInfo fVar : C2210a.m10136a(sQLiteDatabase.rawQuery("SELECT * FROM tasks", null))) {
                     for (int i3 = 0; ((long) i3) < fVar.mo7903e(); i3++) {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("date_finished", Long.valueOf(fVar.mo7908h()));

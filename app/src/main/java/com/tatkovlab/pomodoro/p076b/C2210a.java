@@ -5,8 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import com.tatkovlab.pomodoro.p076b.C2223f.C2225a;
-import com.tatkovlab.pomodoro.p076b.C2223f.C2226b;
+import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskType;
+import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
 import com.tatkovlab.pomodoro.p077c.C2228b;
 import com.tatkovlab.pomodoro.p077c.C2234h;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class C2210a {
     private static C2219b f6499a;
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$a */
-    private static class C2211a extends AsyncTask<C2223f, Void, Void> {
+    private static class C2211a extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
         private C2219b f6500a;
@@ -31,9 +31,9 @@ public class C2210a {
         /* JADX INFO: finally extract failed */
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public Void doInBackground(C2223f... fVarArr) {
+        public Void doInBackground(TaskInfo... fVarArr) {
             SQLiteDatabase writableDatabase = this.f6500a.getWritableDatabase();
-            C2223f fVar = fVarArr[0];
+            TaskInfo fVar = fVarArr[0];
             writableDatabase.beginTransaction();
             try {
                 long a = fVar.mo7891a();
@@ -52,37 +52,36 @@ public class C2210a {
         }
     }
 
-    /* renamed from: com.tatkovlab.pomodoro.b.a$b */
-    private static class C2212b extends AsyncTask<Void, Void, C2223f> {
+    private static class C2212b extends AsyncTask<Void, Void, TaskInfo> {
 
         /* renamed from: a */
-        private C2221d<C2223f> f6501a;
+        private C2221d<TaskInfo> f6501a;
 
         /* renamed from: b */
         private C2219b f6502b;
 
-        C2212b(C2219b bVar, C2221d<C2223f> dVar) {
+        C2212b(C2219b bVar, C2221d<TaskInfo> dVar) {
             this.f6502b = bVar;
             this.f6501a = dVar;
         }
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public C2223f doInBackground(Void... voidArr) {
+        public TaskInfo doInBackground(Void... voidArr) {
             String[] strArr = C2222e.f6512a;
-            StringBuilder sb = new StringBuilder();
-            sb.append("status = ");
-            sb.append(C2226b.IN_PROGRESS.mo7917a());
-            List a = C2210a.m10136a(this.f6502b.getReadableDatabase().query("tasks", strArr, sb.toString(), null, null, null, null));
+            String sb = "status = " +
+                    TaskStatus.IN_PROGRESS.intValue();
+            List a = C2210a.m10136a(this.f6502b.getReadableDatabase()
+                    .query("tasks", strArr, sb, null, null, null, null));
             if (a == null || a.size() <= 0) {
                 return null;
             }
-            return (C2223f) a.get(0);
+            return (TaskInfo) a.get(0);
         }
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public void onPostExecute(C2223f fVar) {
+        public void onPostExecute(TaskInfo fVar) {
             this.f6501a.mo7844a(fVar);
         }
     }
@@ -140,31 +139,31 @@ public class C2210a {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$d */
-    private static class C2214d extends AsyncTask<Void, Void, List<C2223f>> {
+    private static class C2214d extends AsyncTask<Void, Void, List<TaskInfo>> {
 
         /* renamed from: a */
-        private C2220c<C2223f> f6505a;
+        private C2220c<TaskInfo> f6505a;
 
         /* renamed from: b */
         private C2219b f6506b;
 
-        C2214d(C2219b bVar, C2220c<C2223f> cVar) {
+        C2214d(C2219b bVar, C2220c<TaskInfo> cVar) {
             this.f6506b = bVar;
             this.f6505a = cVar;
         }
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public List<C2223f> doInBackground(Void... voidArr) {
+        public List<TaskInfo> doInBackground(Void... voidArr) {
             SQLiteDatabase readableDatabase = this.f6506b.getReadableDatabase();
-            List<C2223f> a = C2210a.m10136a(readableDatabase.query("tasks", C2222e.f6512a, null, null, null, null, "list_order DESC", String.valueOf(200)));
+            List<TaskInfo> a = C2210a.m10136a(readableDatabase.query("tasks", C2222e.f6512a, null, null, null, null, "list_order DESC", String.valueOf(200)));
             readableDatabase.close();
             return a;
         }
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public void onPostExecute(List<C2223f> list) {
+        public void onPostExecute(List<TaskInfo> list) {
             this.f6505a.mo7850a(list);
         }
     }
@@ -194,7 +193,7 @@ public class C2210a {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$f */
-    private static class C2216f extends AsyncTask<C2223f, Void, Void> {
+    private static class C2216f extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
         private C2219b f6508a;
@@ -205,14 +204,14 @@ public class C2210a {
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public Void doInBackground(C2223f... fVarArr) {
+        public Void doInBackground(TaskInfo... fVarArr) {
             SQLiteDatabase writableDatabase = this.f6508a.getWritableDatabase();
-            for (C2223f fVar : fVarArr) {
+            for (TaskInfo fVar : fVarArr) {
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("name", fVar.mo7898c());
                 contentValues.put("list_order", Long.valueOf(fVar.mo7908h()));
-                contentValues.put("status", Long.valueOf(fVar.mo7907g().mo7917a()));
-                contentValues.put("list", Long.valueOf(fVar.mo7909i().mo7916a()));
+                contentValues.put("status", Long.valueOf(fVar.getTaskStatus().intValue()));
+                contentValues.put("list", Long.valueOf(fVar.getTaskType().intValue()));
                 contentValues.put("estimated", Long.valueOf(fVar.mo7900d()));
                 contentValues.put("done", Long.valueOf(fVar.mo7903e()));
                 contentValues.put("abandoned", Long.valueOf(fVar.mo7905f()));
@@ -225,7 +224,7 @@ public class C2210a {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$g */
-    private static class C2217g extends AsyncTask<C2223f, Void, Void> {
+    private static class C2217g extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
         private C2219b f6509a;
@@ -236,16 +235,16 @@ public class C2210a {
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public Void doInBackground(C2223f... fVarArr) {
+        public Void doInBackground(TaskInfo... fVarArr) {
             SQLiteDatabase writableDatabase = this.f6509a.getWritableDatabase();
-            C2223f fVar = fVarArr[0];
+            TaskInfo fVar = fVarArr[0];
             ContentValues contentValues = new ContentValues();
-            contentValues.put("status", Long.valueOf(C2226b.NEW.mo7917a()));
+            contentValues.put("status", Long.valueOf(TaskStatus.NEW.intValue()));
             StringBuilder sb = new StringBuilder();
             sb.append("status = ");
-            sb.append(C2226b.IN_PROGRESS.mo7917a());
+            sb.append(TaskStatus.IN_PROGRESS.intValue());
             writableDatabase.update("tasks", contentValues, sb.toString(), null);
-            contentValues.put("status", Long.valueOf(C2226b.IN_PROGRESS.mo7917a()));
+            contentValues.put("status", Long.valueOf(TaskStatus.IN_PROGRESS.intValue()));
             StringBuilder sb2 = new StringBuilder();
             sb2.append("_id = ");
             sb2.append(fVar.mo7891a());
@@ -256,7 +255,7 @@ public class C2210a {
     }
 
     /* renamed from: com.tatkovlab.pomodoro.b.a$h */
-    private static class C2218h extends AsyncTask<C2223f, Void, Void> {
+    private static class C2218h extends AsyncTask<TaskInfo, Void, Void> {
 
         /* renamed from: a */
         private C2219b f6510a;
@@ -267,16 +266,16 @@ public class C2210a {
 
         /* access modifiers changed from: protected */
         /* renamed from: a */
-        public Void doInBackground(C2223f... fVarArr) {
+        public Void doInBackground(TaskInfo... fVarArr) {
             SQLiteDatabase writableDatabase = this.f6510a.getWritableDatabase();
-            for (C2223f fVar : fVarArr) {
+            for (TaskInfo fVar : fVarArr) {
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("list_order", Long.valueOf(fVar.mo7896b()));
                 contentValues.put("name", fVar.mo7898c());
                 contentValues.put("estimated", Long.valueOf(fVar.mo7900d()));
                 contentValues.put("done", Long.valueOf(fVar.mo7903e()));
                 contentValues.put("abandoned", Long.valueOf(fVar.mo7905f()));
-                contentValues.put("status", Long.valueOf(fVar.mo7907g().f6530d));
+                contentValues.put("status", Long.valueOf(fVar.getTaskStatus().intValue));
                 writableDatabase.update("tasks", contentValues, "_id = ?", new String[]{String.valueOf(fVar.mo7891a())});
             }
             writableDatabase.close();
@@ -290,32 +289,32 @@ public class C2210a {
     }
 
     /* renamed from: a */
-    public static void m10141a(C2223f fVar) {
-        new C2216f(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new C2223f[]{fVar});
+    public static void m10141a(TaskInfo fVar) {
+        new C2216f(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
     }
 
     /* renamed from: b */
-    public static void m10144b(C2223f fVar) {
-        new C2218h(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new C2223f[]{fVar});
+    public static void m10144b(TaskInfo fVar) {
+        new C2218h(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
     }
 
     /* renamed from: a */
-    public static void m10139a(C2220c<C2223f> cVar) {
+    public static void m10139a(C2220c<TaskInfo> cVar) {
         new C2214d(f6499a, cVar).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new Void[]{null});
     }
 
     /* renamed from: c */
-    public static void m10145c(C2223f fVar) {
-        new C2211a(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new C2223f[]{fVar});
+    public static void m10145c(TaskInfo fVar) {
+        new C2211a(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
     }
 
     /* renamed from: d */
-    public static void m10146d(C2223f fVar) {
-        new C2217g(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new C2223f[]{fVar});
+    public static void m10146d(TaskInfo fVar) {
+        new C2217g(f6499a).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new TaskInfo[]{fVar});
     }
 
     /* renamed from: a */
-    public static void m10140a(C2221d<C2223f> dVar) {
+    public static void m10140a(C2221d<TaskInfo> dVar) {
         new C2212b(f6499a, dVar).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, new Void[]{null});
     }
 
@@ -330,7 +329,7 @@ public class C2210a {
     }
 
     /* renamed from: a */
-    static List<C2223f> m10136a(Cursor cursor) {
+    static List<TaskInfo> m10136a(Cursor cursor) {
         ArrayList arrayList = new ArrayList();
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
@@ -342,13 +341,13 @@ public class C2210a {
     }
 
     /* renamed from: b */
-    private static C2223f m10143b(Cursor cursor) {
-        C2223f fVar = new C2223f();
+    private static TaskInfo m10143b(Cursor cursor) {
+        TaskInfo fVar = new TaskInfo();
         fVar.mo7892a(cursor.getLong(0));
         fVar.mo7897b(cursor.getLong(1));
         fVar.mo7895a(cursor.getString(2));
-        fVar.mo7894a(C2226b.m10194a(cursor.getLong(3)));
-        fVar.mo7893a(C2225a.m10192a(cursor.getLong(4)));
+        fVar.mo7894a(TaskStatus.m10194a(cursor.getLong(3)));
+        fVar.setTaskType(TaskType.m10192a(cursor.getLong(4)));
         fVar.mo7899c(cursor.getLong(5));
         fVar.mo7901d(cursor.getLong(6));
         fVar.mo7904e(cursor.getLong(7));

@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.tatkovlab.pomodoro.p076b.C2221d;
 import com.tatkovlab.pomodoro.p077c.C2233g;
-import com.tatkovlab.pomodoro.p078d.C2236b;
-import com.tatkovlab.pomodoro.p078d.C2236b.C2237a;
+import com.tatkovlab.pomodoro.p078d.FontHelper;
+import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodorolite.R;
 
@@ -31,7 +31,7 @@ public class StatsActivity extends C2204a {
 
     /* renamed from: k */
     private void m10081k() {
-        C2236b.m10219a((TextView) findViewById(R.id.text_header), C2237a.LATO_BOLD);
+        FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
     }
 
     /* access modifiers changed from: private */
@@ -54,8 +54,8 @@ public class StatsActivity extends C2204a {
         textView.setText(i);
         TextView textView2 = (TextView) viewGroup.findViewById(R.id.number);
         textView2.setText(String.valueOf(j));
-        C2236b.m10219a(textView, C2237a.LATO_BOLD);
-        C2236b.m10219a(textView2, C2237a.LATO_BOLD);
+        FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
+        FontHelper.setTypeface(textView2, Fonts.LATO_BOLD);
         this.f6463j.addView(viewGroup);
     }
 
@@ -74,10 +74,10 @@ public class StatsActivity extends C2204a {
         sb.append(String.valueOf(j2));
         sb.append(")");
         textView4.setText(sb.toString());
-        C2236b.m10219a(textView, C2237a.LATO_BOLD);
-        C2236b.m10219a(textView2, C2237a.LATO_BOLD);
-        C2236b.m10219a(textView3, C2237a.LATO_BOLD);
-        C2236b.m10219a(textView4, C2237a.LATO_BOLD);
+        FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
+        FontHelper.setTypeface(textView2, Fonts.LATO_BOLD);
+        FontHelper.setTypeface(textView3, Fonts.LATO_BOLD);
+        FontHelper.setTypeface(textView4, Fonts.LATO_BOLD);
         this.f6463j.addView(viewGroup);
     }
 }

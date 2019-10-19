@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:background="@color/tasks_activity" android:layout_width="match_parent" android:layout_height="match_parent">
-    <LinearLayout android:orientation="vertical" android:id="@+id/header_box" android:background="@drawable/bg_gradient_red" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <RelativeLayout android:id="@+id/title_box" android:layout_width="match_parent" android:layout_height="@dimen/activity_title_bar_height">
-            <TextView android:id="@+id/text_header" android:text="@string/header_tasks" style="@style/ActivityHeader"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tasks_activity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_red"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_box"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_title_bar_height">
+
+            <TextView
+                android:id="@+id/text_header"
+                style="@style/ActivityHeader"
+                android:text="@string/header_tasks" />
         </RelativeLayout>
-        <View style="@style/Delimiter"/>
+
+        <View style="@style/Delimiter" />
     </LinearLayout>
-    <com.woxthebox.draglistview.DragListView android:id="@+id/tasks_list" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@+id/header_box"/>
-    <Button android:id="@+id/add_task_btn" android:background="@drawable/fab_plus_red" android:layout_width="70dp" android:layout_height="70dp" android:layout_marginRight="8dp" android:layout_marginBottom="12dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"/>
-    <RelativeLayout android:id="@+id/placeholder_no_tasks" android:layout_width="match_parent" android:layout_height="match_parent">
-        <TextView android:textSize="26dp" android:textColor="@color/dark_brown" android:gravity="center" android:id="@+id/placeholder_no_tasks_text" android:padding="32dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_tasks_placeholder_text" android:layout_centerInParent="true"/>
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="68dp" android:layout_marginBottom="90dp" android:src="@drawable/ic_arrow_right_down" android:layout_alignParentRight="true" android:layout_alignParentBottom="true"/>
+
+    <com.woxthebox.draglistview.DragListView
+        android:id="@+id/tasks_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_box" />
+
+    <Button
+        android:id="@+id/add_task_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/fab_plus_red" />
+
+    <RelativeLayout
+        android:id="@+id/placeholder_no_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/placeholder_no_tasks_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/no_tasks_placeholder_text"
+            android:textColor="@color/dark_brown"
+            android:textSize="26dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="68dp"
+            android:layout_marginBottom="90dp"
+            android:src="@drawable/ic_arrow_right_down" />
     </RelativeLayout>
 </RelativeLayout>
