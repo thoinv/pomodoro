@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Build.VERSION;
 import android.os.CountDownTimer;
 
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodoro.receivers.TimerBackupAlarmReceiver;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -77,7 +77,7 @@ class C2261k implements C2248e {
     /* renamed from: d */
     @SuppressLint("WrongConstant")
     private PendingIntent m10355d() {
-        long longValue = C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue();
+        long longValue = PrefManager.getValue(PrefManager.TIMER_STARTED_TIME).longValue();
         Intent intent = new Intent(this.f6624d, TimerBackupAlarmReceiver.class);
         intent.putExtra("INTENT_EXTRA_TIMER_STARTED_TIME", longValue);
         return PendingIntent.getBroadcast(this.f6624d, 2, intent, 268435456);
@@ -93,7 +93,7 @@ class C2261k implements C2248e {
 
     /* renamed from: a */
     public void mo7953a(long j) {
-        if (j > 0 && j == C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue()) {
+        if (j > 0 && j == PrefManager.getValue(PrefManager.TIMER_STARTED_TIME).longValue()) {
             mo7951a();
             m10358f();
         }
@@ -143,7 +143,7 @@ class C2261k implements C2248e {
 
     /* renamed from: h */
     private int m10360h() {
-        long longValue = C2295b.getValue(C2295b.TIMER_STARTED_TIME).longValue() + C2295b.getValue(C2295b.TIMER_DURATION_IN_MILLIS).longValue();
+        long longValue = PrefManager.getValue(PrefManager.TIMER_STARTED_TIME).longValue() + PrefManager.getValue(PrefManager.TIMER_DURATION_IN_MILLIS).longValue();
         if (longValue > System.currentTimeMillis()) {
             return (int) ((longValue - System.currentTimeMillis()) / 1000);
         }
@@ -152,14 +152,14 @@ class C2261k implements C2248e {
 
     /* renamed from: d */
     private void m10356d(int i) {
-        C2295b.save(C2295b.TIMER_STARTED_TIME, Long.valueOf(System.currentTimeMillis()));
-        C2295b.save(C2295b.TIMER_DURATION_IN_MILLIS, Long.valueOf(((long) i) * 1000));
+        PrefManager.save(PrefManager.TIMER_STARTED_TIME, Long.valueOf(System.currentTimeMillis()));
+        PrefManager.save(PrefManager.TIMER_DURATION_IN_MILLIS, Long.valueOf(((long) i) * 1000));
     }
 
     /* renamed from: i */
     private void m10361i() {
-        C2295b.save(C2295b.TIMER_STARTED_TIME, Long.valueOf(0));
-        C2295b.save(C2295b.TIMER_DURATION_IN_MILLIS, Long.valueOf(0));
+        PrefManager.save(PrefManager.TIMER_STARTED_TIME, Long.valueOf(0));
+        PrefManager.save(PrefManager.TIMER_DURATION_IN_MILLIS, Long.valueOf(0));
     }
 
     /* renamed from: b */

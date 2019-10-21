@@ -42,16 +42,16 @@ public class AddTaskActivity extends BaseActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_add_task);
-        m10009k();
+        initHeader();
         m10010l();
         m10011m();
         initSaveButton();
         getWindow().setSoftInputMode(4);
         this.f6403o = getIntent().getParcelableExtra("edit_task_key");
         if (this.f6403o != null) {
-            this.edTaskName.setText(this.f6403o.mo7898c());
-            this.sbExpectedPodonoros.setProgress(((int) this.f6403o.mo7900d()) - 1);
-            this.f6398j = (int) this.f6403o.mo7900d();
+            this.edTaskName.setText(this.f6403o.getTaskName());
+            this.sbExpectedPodonoros.setProgress(((int) this.f6403o.getEstimated()) - 1);
+            this.f6398j = (int) this.f6403o.getEstimated();
             this.tvHeader.setText(R.string.header_edit_task);
         }
     }
@@ -61,7 +61,7 @@ public class AddTaskActivity extends BaseActivity {
     }
 
     /* renamed from: k */
-    private void m10009k() {
+    private void initHeader() {
         this.tvHeader = findViewById(R.id.text_header);
         FontHelper.setTypeface(this.tvHeader, Fonts.LATO_BOLD);
     }
@@ -108,22 +108,22 @@ public class AddTaskActivity extends BaseActivity {
     /* access modifiers changed from: private */
     /* renamed from: o */
     public void m10013o() {
-        String obj = this.edTaskName.getText().toString();
+        String taskName = this.edTaskName.getText().toString();
         if (this.f6403o == null) {
-            m10005a(obj, this.f6398j);
+            m10005a(taskName, this.f6398j);
         } else {
-            m10007b(obj, this.f6398j);
+            m10007b(taskName, this.f6398j);
         }
     }
 
     /* renamed from: a */
     private void m10005a(String str, int i) {
         TaskInfo fVar = new TaskInfo();
-        fVar.mo7895a(str);
-        fVar.mo7894a(TaskStatus.NEW);
+        fVar.setTaskName(str);
+        fVar.setTaskStatus(TaskStatus.NEW);
         fVar.setTaskType(TaskType.TODAY);
-        fVar.mo7899c((long) i);
-        fVar.mo7901d(0);
+        fVar.setEstimated((long) i);
+        fVar.setNumberOfDone(0);
         fVar.mo7904e(0);
         fVar.mo7906f(System.currentTimeMillis());
         m10014p().mo7986b(fVar);
@@ -131,8 +131,8 @@ public class AddTaskActivity extends BaseActivity {
 
     /* renamed from: b */
     private void m10007b(String str, int i) {
-        this.f6403o.mo7895a(str);
-        this.f6403o.mo7899c((long) i);
+        this.f6403o.setTaskName(str);
+        this.f6403o.setEstimated((long) i);
         m10014p().mo7989e(this.f6403o);
     }
 

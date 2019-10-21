@@ -8,14 +8,14 @@ public class TaskInfo implements Parcelable {
         /* renamed from: a */
         public TaskInfo createFromParcel(Parcel parcel) {
             TaskInfo fVar = new TaskInfo();
-            fVar.f6513a = parcel.readLong();
-            fVar.f6514b = parcel.readLong();
-            fVar.f6515c = parcel.readString();
-            fVar.f6516d = parcel.readLong();
-            fVar.f6517e = parcel.readLong();
+            fVar.id = parcel.readLong();
+            fVar.listOrder = parcel.readLong();
+            fVar.taskName = parcel.readString();
+            fVar.estimated = parcel.readLong();
+            fVar.numberOfDone = parcel.readLong();
             fVar.f6518f = parcel.readLong();
             fVar.taskStatus = TaskStatus.m10194a(parcel.readLong());
-            fVar.taskType = TaskType.m10192a(parcel.readLong());
+            fVar.taskType = TaskType.getTaskType(parcel.readLong());
             fVar.f6521i = parcel.readLong();
             return fVar;
         }
@@ -28,23 +28,23 @@ public class TaskInfo implements Parcelable {
     /* access modifiers changed from: private */
 
     /* renamed from: a */
-    public long f6513a;
+    public long id;
     /* access modifiers changed from: private */
 
     /* renamed from: b */
-    public long f6514b;
+    public long listOrder;
     /* access modifiers changed from: private */
 
     /* renamed from: c */
-    public String f6515c;
+    public String taskName;
     /* access modifiers changed from: private */
 
     /* renamed from: d */
-    public long f6516d;
+    public long estimated;
     /* access modifiers changed from: private */
 
     /* renamed from: e */
-    public long f6517e;
+    public long numberOfDone;
     /* access modifiers changed from: private */
 
     /* renamed from: f */
@@ -79,8 +79,8 @@ public class TaskInfo implements Parcelable {
         }
 
         /* renamed from: a */
-        public static TaskType m10192a(long j) {
-            switch ((int) j) {
+        public static TaskType getTaskType(long intValue) {
+            switch ((int) intValue) {
                 case 1:
                     return TODAY;
                 case 2:
@@ -127,57 +127,57 @@ public class TaskInfo implements Parcelable {
     }
 
     /* renamed from: a */
-    public long mo7891a() {
-        return this.f6513a;
+    public long getId() {
+        return this.id;
     }
 
     /* renamed from: a */
-    public void mo7892a(long j) {
-        this.f6513a = j;
+    public void setId(long id) {
+        this.id = id;
     }
 
     /* renamed from: b */
-    public long mo7896b() {
-        return this.f6514b;
+    public long getListOrder() {
+        return this.listOrder;
     }
 
     /* renamed from: b */
-    public void mo7897b(long j) {
-        this.f6514b = j;
+    public void setListOrder(long j) {
+        this.listOrder = j;
     }
 
     /* renamed from: c */
-    public String mo7898c() {
-        return this.f6515c;
+    public String getTaskName() {
+        return this.taskName;
     }
 
     /* renamed from: a */
-    public void mo7895a(String str) {
-        this.f6515c = str;
+    public void setTaskName(String str) {
+        this.taskName = str;
     }
 
     /* renamed from: d */
-    public long mo7900d() {
-        return this.f6516d;
+    public long getEstimated() {
+        return this.estimated;
     }
 
     /* renamed from: c */
-    public void mo7899c(long j) {
-        this.f6516d = j;
+    public void setEstimated(long estimated) {
+        this.estimated = estimated;
     }
 
     /* renamed from: e */
-    public long mo7903e() {
-        return this.f6517e;
+    public long getNumberOfDone() {
+        return this.numberOfDone;
     }
 
     /* renamed from: d */
-    public void mo7901d(long j) {
-        this.f6517e = j;
+    public void setNumberOfDone(long j) {
+        this.numberOfDone = j;
     }
 
     /* renamed from: f */
-    public long mo7905f() {
+    public long getNumberOfAbandoned() {
         return this.f6518f;
     }
 
@@ -192,7 +192,7 @@ public class TaskInfo implements Parcelable {
     }
 
     /* renamed from: a */
-    public void mo7894a(TaskStatus taskStatus) {
+    public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
     }
 
@@ -217,17 +217,17 @@ public class TaskInfo implements Parcelable {
     }
 
     public String toString() {
-        return this.f6515c +
+        return this.taskName +
                 " " +
-                this.f6516d;
+                this.estimated;
     }
 
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f6513a);
-        parcel.writeLong(this.f6514b);
-        parcel.writeString(this.f6515c);
-        parcel.writeLong(this.f6516d);
-        parcel.writeLong(this.f6517e);
+        parcel.writeLong(this.id);
+        parcel.writeLong(this.listOrder);
+        parcel.writeString(this.taskName);
+        parcel.writeLong(this.estimated);
+        parcel.writeLong(this.numberOfDone);
         parcel.writeLong(this.f6518f);
         parcel.writeLong(this.taskStatus.intValue());
         parcel.writeLong(this.taskType.intValue());

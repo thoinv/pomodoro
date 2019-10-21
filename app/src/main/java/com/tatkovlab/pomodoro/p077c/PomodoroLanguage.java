@@ -1,11 +1,15 @@
 package com.tatkovlab.pomodoro.p077c;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
 import com.tatkovlab.pomodorolite.R;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /* renamed from: com.tatkovlab.pomodoro.c.c */
-public enum C2229c {
+public enum PomodoroLanguage {
     ENGLISH("en", R.string.native_lang_english),
     PORTUGUESE("pt", R.string.native_lang_portuguese),
     VIETNAMESE("vi", R.string.native_lang_vietnamese),
@@ -13,10 +17,10 @@ public enum C2229c {
     RUSSIAN("ru", R.string.native_lang_russian),
     HINDI("hi", R.string.native_lang_hindi),
     THAI("th", R.string.native_lang_thai);
-    
+
 
     /* renamed from: h */
-    private static Map<String, C2229c> f6553h;
+    private static Map<String, PomodoroLanguage> languages;
 
     /* renamed from: i */
     private String f6555i;
@@ -25,12 +29,12 @@ public enum C2229c {
     private int f6556j;
 
     static {
-        f6553h = null;
+        languages = null;
     }
 
-    C2229c(String str, int i) {
-        this.f6555i = str;
-        this.f6556j = i;
+    PomodoroLanguage(@NonNull String languageCode, @StringRes int languageNameResId) {
+        this.f6555i = languageCode;
+        this.f6556j = languageNameResId;
     }
 
     /* renamed from: a */
@@ -44,14 +48,14 @@ public enum C2229c {
     }
 
     /* renamed from: a */
-    public static C2229c m10199a(String str) {
-        C2229c[] values;
-        if (f6553h == null) {
-            f6553h = new HashMap();
-            for (C2229c cVar : values()) {
-                f6553h.put(cVar.mo7920a(), cVar);
+    public static PomodoroLanguage m10199a(String str) {
+        PomodoroLanguage[] values;
+        if (languages == null) {
+            languages = new HashMap();
+            for (PomodoroLanguage cVar : values()) {
+                languages.put(cVar.mo7920a(), cVar);
             }
         }
-        return f6553h.get(str);
+        return languages.get(str);
     }
 }

@@ -2,7 +2,7 @@ package com.tatkovlab.pomodoro.p079e;
 
 import android.annotation.SuppressLint;
 
-import com.tatkovlab.pomodoro.p076b.C2210a;
+import com.tatkovlab.pomodoro.p076b.PomodoroDatabaseHelper;
 import com.tatkovlab.pomodoro.p076b.C2221d;
 import com.tatkovlab.pomodoro.p077c.C2228b;
 import com.tatkovlab.pomodoro.p077c.C2233g;
@@ -22,14 +22,14 @@ public class C2255i {
 
             /* renamed from: a */
             public void mo7946a() {
-                C2210a.m10137a(System.currentTimeMillis());
+                PomodoroDatabaseHelper.m10137a(System.currentTimeMillis());
             }
         });
     }
 
     /* renamed from: a */
     public void mo7982a(final C2221d<C2233g> dVar) {
-        C2210a.m10142a(m10327a(), new C2221d<C2234h>() {
+        PomodoroDatabaseHelper.m10142a(m10327a(), new C2221d<C2234h>() {
             /* renamed from: a */
             public void mo7844a(C2234h hVar) {
                 dVar.mo7844a(C2255i.this.m10325a(hVar));

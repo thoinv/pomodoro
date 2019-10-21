@@ -11,7 +11,7 @@ import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import com.tatkovlab.pomodoro.p078d.C2240d;
 import com.tatkovlab.pomodoro.p079e.C2250f;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodorolite.R;
 
 public class WelcomeActivity extends BaseActivity {
@@ -39,7 +39,7 @@ public class WelcomeActivity extends BaseActivity {
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                C2295b.save(C2295b.WAS_WELCOME_SCREEN_SHOWN, Boolean.valueOf(true));
+                PrefManager.save(PrefManager.WAS_WELCOME_SCREEN_SHOWN, Boolean.valueOf(true));
                 C2250f.m10263a().mo7966h().mo7938b();
                 WelcomeActivity.this.startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 WelcomeActivity.this.finish();
@@ -54,7 +54,7 @@ public class WelcomeActivity extends BaseActivity {
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                C2238c.m10221a(WelcomeActivity.this);
+                C2238c.showLanguageChooserDialog(WelcomeActivity.this);
             }
         });
     }

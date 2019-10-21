@@ -2,22 +2,21 @@
 <resources>
 
     <style name="ActivityHeader">
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerInParent">true</item>
     </style>
 
-    <style name="AppTheme">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="colorAccent">@color/colorPrimary</item>
         <item name="colorControlActivated">@color/white</item>
         <item name="colorControlHighlight">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#900e0e</item>
+        <item name="colorPrimaryDark">#ff900e0e</item>
     </style>
-
     <style name="ButtonText">
         <item name="android:textSize">@dimen/text_size_borderless_button</item>
         <item name="android:textColor">@color/button_plain_text_color</item>

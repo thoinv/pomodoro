@@ -5,13 +5,13 @@ import android.os.Build.VERSION;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p080f.C2263a;
 import com.tatkovlab.pomodoro.p083i.C2291a;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 
 public class App extends Application {
     public void onCreate() {
         super.onCreate();
         m10015a();
-        C2295b.init(getApplicationContext());
+        PrefManager.init(getApplicationContext());
         C2250f.get(getApplicationContext(), m10016b());
         C2291a.m10454a(this);
     }

@@ -28,7 +28,7 @@ import com.tatkovlab.pomodoro.p082h.C2287c;
 import com.tatkovlab.pomodoro.p082h.PomodoroTime;
 import com.tatkovlab.pomodoro.p082h.C2290e;
 import com.tatkovlab.pomodoro.p083i.C2291a;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodorolite.R;
 
 public class MainActivity extends BaseActivity {
@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (!C2295b.getValue(C2295b.WAS_WELCOME_SCREEN_SHOWN).booleanValue()) {
+        if (!PrefManager.getValue(PrefManager.WAS_WELCOME_SCREEN_SHOWN).booleanValue()) {
             startActivity(new Intent(this, WelcomeActivity.class));
             finish();
             return;
@@ -115,7 +115,7 @@ public class MainActivity extends BaseActivity {
 
     /* renamed from: a */
     private void m10019a(boolean z) {
-        if (z || !C2295b.getValue(C2295b.keepScreenOnTag).booleanValue()) {
+        if (z || !PrefManager.getValue(PrefManager.keepScreenOnTag).booleanValue()) {
             getWindow().clearFlags(128);
         } else {
             getWindow().addFlags(128);

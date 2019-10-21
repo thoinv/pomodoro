@@ -1,7 +1,7 @@
 package com.tatkovlab.pomodoro.p077c;
 
 import com.tatkovlab.pomodoro.p081g.C2270d;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodorolite.R;
 
 /* renamed from: com.tatkovlab.pomodoro.c.f */
@@ -45,7 +45,7 @@ public enum C2232f implements C2270d {
     /* renamed from: d */
     public static C2232f m10212d() {
         C2232f fVar = TICKING_1;
-        switch (C2295b.getValue(C2295b.TICKING_SOUND_INDEX).intValue()) {
+        switch (PrefManager.getValue(PrefManager.TICKING_SOUND_INDEX).intValue()) {
             case 0:
                 return TICKING_1;
             case 1:
@@ -58,7 +58,7 @@ public enum C2232f implements C2270d {
     /* renamed from: e */
     public static C2232f m10213e() {
         C2232f fVar = RINGING_1;
-        switch (C2295b.getValue(C2295b.RINGING_SOUND_INDEX).intValue()) {
+        switch (PrefManager.getValue(PrefManager.RINGING_SOUND_INDEX).intValue()) {
             case 0:
                 return RINGING_1;
             case 1:

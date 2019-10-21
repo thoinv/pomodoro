@@ -126,7 +126,7 @@ public class TasksActivity extends BaseActivity {
                 List itemList = TasksActivity.this.f6466k.getItemList();
                 for (int i3 = 0; i3 < itemList.size(); i3++) {
                     TaskInfo fVar = (TaskInfo) itemList.get(i3);
-                    fVar.mo7897b(currentTimeMillis);
+                    fVar.setListOrder(currentTimeMillis);
                     TasksActivity.this.m10107q().mo7989e(fVar);
                     currentTimeMillis--;
                 }
@@ -144,7 +144,7 @@ public class TasksActivity extends BaseActivity {
     /* access modifiers changed from: private */
     /* renamed from: c */
     public void m10094c(final TaskInfo fVar) {
-//        this.f6467l = new C1174a(this).mo5488a((CharSequence) fVar.mo7898c()).mo5487a(C1194i.LIGHT).mo5501e(R.array.task_long_press_options).mo5485a((C1178e) new C1178e() {
+//        this.f6467l = new C1174a(this).mo5488a((CharSequence) fVar.getTaskName()).mo5487a(C1194i.LIGHT).mo5501e(R.array.task_long_press_options).mo5485a((C1178e) new C1178e() {
 //            /* renamed from: a */
 //            public void mo5518a(MaterialDialog fVar, View view, int i, CharSequence charSequence) {
 //                switch (i) {
@@ -166,7 +166,7 @@ public class TasksActivity extends BaseActivity {
 
     /* renamed from: a */
     public void mo7845a(final TaskInfo fVar) {
-//        this.f6468m = new MaterialDialog(this).mo5488a((CharSequence) getString(R.string.delete_task_confirmation_header)).mo5494b((CharSequence) getString(R.string.delete_task_confirmation_body, new Object[]{fVar.mo7898c()})).mo5499d((int) R.drawable.dialog_delete).mo5504h(R.string.delete_task_confirmation_confirm).mo5502f(R.string.delete_task_confirmation_cancel).mo5487a(C1194i.LIGHT).mo5486a((C1183j) new C1183j() {
+//        this.f6468m = new MaterialDialog(this).mo5488a((CharSequence) getString(R.string.delete_task_confirmation_header)).mo5494b((CharSequence) getString(R.string.delete_task_confirmation_body, new Object[]{fVar.getTaskName()})).mo5499d((int) R.drawable.dialog_delete).mo5504h(R.string.delete_task_confirmation_confirm).mo5502f(R.string.delete_task_confirmation_cancel).mo5487a(C1194i.LIGHT).mo5486a((C1183j) new C1183j() {
 //            /* renamed from: a */
 //            public void mo5522a(MaterialDialog fVar, C1164b bVar) {
 //                TasksActivity.this.m10097d(fVar);
@@ -202,7 +202,7 @@ public class TasksActivity extends BaseActivity {
     /* renamed from: a */
     public void m10088a(boolean z, int i) {
         TaskInfo fVar = this.f6466k.getItemList().get(i);
-        fVar.mo7894a(z ? TaskStatus.FINISHED : TaskStatus.NEW);
+        fVar.setTaskStatus(z ? TaskStatus.FINISHED : TaskStatus.NEW);
         m10107q().mo7989e(fVar);
         this.f6466k.notifyDataSetChanged();
     }

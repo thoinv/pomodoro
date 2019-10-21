@@ -30,8 +30,8 @@ import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import com.tatkovlab.pomodoro.p078d.C2240d;
 import com.tatkovlab.pomodoro.p079e.C2250f;
-import com.tatkovlab.pomodoro.p083i.C2295b;
-import com.tatkovlab.pomodoro.p083i.C2295b.PreferenceValueObject;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
+import com.tatkovlab.pomodoro.p083i.PrefManager.PreferenceValueObject;
 import com.tatkovlab.pomodorolite.R;
 
 public class SettingsActivity extends BaseActivity {
@@ -113,7 +113,7 @@ public class SettingsActivity extends BaseActivity {
     /* renamed from: m */
     private void m10052m() {
         SeekBar seekBar = findViewById(R.id.volume_bar_ringing);
-        seekBar.setProgress(C2295b.getValue(C2295b.ringSoundTags).intValue());
+        seekBar.setProgress(PrefManager.getValue(PrefManager.ringSoundTags).intValue());
         seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
@@ -122,11 +122,11 @@ public class SettingsActivity extends BaseActivity {
             }
 
             public void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-                C2295b.save(C2295b.ringSoundTags, Integer.valueOf(i));
+                PrefManager.save(PrefManager.ringSoundTags, Integer.valueOf(i));
             }
         });
         SeekBar seekBar2 = findViewById(R.id.volume_bar_ticking);
-        seekBar2.setProgress(C2295b.getValue(C2295b.tickingTag).intValue());
+        seekBar2.setProgress(PrefManager.getValue(PrefManager.tickingTag).intValue());
         seekBar2.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
@@ -135,7 +135,7 @@ public class SettingsActivity extends BaseActivity {
             }
 
             public void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-                C2295b.save(C2295b.tickingTag, Integer.valueOf(i));
+                PrefManager.save(PrefManager.tickingTag, Integer.valueOf(i));
                 C2250f.m10263a().mo7962d().mo7972b(i);
             }
         });
@@ -143,41 +143,41 @@ public class SettingsActivity extends BaseActivity {
 
     /* renamed from: n */
     private void m10053n() {
-        m10045a(R.id.checkbox_keep_screen_on, C2295b.keepScreenOnTag);
-        m10045a(R.id.checkbox_vibrate, C2295b.isVibrationTag);
+        m10045a(R.id.checkbox_keep_screen_on, PrefManager.keepScreenOnTag);
+        m10045a(R.id.checkbox_vibrate, PrefManager.isVibrationTag);
     }
 
     /* renamed from: a */
     private void m10045a(int i, final PreferenceValueObject<Boolean> aVar) {
         CheckBox checkBox = findViewById(i);
         FontHelper.setTypeface(checkBox, Fonts.LATO_BOLD);
-        checkBox.setChecked(C2295b.getValue(aVar).booleanValue());
+        checkBox.setChecked(PrefManager.getValue(aVar).booleanValue());
         checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                C2295b.save(aVar, Boolean.valueOf(z));
+                PrefManager.save(aVar, Boolean.valueOf(z));
             }
         });
     }
 
     /* renamed from: o */
     private void m10054o() {
-        m10043a(R.id.spinner_short_break_duration, R.array.short_breaks, C2295b.shortBreakTag);
-        m10043a(R.id.spinner_long_break_duration, R.array.long_breaks, C2295b.longBreakTag);
-        m10043a(R.id.spinner_pomodoro_duration, R.array.pomodoro_duration, C2295b.pomodoroDurationIndex);
+        m10043a(R.id.spinner_short_break_duration, R.array.short_breaks, PrefManager.shortBreakTag);
+        m10043a(R.id.spinner_long_break_duration, R.array.long_breaks, PrefManager.longBreakTag);
+        m10043a(R.id.spinner_pomodoro_duration, R.array.pomodoro_duration, PrefManager.pomodoroDurationIndex);
         int i = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
         int i2 = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
-        m10042a(R.id.spinner_ringing_sound, R.array.ringing_sounds_array, i, C2295b.RINGING_SOUND_INDEX, new C2186a() {
+        m10042a(R.id.spinner_ringing_sound, R.array.ringing_sounds_array, i, PrefManager.RINGING_SOUND_INDEX, new C2186a() {
             /* renamed from: a */
             public void mo7814a(int i) {
-                C2295b.save(C2295b.RINGING_SOUND_INDEX, Integer.valueOf(i));
+                PrefManager.save(PrefManager.RINGING_SOUND_INDEX, Integer.valueOf(i));
             }
         });
-        m10042a(R.id.spinner_ticking_sound, R.array.ticking_sounds_array, i2, C2295b.TICKING_SOUND_INDEX, new C2186a() {
+        m10042a(R.id.spinner_ticking_sound, R.array.ticking_sounds_array, i2, PrefManager.TICKING_SOUND_INDEX, new C2186a() {
             /* renamed from: a */
             public void mo7814a(int i) {
-                if (i != C2295b.getValue(C2295b.TICKING_SOUND_INDEX).intValue()) {
+                if (i != PrefManager.getValue(PrefManager.TICKING_SOUND_INDEX).intValue()) {
                     C2232f d = C2232f.m10212d();
-                    C2295b.save(C2295b.TICKING_SOUND_INDEX, Integer.valueOf(i));
+                    PrefManager.save(PrefManager.TICKING_SOUND_INDEX, Integer.valueOf(i));
                     C2250f.m10263a().mo7962d().mo7968a(d, C2232f.m10212d());
                 }
             }
@@ -191,13 +191,13 @@ public class SettingsActivity extends BaseActivity {
         C2188c cVar = new C2188c(this, 17367048, i2);
         cVar.setDropDownViewResource(17367049);
         spinner.setAdapter(cVar);
-        spinner.setSelection(C2295b.getValue(aVar).intValue());
+        spinner.setSelection(PrefManager.getValue(aVar).intValue());
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
 
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long j) {
-                C2295b.save(aVar, Integer.valueOf(i));
+                PrefManager.save(aVar, Integer.valueOf(i));
             }
         });
     }
@@ -218,7 +218,7 @@ public class SettingsActivity extends BaseActivity {
         C2188c cVar = new C2188c(this, 17367048, stringArray);
         cVar.setDropDownViewResource(17367049);
         spinner.setAdapter(cVar);
-        spinner.setSelection(C2295b.getValue(aVar).intValue());
+        spinner.setSelection(PrefManager.getValue(aVar).intValue());
         final int i5 = i3;
         final C2186a aVar3 = aVar2;
         final Spinner spinner2 = spinner;
@@ -232,7 +232,7 @@ public class SettingsActivity extends BaseActivity {
                     aVar3.mo7814a(i);
                     return;
                 }
-                spinner2.setSelection(C2295b.getValue(aVar4).intValue());
+                spinner2.setSelection(PrefManager.getValue(aVar4).intValue());
                 SettingsActivity.this.m10057r();
             }
         };
@@ -272,7 +272,7 @@ public class SettingsActivity extends BaseActivity {
     public void m10044a(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {
-            float intValue = ((float) C2295b.getValue(C2295b.ringSoundTags).intValue()) / 100.0f;
+            float intValue = ((float) PrefManager.getValue(PrefManager.ringSoundTags).intValue()) / 100.0f;
             create.setVolume(intValue, intValue);
             create.start();
             create.setOnCompletionListener(new OnCompletionListener() {
@@ -289,7 +289,7 @@ public class SettingsActivity extends BaseActivity {
     public void m10048b(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {
-            float intValue = ((float) C2295b.getValue(C2295b.tickingTag).intValue()) / 100.0f;
+            float intValue = ((float) PrefManager.getValue(PrefManager.tickingTag).intValue()) / 100.0f;
             create.setVolume(intValue, intValue);
             create.seekTo(create.getDuration() - 4000);
             create.start();
@@ -329,7 +329,7 @@ public class SettingsActivity extends BaseActivity {
         button.setText(getResources().getString(C2238c.m10226c()));
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                C2238c.m10221a(SettingsActivity.this);
+                C2238c.showLanguageChooserDialog(SettingsActivity.this);
             }
         });
     }

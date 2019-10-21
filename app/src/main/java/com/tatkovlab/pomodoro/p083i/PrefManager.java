@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2274c;
 
-public class C2295b {
+public class PrefManager {
 
     public static final PreferenceValueObject<Long> APP_INSTALL_TIME = new PreferenceValueObject<>("APP_INSTALL_TIME", Long.class, 0L);
 
@@ -83,11 +83,11 @@ public class C2295b {
 
     public static void init(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        m10462b(context);
+        saveInstalledTimeIfNeed(context);
         m10459a();
     }
 
-    private static void m10462b(Context context) {
+    private static void saveInstalledTimeIfNeed(Context context) {
         long j;
         if (getValue(APP_INSTALL_TIME) == 0) {
             try {

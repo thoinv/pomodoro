@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.Vibrator;
 import com.tatkovlab.pomodoro.p077c.C2232f;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 
 public class RingingService extends Service {
     public IBinder onBind(Intent intent) {
@@ -31,10 +31,10 @@ public class RingingService extends Service {
         powerManager.newWakeLock(805306394, "SCREEN_WAKE_LOCK").acquire(5000);
         final MediaPlayer create = MediaPlayer.create(baseContext, C2232f.m10213e().mo7931b());
         if (create != null) {
-            if (C2295b.getValue(C2295b.isVibrationTag).booleanValue()) {
+            if (PrefManager.getValue(PrefManager.isVibrationTag).booleanValue()) {
                 ((Vibrator) baseContext.getSystemService("vibrator")).vibrate(new long[]{0, 200, 300, 200}, -1);
             }
-            float intValue = ((float) C2295b.getValue(C2295b.ringSoundTags).intValue()) / 100.0f;
+            float intValue = ((float) PrefManager.getValue(PrefManager.ringSoundTags).intValue()) / 100.0f;
             create.setScreenOnWhilePlaying(true);
             create.setVolume(intValue, intValue);
             create.start();

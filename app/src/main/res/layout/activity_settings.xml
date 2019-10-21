@@ -110,14 +110,14 @@
                     android:focusable="true" />
             </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_vibrate"
                 style="@style/WhiteCheckBox"
                 android:layout_marginTop="42dp"
                 android:text="@string/vibrate"
                 android:theme="@style/WhiteCheckBox" />
 
-            <androidx.appcompat.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkbox_keep_screen_on"
                 style="@style/WhiteCheckBox"
                 android:layout_marginTop="8dp"

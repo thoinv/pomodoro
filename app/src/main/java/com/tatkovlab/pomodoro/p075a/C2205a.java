@@ -9,8 +9,6 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.tatkovlab.pomodoro.p076b.TaskInfo;
 import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
 import com.tatkovlab.pomodoro.p078d.FontHelper;
@@ -137,17 +135,17 @@ public class C2205a extends DragItemAdapter<TaskInfo, C2205a.C2209c> {
     }
 
 //    public long getItemId(int i) {
-//        return ((C2223f) this.f6488c.getValue(i)).mo7891a();
+//        return ((C2223f) this.f6488c.getValue(i)).getId();
 //    }
 
     /* renamed from: a */
     private void m10123a(final C2209c cVar, TaskInfo fVar) {
-        cVar.f6496b.setText(fVar.mo7898c());
+        cVar.f6496b.setText(fVar.getTaskName());
         TextView textView = cVar.f6497c;
         StringBuilder sb = new StringBuilder();
-        sb.append(fVar.mo7903e());
+        sb.append(fVar.getNumberOfDone());
         sb.append("/");
-        sb.append(fVar.mo7900d());
+        sb.append(fVar.getEstimated());
         textView.setText(sb.toString());
         cVar.f6495a.setOnCheckedChangeListener(null);
         Resources resources = cVar.f6496b.getContext().getResources();

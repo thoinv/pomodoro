@@ -15,9 +15,8 @@ import com.tatkovlab.pomodoro.p077c.C2230d;
 import com.tatkovlab.pomodoro.p077c.C2231e;
 import com.tatkovlab.pomodoro.p077c.C2232f;
 import com.tatkovlab.pomodoro.p079e.C2248e.C2249a;
-import com.tatkovlab.pomodoro.p081g.C2270d;
 import com.tatkovlab.pomodoro.p081g.C2271e;
-import com.tatkovlab.pomodoro.p083i.C2295b;
+import com.tatkovlab.pomodoro.p083i.PrefManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,12 +80,12 @@ class C2251g implements C2249a, C2271e {
 
     /* renamed from: l */
     private void m10281l() {
-        this.f6603d = C2274c.m10408a(C2295b.getValue(C2295b.CURRENT_POMODORO_STATE).intValue());
+        this.f6603d = C2274c.m10408a(PrefManager.getValue(PrefManager.CURRENT_POMODORO_STATE).intValue());
         if (this.f6603d == C2274c.POMODORO && !m10295z().mo7955b()) {
             m10276a(C2274c.IDLE);
         }
         if (this.f6608i.mo7922a()) {
-            this.f6604e = C2274c.m10408a(C2295b.getValue(C2295b.NEXT_POMODORO_STATE).intValue());
+            this.f6604e = C2274c.m10408a(PrefManager.getValue(PrefManager.NEXT_POMODORO_STATE).intValue());
             C2250f.m10263a().mo7966h().mo7941d();
         }
     }
@@ -131,13 +130,13 @@ class C2251g implements C2249a, C2271e {
     /* renamed from: a */
     private void m10276a(C2274c cVar) {
         this.f6603d = cVar;
-        C2295b.save(C2295b.CURRENT_POMODORO_STATE, Integer.valueOf(cVar.mo8007a()));
+        PrefManager.save(PrefManager.CURRENT_POMODORO_STATE, Integer.valueOf(cVar.mo8007a()));
     }
 
     /* renamed from: b */
     private void m10278b(C2274c cVar) {
         this.f6604e = cVar;
-        C2295b.save(C2295b.NEXT_POMODORO_STATE, Integer.valueOf(cVar.mo8007a()));
+        PrefManager.save(PrefManager.NEXT_POMODORO_STATE, Integer.valueOf(cVar.mo8007a()));
     }
 
     /* renamed from: a */
@@ -286,7 +285,7 @@ class C2251g implements C2249a, C2271e {
 
     /* renamed from: a */
     private void m10275a(C2232f fVar) {
-        this.f6601b.mo7836a(fVar, C2295b.getValue(C2295b.tickingTag).intValue());
+        this.f6601b.mo7836a(fVar, PrefManager.getValue(PrefManager.tickingTag).intValue());
     }
 
     /* renamed from: u */
