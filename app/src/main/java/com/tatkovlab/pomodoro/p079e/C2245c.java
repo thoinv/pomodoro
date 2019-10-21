@@ -10,7 +10,7 @@ public interface C2245c {
     }
 
     /* renamed from: a */
-    String mo7942a();
+    String getCurrentTaskName();
 
     /* renamed from: a */
     void mo7943a(C2246a aVar);

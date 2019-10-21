@@ -9,10 +9,10 @@ import com.tatkovlab.pomodorolite.R;
 public class C2285b {
 
     /* renamed from: a */
-    private Activity f6665a;
+    private Activity activity;
 
     /* renamed from: b */
-    private View f6666b;
+    private View rootView;
 
     /* renamed from: com.tatkovlab.pomodoro.h.b$a */
     public enum C2286a {
@@ -43,13 +43,13 @@ public class C2285b {
     }
 
     public C2285b(Activity activity) {
-        this.f6665a = activity;
-        this.f6666b = activity.findViewById(R.id.root_view);
+        this.activity = activity;
+        this.rootView = activity.findViewById(R.id.root_view);
     }
 
     /* renamed from: a */
     public void mo8017a(C2286a aVar) {
-        this.f6666b.setBackgroundResource(aVar.mo8018a());
-        C2297c.m10467a(this.f6665a, this.f6665a.getResources().getColor(aVar.mo8019b()));
+        this.rootView.setBackgroundResource(aVar.mo8018a());
+        C2297c.m10467a(this.activity, this.activity.getResources().getColor(aVar.mo8019b()));
     }
 }

@@ -54,10 +54,10 @@ public class MainActivity extends BaseActivity {
     private Button btSkipBreak;
 
     /* renamed from: p */
-    private TextView f6412p;
+    private TextView tvTaskName;
 
     /* renamed from: q */
-    private ViewGroup f6413q;
+    private ViewGroup layoutCompletedTicks;
 
     /* renamed from: r */
     private String f6414r;
@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity {
     /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (!PrefManager.getValue(PrefManager.WAS_WELCOME_SCREEN_SHOWN).booleanValue()) {
+        if (!PrefManager.getValue(PrefManager.WAS_WELCOME_SCREEN_SHOWN)) {
             startActivity(new Intent(this, WelcomeActivity.class));
             finish();
             return;
@@ -115,7 +115,7 @@ public class MainActivity extends BaseActivity {
 
     /* renamed from: a */
     private void m10019a(boolean z) {
-        if (z || !PrefManager.getValue(PrefManager.keepScreenOnTag).booleanValue()) {
+        if (z || !PrefManager.getValue(PrefManager.keepScreenOnTag)) {
             getWindow().clearFlags(128);
         } else {
             getWindow().addFlags(128);
@@ -212,9 +212,9 @@ public class MainActivity extends BaseActivity {
 
     /* renamed from: n */
     private void m10028n() {
-        this.f6413q = findViewById(R.id.box_completed_pomodoros_indicator);
-        this.f6412p = findViewById(R.id.task_name_text);
-        FontHelper.setTypeface(this.f6412p, Fonts.PANGOLIN_REGULAR);
+        this.layoutCompletedTicks = findViewById(R.id.box_completed_pomodoros_indicator);
+        this.tvTaskName = findViewById(R.id.task_name_text);
+        FontHelper.setTypeface(this.tvTaskName, Fonts.PANGOLIN_REGULAR);
         findViewById(R.id.note_background).setOnClickListener(new C2287c());
         C2250f.m10263a().mo7963e().mo7943a(new C2246a() {
             /* renamed from: a */
@@ -229,23 +229,23 @@ public class MainActivity extends BaseActivity {
     /* renamed from: o */
     public void m10029o() {
         C2245c e = C2250f.m10263a().mo7963e();
-        if (e.mo7942a() == null) {
-            this.f6412p.setText(R.string.no_task_placeholder);
-            m10017a(this.f6413q, 0);
+        if (e.getCurrentTaskName() == null) {
+            this.tvTaskName.setText(R.string.no_task_placeholder);
+            m10017a(this.layoutCompletedTicks, 0);
             return;
         }
-        this.f6412p.setText(e.mo7942a());
-        m10017a(this.f6413q, e.mo7945b());
+        this.tvTaskName.setText(e.getCurrentTaskName());
+        m10017a(this.layoutCompletedTicks, e.mo7945b());
     }
 
     /* renamed from: a */
     private void m10017a(ViewGroup viewGroup, int i) {
         if (viewGroup.getChildCount() != i) {
-            this.f6413q.removeAllViews();
+            this.layoutCompletedTicks.removeAllViews();
             for (int i2 = 0; i2 < i; i2++) {
                 ImageView imageView = new ImageView(this);
                 imageView.setImageResource(R.drawable.ic_done);
-                this.f6413q.addView(imageView);
+                this.layoutCompletedTicks.addView(imageView);
             }
         }
     }
