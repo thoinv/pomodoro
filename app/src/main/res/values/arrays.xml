@@ -44,11 +44,11 @@
         <item>@string/four_minutes</item>
         <item>@string/five_minutes</item>
     </string-array>
-    <array name="short_breaks_values">
+    <string-array name="short_breaks_values">
         <item>3</item>
         <item>4</item>
         <item>5</item>
-    </array>
+    </string-array>
     <string-array name="task_long_press_options">
         <item>Edit Task</item>
         <item>Duplicate Task</item>

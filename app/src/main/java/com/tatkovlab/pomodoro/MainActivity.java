@@ -303,6 +303,7 @@ public class MainActivity extends BaseActivity {
                 }
             });
         }
+        this.f6408l.show();
     }
 
     /* access modifiers changed from: private */
