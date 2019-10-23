@@ -11,7 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-//import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.tatkovlab.pomodoro.p078d.FontHelper;
 import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p078d.C2238c;
@@ -22,6 +23,7 @@ import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p081g.C2271e;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2273b;
 import com.tatkovlab.pomodoro.p081g.C2271e.C2274c;
+import com.tatkovlab.pomodoro.p082h.C2280a;
 import com.tatkovlab.pomodoro.p082h.C2285b;
 import com.tatkovlab.pomodoro.p082h.C2285b.C2286a;
 import com.tatkovlab.pomodoro.p082h.C2287c;
@@ -41,9 +43,6 @@ public class MainActivity extends BaseActivity {
     private C2285b f6407k;
     /* access modifiers changed from: private */
 
-    /* renamed from: l */
-//    public MaterialDialog f6408l;
-
     /* renamed from: m */
     private Button btStartPomodoro;
 
@@ -61,6 +60,7 @@ public class MainActivity extends BaseActivity {
 
     /* renamed from: r */
     private String f6414r;
+    private MaterialDialog f6408l;
 
     /* renamed from: t */
     private void m10034t() {
@@ -125,10 +125,10 @@ public class MainActivity extends BaseActivity {
     /* access modifiers changed from: protected */
     public void onStop() {
         super.onStop();
-//        if (this.f6408l != null && this.f6408l.isShowing()) {
-//            this.f6408l.dismiss();
-//            this.f6408l = null;
-//        }
+        if (this.f6408l != null && this.f6408l.isShowing()) {
+            this.f6408l.dismiss();
+            this.f6408l = null;
+        }
     }
 
     /* renamed from: l */
@@ -277,31 +277,32 @@ public class MainActivity extends BaseActivity {
 
     /* renamed from: b */
     private void m10021b(boolean z) {
-//        if (this.f6408l == null || !this.f6408l.isShowing()) {
-//            this.f6408l = new C1174a(this).mo5482a((int) R.layout.pop_up_time_for_break, true).mo5487a(LIGHT).mo5491a(false).mo5498c();
-//            new C2280a(this.f6408l.mo5464f(), z, new C2284a() {
-//                /* renamed from: a */
-//                public void mo7804a() {
-//                    MainActivity.this.m10033s().mo7973c();
-//                    MainActivity.this.m10027m();
-//                    MainActivity.this.f6408l.dismiss();
-//                }
-//
-//                /* renamed from: b */
-//                public void mo7805b() {
-//                    MainActivity.this.m10033s().mo7974f();
-//                    MainActivity.this.m10027m();
-//                    MainActivity.this.f6408l.dismiss();
-//                }
-//
-//                /* renamed from: c */
-//                public void mo7806c() {
-//                    MainActivity.this.m10033s().mo7975g();
-//                    MainActivity.this.m10027m();
-//                    MainActivity.this.f6408l.dismiss();
-//                }
-//            });
-//        }
+        if (this.f6408l == null || !this.f6408l.isShowing()) {
+            this.f6408l = new MaterialDialog.Builder(this).customView(R.layout.pop_up_time_for_break, true)
+                    .theme(Theme.LIGHT).build();
+            new C2280a(this.f6408l.getView(), z, new C2280a.C2284a() {
+                /* renamed from: a */
+                public void mo7804a() {
+                    MainActivity.this.m10033s().mo7973c();
+                    MainActivity.this.m10027m();
+                    MainActivity.this.f6408l.dismiss();
+                }
+
+                /* renamed from: b */
+                public void mo7805b() {
+                    MainActivity.this.m10033s().mo7974f();
+                    MainActivity.this.m10027m();
+                    MainActivity.this.f6408l.dismiss();
+                }
+
+                /* renamed from: c */
+                public void mo7806c() {
+                    MainActivity.this.m10033s().mo7975g();
+                    MainActivity.this.m10027m();
+                    MainActivity.this.f6408l.dismiss();
+                }
+            });
+        }
     }
 
     /* access modifiers changed from: private */
