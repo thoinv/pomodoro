@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Locale;
+
 class PomodoroDatabase extends SQLiteOpenHelper {
 
     private static PomodoroDatabase instance;
@@ -31,10 +33,7 @@ class PomodoroDatabase extends SQLiteOpenHelper {
 
     public void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
         String name = PomodoroDatabase.class.getName();
-        String sb = "Upgrading database from version " +
-                i +
-                " to " +
-                i2;
+        String sb = String.format(Locale.US, "Upgrading database from version %d to %d", i, i2);
         Log.w(name, sb);
         switch (i) {
             case 1:

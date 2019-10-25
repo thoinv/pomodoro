@@ -6,13 +6,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-//import com.afollestad.materialdialogs.C1164b;
-//import com.afollestad.materialdialogs.MaterialDialog.C1174a;
-//import com.afollestad.materialdialogs.C1169f.C1178e;
-//import com.afollestad.materialdialogs.C1169f.C1183j;
-//import com.afollestad.materialdialogs.C1194i;
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.tatkovlab.pomodoro.p075a.C2205a;
 import com.tatkovlab.pomodoro.p075a.C2205a.C2207a;
 import com.tatkovlab.pomodoro.p075a.C2205a.C2208b;
@@ -26,6 +26,7 @@ import com.tatkovlab.pomodoro.p079e.C2258j;
 import com.tatkovlab.pomodorolite.R;
 import com.woxthebox.draglistview.DragListView;
 import com.woxthebox.draglistview.DragListView.DragListListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,10 +41,10 @@ public class TasksActivity extends BaseActivity {
     public C2205a f6466k;
 
     /* renamed from: l */
-//    private MaterialDialog f6467l;
-//
+    private MaterialDialog f6467l;
+    //
 //    /* renamed from: m */
-//    private MaterialDialog f6468m;
+    private MaterialDialog f6468m;
 
     /* renamed from: n */
     private View f6469n;
@@ -67,12 +68,12 @@ public class TasksActivity extends BaseActivity {
     /* access modifiers changed from: protected */
     public void onStop() {
         super.onStop();
-//        if (this.f6467l != null && this.f6467l.isShowing()) {
-//            this.f6467l.dismiss();
-//        }
-//        if (this.f6468m != null && this.f6468m.isShowing()) {
-//            this.f6468m.dismiss();
-//        }
+        if (this.f6467l != null && this.f6467l.isShowing()) {
+            this.f6467l.dismiss();
+        }
+        if (this.f6468m != null && this.f6468m.isShowing()) {
+            this.f6468m.dismiss();
+        }
     }
 
     /* renamed from: k */
@@ -144,34 +145,42 @@ public class TasksActivity extends BaseActivity {
     /* access modifiers changed from: private */
     /* renamed from: c */
     public void m10094c(final TaskInfo fVar) {
-//        this.f6467l = new C1174a(this).mo5488a((CharSequence) fVar.getTaskName()).mo5487a(C1194i.LIGHT).mo5501e(R.array.task_long_press_options).mo5485a((C1178e) new C1178e() {
-//            /* renamed from: a */
-//            public void mo5518a(MaterialDialog fVar, View view, int i, CharSequence charSequence) {
-//                switch (i) {
-//                    case 0:
-//                        TasksActivity.this.m10099e(fVar);
-//                        return;
-//                    case 1:
-//                        TasksActivity.this.m10100f(fVar);
-//                        return;
-//                    case 2:
-//                        TasksActivity.this.mo7845a(fVar);
-//                        return;
-//                    default:
-//                        return;
-//                }
-//            }
-//        }).mo5498c();
+        this.f6467l = new MaterialDialog.Builder(this)
+                .title(fVar.getTaskName())
+                .theme(Theme.LIGHT)
+                .items(R.array.task_long_press_options)
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                        switch (which) {
+                            case 0:
+                                TasksActivity.this.m10099e(fVar);
+                                return;
+                            case 1:
+                                TasksActivity.this.m10100f(fVar);
+                                return;
+                            case 2:
+                                TasksActivity.this.mo7845a(fVar);
+
+                        }
+                    }
+                }).show();
     }
 
     /* renamed from: a */
     public void mo7845a(final TaskInfo fVar) {
-//        this.f6468m = new MaterialDialog(this).mo5488a((CharSequence) getString(R.string.delete_task_confirmation_header)).mo5494b((CharSequence) getString(R.string.delete_task_confirmation_body, new Object[]{fVar.getTaskName()})).mo5499d((int) R.drawable.dialog_delete).mo5504h(R.string.delete_task_confirmation_confirm).mo5502f(R.string.delete_task_confirmation_cancel).mo5487a(C1194i.LIGHT).mo5486a((C1183j) new C1183j() {
-//            /* renamed from: a */
-//            public void mo5522a(MaterialDialog fVar, C1164b bVar) {
-//                TasksActivity.this.m10097d(fVar);
-//            }
-//        }).mo5498c();
+        this.f6468m = new MaterialDialog.Builder(this)
+                .title(getString(R.string.delete_task_confirmation_header))
+                .content(getString(R.string.delete_task_confirmation_body, fVar.getTaskName()))
+                .icon(ContextCompat.getDrawable(this, R.drawable.dialog_delete)) // FIXME: 2019-10-25 check againF
+                .positiveText(R.string.delete_task_confirmation_confirm)
+                .negativeText(R.string.delete_task_confirmation_cancel)
+                .theme(Theme.LIGHT).onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        TasksActivity.this.m10097d(fVar);
+                    }
+                }).show();
     }
 
     /* access modifiers changed from: private */

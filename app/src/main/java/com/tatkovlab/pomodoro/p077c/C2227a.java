@@ -17,28 +17,23 @@ public enum C2227a {
     NO_10(R.string.break_header_v10, R.drawable.break_image_10);
     
 
-    /* renamed from: k */
-    private int f6542k;
+    private int messageStringResourceId;
 
-    /* renamed from: l */
-    private int f6543l;
+    private int messageDrawableResourceId;
 
-    C2227a(int i, int i2) {
-        this.f6542k = i;
-        this.f6543l = i2;
+    C2227a(int messageStringResourceId, int messageDrawableResourceId) {
+        this.messageStringResourceId = messageStringResourceId;
+        this.messageDrawableResourceId = messageDrawableResourceId;
     }
 
-    /* renamed from: a */
-    public int mo7918a() {
-        return this.f6542k;
+    public int getMessageStringResourceId() {
+        return this.messageStringResourceId;
     }
 
-    /* renamed from: b */
-    public int mo7919b() {
-        return this.f6543l;
+    public int getMessageDrawableResourceId() {
+        return this.messageDrawableResourceId;
     }
 
-    /* renamed from: c */
     public static C2227a m10196c() {
         return values()[new Random().nextInt(values().length)];
     }

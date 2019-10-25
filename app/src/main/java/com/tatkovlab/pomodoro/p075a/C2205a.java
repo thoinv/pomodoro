@@ -9,6 +9,9 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+
 import com.tatkovlab.pomodoro.p076b.TaskInfo;
 import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
 import com.tatkovlab.pomodoro.p078d.FontHelper;
@@ -64,19 +67,19 @@ public class C2205a extends DragItemAdapter<TaskInfo, C2205a.C2209c> {
     public class C2209c extends DragItemAdapter.ViewHolder {
 
         /* renamed from: a */
-        CheckBox f6495a;
+        CheckBox ckDone;
 
         /* renamed from: b */
-        TextView f6496b;
+        TextView tvTaskName;
 
         /* renamed from: c */
-        TextView f6497c;
+        TextView tvDoneExpected;
 
         C2209c(View view) {
             super(view, C2205a.this.f6486a, C2205a.this.f6492g);
-            this.f6495a = view.findViewById(R.id.isDone);
-            this.f6496b = view.findViewById(R.id.taskName);
-            this.f6497c = view.findViewById(R.id.doneExpectedTextBox);
+            this.ckDone = view.findViewById(R.id.isDone);
+            this.tvTaskName = view.findViewById(R.id.taskName);
+            this.tvDoneExpected = view.findViewById(R.id.doneExpectedTextBox);
         }
 
         public void onItemClicked(View view) {
@@ -103,7 +106,9 @@ public class C2205a extends DragItemAdapter<TaskInfo, C2205a.C2209c> {
     }
 
     /* renamed from: a */
-    public C2209c onCreateViewHolder(ViewGroup viewGroup, int i) {
+    @NonNull
+    @Override
+    public C2209c onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return new C2209c(LayoutInflater.from(viewGroup.getContext()).inflate(this.f6487b, viewGroup, false));
     }
 
@@ -140,29 +145,29 @@ public class C2205a extends DragItemAdapter<TaskInfo, C2205a.C2209c> {
 
     /* renamed from: a */
     private void m10123a(final C2209c cVar, TaskInfo fVar) {
-        cVar.f6496b.setText(fVar.getTaskName());
-        TextView textView = cVar.f6497c;
+        cVar.tvTaskName.setText(fVar.getTaskName());
+        TextView textView = cVar.tvDoneExpected;
         StringBuilder sb = new StringBuilder();
         sb.append(fVar.getNumberOfDone());
         sb.append("/");
         sb.append(fVar.getEstimated());
         textView.setText(sb.toString());
-        cVar.f6495a.setOnCheckedChangeListener(null);
-        Resources resources = cVar.f6496b.getContext().getResources();
-        FontHelper.setTypeface(cVar.f6496b, Fonts.PANGOLIN_REGULAR);
-        FontHelper.setTypeface(cVar.f6497c, Fonts.PANGOLIN_REGULAR);
+        cVar.ckDone.setOnCheckedChangeListener(null);
+        Resources resources = cVar.tvTaskName.getContext().getResources();
+        FontHelper.setTypeface(cVar.tvTaskName, Fonts.PANGOLIN_REGULAR);
+        FontHelper.setTypeface(cVar.tvDoneExpected, Fonts.PANGOLIN_REGULAR);
         if (fVar.getTaskStatus() == TaskStatus.FINISHED) {
-            cVar.f6495a.setChecked(true);
-            cVar.f6496b.setTextColor(resources.getColor(R.color.light_brown));
-            cVar.f6496b.setBackgroundDrawable(resources.getDrawable(R.drawable.text_strikethrough));
-            cVar.f6497c.setTextColor(resources.getColor(R.color.light_brown));
+            cVar.ckDone.setChecked(true);
+            cVar.tvTaskName.setTextColor(resources.getColor(R.color.light_brown));
+            cVar.tvTaskName.setBackgroundDrawable(ContextCompat.getDrawable(cVar.tvTaskName.getContext(), R.drawable.text_strikethrough));
+            cVar.tvDoneExpected.setTextColor(resources.getColor(R.color.light_brown));
         } else {
-            cVar.f6495a.setChecked(false);
-            cVar.f6496b.setTextColor(resources.getColor(R.color.dark_brown));
-            cVar.f6497c.setTextColor(resources.getColor(R.color.dark_brown));
-            cVar.f6496b.setBackgroundDrawable(null);
+            cVar.ckDone.setChecked(false);
+            cVar.tvTaskName.setTextColor(resources.getColor(R.color.dark_brown));
+            cVar.tvDoneExpected.setTextColor(resources.getColor(R.color.dark_brown));
+            cVar.tvTaskName.setBackgroundDrawable(null);
         }
-        cVar.f6495a.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        cVar.ckDone.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 if (C2205a.this.f6489d != null) {
                     C2205a.this.f6489d.mo7852a(z, cVar.getAdapterPosition());

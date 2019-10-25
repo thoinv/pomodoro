@@ -54,8 +54,8 @@ public class C2280a {
     /* renamed from: b */
     private void m10434b() {
         C2227a c = C2227a.m10196c();
-        ((TextView) this.f6659c.findViewById(R.id.text_dialog_title)).setText(c.mo7918a());
-        ((ImageView) this.f6659c.findViewById(R.id.image_dialog_body)).setImageResource(c.mo7919b());
+        ((TextView) this.f6659c.findViewById(R.id.text_dialog_title)).setText(c.getMessageStringResourceId());
+        ((ImageView) this.f6659c.findViewById(R.id.image_dialog_body)).setImageResource(c.getMessageDrawableResourceId());
     }
 
     /* renamed from: a */
