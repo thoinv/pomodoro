@@ -29,7 +29,7 @@ import com.tatkovlab.pomodoro.p082h.C2285b.C2286a;
 import com.tatkovlab.pomodoro.p082h.C2287c;
 import com.tatkovlab.pomodoro.p082h.PomodoroTime;
 import com.tatkovlab.pomodoro.p082h.C2290e;
-import com.tatkovlab.pomodoro.p083i.C2291a;
+import com.tatkovlab.pomodoro.p083i.AppRateUtils;
 import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodorolite.R;
 
@@ -74,6 +74,7 @@ public class MainActivity extends BaseActivity {
             finish();
             return;
         }
+
         setContentView(R.layout.activity_main);
         this.f6414r = C2238c.m10225b();
         this.f6407k = new C2285b(this);
@@ -82,8 +83,9 @@ public class MainActivity extends BaseActivity {
         m10026l();
         m10032r();
         m10034t();
-        C2291a.m10456b(this);
-        C2242a h = C2250f.m10263a().mo7966h();
+        AppRateUtils.checkAndShowRateIfNeed(this);
+
+        C2242a h = C2250f.m10263a().getInstance();
         if (h.mo7940c()) {
             h.mo7936a(this);
         }
@@ -122,7 +124,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    /* access modifiers changed from: protected */
+    @Override
     public void onStop() {
         super.onStop();
         if (this.f6408l != null && this.f6408l.isShowing()) {
@@ -164,7 +166,7 @@ public class MainActivity extends BaseActivity {
             }
         });
         View findViewById = findViewById(R.id.button_stats);
-        if (C2250f.m10263a().mo7966h().mo7937a()) {
+        if (C2250f.m10263a().getInstance().mo7937a()) {
             findViewById.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) {
                     MainActivity.this.startActivity(new Intent(MainActivity.this, StatsActivity.class));
@@ -175,8 +177,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: m */
     @SuppressLint("WrongConstant")
     public void m10027m() {
         C2274c h = m10033s().mo7976h();

@@ -34,7 +34,7 @@ public class UpgradeToProActivity extends BaseActivity {
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                C2250f.m10263a().mo7966h().mo7939b(UpgradeToProActivity.this);
+                C2250f.m10263a().getInstance().mo7939b(UpgradeToProActivity.this);
             }
         });
         Button button2 = findViewById(R.id.button_maybe_later);

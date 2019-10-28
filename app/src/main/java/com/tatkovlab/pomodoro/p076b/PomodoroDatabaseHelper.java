@@ -173,7 +173,7 @@ public class PomodoroDatabaseHelper {
             SQLiteDatabase writableDatabase = this.f6508a.getWritableDatabase();
             for (TaskInfo taskInfo : taskInfos) {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("taskName", taskInfo.getTaskName());
+                contentValues.put("name", taskInfo.getTaskName());
                 contentValues.put("list_order", taskInfo.mo7908h());
                 contentValues.put("status", taskInfo.getTaskStatus().intValue());
                 contentValues.put("list", taskInfo.getTaskType().intValue());
@@ -226,7 +226,7 @@ public class PomodoroDatabaseHelper {
             for (TaskInfo taskInfo : lstTaskInfo) {
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("list_order", taskInfo.getListOrder());
-                contentValues.put("taskName", taskInfo.getTaskName());
+                contentValues.put("name", taskInfo.getTaskName());
                 contentValues.put("estimated", taskInfo.getEstimated());
                 contentValues.put("done", taskInfo.getNumberOfDone());
                 contentValues.put("abandoned", taskInfo.getNumberOfAbandoned());

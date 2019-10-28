@@ -6,7 +6,7 @@ import android.os.Build.VERSION;
 import com.facebook.stetho.Stetho;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p080f.C2263a;
-import com.tatkovlab.pomodoro.p083i.C2291a;
+import com.tatkovlab.pomodoro.p083i.AppRateUtils;
 import com.tatkovlab.pomodoro.p083i.PrefManager;
 
 public class App extends Application {
@@ -16,7 +16,7 @@ public class App extends Application {
         m10015a();
         PrefManager.init(getApplicationContext());
         C2250f.get(getApplicationContext(), m10016b());
-        C2291a.m10454a(this);
+        AppRateUtils.checkAndUpdateFirstLaunchTime(this);
     }
 
     /* renamed from: a */
@@ -28,6 +28,6 @@ public class App extends Application {
 
     /* renamed from: b */
     private boolean m10016b() {
-        return C2291a.m10453a(getApplicationContext(), 0) == 0;
+        return AppRateUtils.getFirstLaunchTime(getApplicationContext(), 0) == 0;
     }
 }

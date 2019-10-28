@@ -86,7 +86,7 @@ class C2251g implements C2249a, C2271e {
         }
         if (this.f6608i.mo7922a()) {
             this.f6604e = C2274c.m10408a(PrefManager.getValue(PrefManager.NEXT_POMODORO_STATE));
-            C2250f.m10263a().mo7966h().mo7941d();
+            C2250f.m10263a().getInstance().mo7941d();
         }
     }
 

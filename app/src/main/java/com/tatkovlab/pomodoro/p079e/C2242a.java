@@ -19,7 +19,7 @@ public class C2242a {
 
     /* renamed from: a */
     public boolean mo7937a() {
-        return "com.tatkovlab.pomodorolite".equals("com.tatkovlab.pomodoro");
+        return true;
     }
 
     /* renamed from: b */

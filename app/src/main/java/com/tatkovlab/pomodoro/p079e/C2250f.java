@@ -47,7 +47,7 @@ public class C2250f {
             instance = new C2250f(context);
             instance.mo7962d();
             instance.mo7961c();
-            instance.mo7966h();
+            instance.getInstance();
             instance.mo7963e();
             instance.mo7964f();
             instance.mo7965g();
@@ -98,7 +98,7 @@ public class C2250f {
 
     /* renamed from: f */
     public C2258j mo7964f() {
-        if (!mo7966h().mo7937a()) {
+        if (!getInstance().mo7937a()) {
             return null;
         }
         if (this.f6597g == null) {
@@ -109,7 +109,7 @@ public class C2250f {
 
     /* renamed from: g */
     public C2255i mo7965g() {
-        if (!mo7966h().mo7937a()) {
+        if (!getInstance().mo7937a()) {
             return null;
         }
         if (this.f6598h == null) {
@@ -118,8 +118,7 @@ public class C2250f {
         return this.f6598h;
     }
 
-    /* renamed from: h */
-    public C2242a mo7966h() {
+    public C2242a getInstance() {
         if (this.f6599i == null) {
             this.f6599i = new C2242a(f6591j);
         }

@@ -164,8 +164,8 @@ public class SettingsActivity extends BaseActivity {
         m10043a(R.id.spinner_short_break_duration, R.array.short_breaks, PrefManager.shortBreakTag);
         m10043a(R.id.spinner_long_break_duration, R.array.long_breaks, PrefManager.longBreakTag);
         m10043a(R.id.spinner_pomodoro_duration, R.array.pomodoro_duration, PrefManager.pomodoroDurationIndex);
-        int i = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
-        int i2 = C2250f.m10263a().mo7966h().mo7937a() ? Integer.MAX_VALUE : 2;
+        int i = C2250f.m10263a().getInstance().mo7937a() ? Integer.MAX_VALUE : 2;
+        int i2 = C2250f.m10263a().getInstance().mo7937a() ? Integer.MAX_VALUE : 2;
         m10042a(R.id.spinner_ringing_sound, R.array.ringing_sounds_array, i, PrefManager.RINGING_SOUND_INDEX, new C2186a() {
             /* renamed from: a */
             public void mo7814a(int i) {
@@ -305,7 +305,7 @@ public class SettingsActivity extends BaseActivity {
     /* renamed from: q */
     @SuppressLint("WrongConstant")
     private void m10056q() {
-        if (!C2250f.m10263a().mo7966h().mo7937a()) {
+        if (!C2250f.m10263a().getInstance().mo7937a()) {
             Button button = findViewById(R.id.button_upgrade_to_premium);
             FontHelper.setTypeface(button, Fonts.LATO_BOLD);
             button.setOnClickListener(new OnClickListener() {

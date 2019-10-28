@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
-import com.tatkovlab.pomodoro.p075a.C2205a;
-import com.tatkovlab.pomodoro.p075a.C2205a.C2207a;
-import com.tatkovlab.pomodoro.p075a.C2205a.C2208b;
+import com.tatkovlab.pomodoro.p075a.TaskAdapter;
+import com.tatkovlab.pomodoro.p075a.TaskAdapter.C2207a;
+import com.tatkovlab.pomodoro.p075a.TaskAdapter.C2208b;
 import com.tatkovlab.pomodoro.p076b.C2220c;
 import com.tatkovlab.pomodoro.p076b.TaskInfo;
 import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
@@ -38,7 +38,7 @@ public class TasksActivity extends BaseActivity {
     /* access modifiers changed from: private */
 
     /* renamed from: k */
-    public C2205a f6466k;
+    public TaskAdapter f6466k;
 
     /* renamed from: l */
     private MaterialDialog f6467l;
@@ -113,7 +113,7 @@ public class TasksActivity extends BaseActivity {
         this.f6465j = findViewById(R.id.tasks_list);
         this.f6465j.setLayoutManager(new LinearLayoutManager(this));
         this.f6465j.setCanDragHorizontally(false);
-        this.f6466k = new C2205a(new ArrayList(), R.layout.list_item_task, R.id.drag_handle, false);
+        this.f6466k = new TaskAdapter(new ArrayList(), R.layout.list_item_task, R.id.drag_handle, false);
         this.f6465j.setAdapter(this.f6466k, true);
         this.f6465j.setDragListListener(new DragListListener() {
             public void onItemDragStarted(int i) {
@@ -220,8 +220,8 @@ public class TasksActivity extends BaseActivity {
     private void m10106p() {
         m10107q().mo7984a(new C2220c<TaskInfo>() {
             /* renamed from: a */
-            public void mo7850a(List<TaskInfo> list) {
-                TasksActivity.this.f6466k = new C2205a(list, R.layout.list_item_task, R.id.drag_handle, false);
+            public void mo7850a(List<TaskInfo> taskInfos) {
+                TasksActivity.this.f6466k = new TaskAdapter(taskInfos, R.layout.list_item_task, R.id.drag_handle, false);
                 TasksActivity.this.f6466k.mo7859a(new C2207a() {
                     /* renamed from: a */
                     public void mo7851a(TaskInfo fVar) {

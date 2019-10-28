@@ -40,7 +40,7 @@ public class WelcomeActivity extends BaseActivity {
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 PrefManager.save(PrefManager.WAS_WELCOME_SCREEN_SHOWN, Boolean.valueOf(true));
-                C2250f.m10263a().mo7966h().mo7938b();
+                C2250f.m10263a().getInstance().mo7938b();
                 WelcomeActivity.this.startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 WelcomeActivity.this.finish();
             }

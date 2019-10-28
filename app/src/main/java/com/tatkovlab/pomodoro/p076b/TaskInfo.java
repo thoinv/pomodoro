@@ -10,17 +10,17 @@ import java.util.Locale;
 public class TaskInfo implements Parcelable {
     public static final Creator<TaskInfo> CREATOR = new Creator<TaskInfo>() {
         public TaskInfo createFromParcel(Parcel parcel) {
-            TaskInfo fVar = new TaskInfo();
-            fVar.id = parcel.readLong();
-            fVar.listOrder = parcel.readLong();
-            fVar.taskName = parcel.readString();
-            fVar.estimated = parcel.readLong();
-            fVar.numberOfDone = parcel.readLong();
-            fVar.f6518f = parcel.readLong();
-            fVar.taskStatus = TaskStatus.m10194a(parcel.readLong());
-            fVar.taskType = TaskType.getTaskType(parcel.readLong());
-            fVar.f6521i = parcel.readLong();
-            return fVar;
+            TaskInfo taskInfo = new TaskInfo();
+            taskInfo.id = parcel.readLong();
+            taskInfo.listOrder = parcel.readLong();
+            taskInfo.taskName = parcel.readString();
+            taskInfo.estimated = parcel.readLong();
+            taskInfo.numberOfDone = parcel.readLong();
+            taskInfo.f6518f = parcel.readLong();
+            taskInfo.taskStatus = TaskStatus.m10194a(parcel.readLong());
+            taskInfo.taskType = TaskType.getTaskType(parcel.readLong());
+            taskInfo.f6521i = parcel.readLong();
+            return taskInfo;
         }
 
         public TaskInfo[] newArray(int i) {

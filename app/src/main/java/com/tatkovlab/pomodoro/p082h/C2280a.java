@@ -10,28 +10,19 @@ import com.tatkovlab.pomodoro.p078d.FontHelper;
 import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodorolite.R;
 
-/* renamed from: com.tatkovlab.pomodoro.h.a */
 public class C2280a {
 
-    /* renamed from: a */
     private int[] f6657a = {R.id.text_dialog_title, R.id.text_dialog_body, R.id.button_primary, R.id.button_secondary, R.id.button_skip};
-    /* access modifiers changed from: private */
 
-    /* renamed from: b */
-    public C2284a f6658b;
+    private C2284a f6658b;
 
-    /* renamed from: c */
     private View f6659c;
 
-    /* renamed from: com.tatkovlab.pomodoro.h.a$a */
     public interface C2284a {
-        /* renamed from: a */
         void mo7804a();
 
-        /* renamed from: b */
         void mo7805b();
 
-        /* renamed from: c */
         void mo7806c();
     }
 
@@ -44,26 +35,22 @@ public class C2280a {
         m10435b(z);
     }
 
-    /* renamed from: a */
     private void m10432a() {
         for (int findViewById : this.f6657a) {
             FontHelper.setTypeface((TextView) this.f6659c.findViewById(findViewById), Fonts.LATO_BOLD);
         }
     }
 
-    /* renamed from: b */
     private void m10434b() {
         C2227a c = C2227a.m10196c();
         ((TextView) this.f6659c.findViewById(R.id.text_dialog_title)).setText(c.getMessageStringResourceId());
         ((ImageView) this.f6659c.findViewById(R.id.image_dialog_body)).setImageResource(c.getMessageDrawableResourceId());
     }
 
-    /* renamed from: a */
     private void m10433a(boolean z) {
         ((TextView) this.f6659c.findViewById(R.id.text_dialog_body)).setText(z ? R.string.break_dialog_body_short_break : R.string.break_dialog_body_long_break);
     }
 
-    /* renamed from: b */
     private void m10435b(final boolean z) {
         Button button = this.f6659c.findViewById(R.id.button_primary);
         int i = R.string.button_long_break;
