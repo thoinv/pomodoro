@@ -27,7 +27,7 @@ public class SoundService extends Service {
     private C2279h f6460c;
 
     /* renamed from: d */
-    private List<Pair<C2270d, Integer>> f6461d = new ArrayList();
+    private List<Pair<C2270d, Integer>> f6461d = new ArrayList<>();
 
     /* renamed from: com.tatkovlab.pomodoro.SoundService$a */
     public class C2189a extends Binder {
@@ -60,7 +60,7 @@ public class SoundService extends Service {
         if (this.f6460c != null) {
             this.f6460c.mo8012a(dVar, i);
         } else {
-            this.f6461d.add(new Pair(dVar, Integer.valueOf(i)));
+            this.f6461d.add(new Pair(dVar, i));
         }
     }
 
@@ -85,14 +85,14 @@ public class SoundService extends Service {
         }
         this.f6460c = new C2279h(this, m10069d());
         for (Pair pair : this.f6461d) {
-            this.f6460c.mo8012a((C2270d) pair.first, ((Integer) pair.second).intValue());
+            this.f6460c.mo8012a((C2270d) pair.first, (Integer) pair.second);
         }
         m10068c();
     }
 
     /* renamed from: c */
     private void m10068c() {
-        this.f6461d = new ArrayList();
+        this.f6461d = new ArrayList<>();
     }
 
     /* renamed from: d */
