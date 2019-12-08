@@ -18,25 +18,17 @@ import com.tatkovlab.pomodoro.p079e.C2258j;
 import com.tatkovlab.pomodorolite.R;
 
 public class AddTaskActivity extends BaseActivity {
-    /* access modifiers changed from: private */
 
-    /* renamed from: j */
     public int f6398j = 4;
 
-    /* renamed from: k */
     private TextView tvHeader;
 
-    /* renamed from: l */
     private EditText edTaskName;
-    /* access modifiers changed from: private */
 
-    /* renamed from: m */
     public TextView tvExpectedPromodoros = null;
 
-    /* renamed from: n */
     private SeekBar sbExpectedPodonoros;
 
-    /* renamed from: o */
     private TaskInfo f6403o = null;
 
     public void onCreate(Bundle bundle) {
@@ -60,19 +52,16 @@ public class AddTaskActivity extends BaseActivity {
         super.onResume();
     }
 
-    /* renamed from: k */
     private void initHeader() {
         this.tvHeader = findViewById(R.id.text_header);
         FontHelper.setTypeface(this.tvHeader, Fonts.LATO_BOLD);
     }
 
-    /* renamed from: l */
     private void m10010l() {
         this.edTaskName = findViewById(R.id.edit_text_task_name);
         FontHelper.setTypeface((TextView) findViewById(R.id.task_name_label), Fonts.LATO_BOLD);
     }
 
-    /* renamed from: m */
     private void m10011m() {
         this.tvExpectedPromodoros = findViewById(R.id.text_expected_pomodoros);
         this.tvExpectedPromodoros.setText(String.valueOf(this.f6398j));
@@ -93,7 +82,6 @@ public class AddTaskActivity extends BaseActivity {
         FontHelper.setTypeface(this.tvExpectedPromodoros, Fonts.LATO_BOLD);
     }
 
-    /* renamed from: n */
     private void initSaveButton() {
         Button button = findViewById(R.id.btn_save);
         button.setOnClickListener(new OnClickListener() {
@@ -105,8 +93,6 @@ public class AddTaskActivity extends BaseActivity {
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: o */
     public void m10013o() {
         String taskName = this.edTaskName.getText().toString();
         if (this.f6403o == null) {
@@ -116,7 +102,6 @@ public class AddTaskActivity extends BaseActivity {
         }
     }
 
-    /* renamed from: a */
     private void m10005a(String str, int i) {
         TaskInfo fVar = new TaskInfo();
         fVar.setTaskName(str);
@@ -129,14 +114,12 @@ public class AddTaskActivity extends BaseActivity {
         m10014p().mo7986b(fVar);
     }
 
-    /* renamed from: b */
     private void m10007b(String str, int i) {
         this.f6403o.setTaskName(str);
         this.f6403o.setEstimated((long) i);
         m10014p().mo7989e(this.f6403o);
     }
 
-    /* renamed from: p */
     private C2258j m10014p() {
         return C2250f.m10263a().mo7964f();
     }

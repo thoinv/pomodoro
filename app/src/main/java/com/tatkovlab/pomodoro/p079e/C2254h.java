@@ -17,24 +17,18 @@ import com.tatkovlab.pomodoro.p081g.C2271e.C2274c;
 import com.tatkovlab.pomodoro.p083i.C2298d;
 import com.tatkovlab.pomodorolite.R;
 
-/* renamed from: com.tatkovlab.pomodoro.e.h */
 class C2254h implements C2247d, C2249a {
 
-    /* renamed from: a */
     private Context context;
 
-    /* renamed from: b */
     private boolean f6613b = false;
 
-    /* renamed from: c */
     private NotificationCompat.Builder f6614c;
 
-    /* renamed from: a */
     public int mo7948a() {
         return 1;
     }
 
-    /* renamed from: e */
     public void mo7959e() {
     }
 
@@ -43,13 +37,11 @@ class C2254h implements C2247d, C2249a {
         m10318i().mo7954a(this);
     }
 
-    /* renamed from: b */
     public Notification mo7949b() {
         this.f6614c = m10315f();
         return this.f6614c.build();
     }
 
-    /* renamed from: f */
     @SuppressLint("WrongConstant")
     private NotificationCompat.Builder m10315f() {
         NotificationCompat.Builder cVar = new NotificationCompat.Builder(this.context, "pomodoro_timer");
@@ -87,7 +79,6 @@ class C2254h implements C2247d, C2249a {
         return cVar;
     }
 
-    /* renamed from: a */
     private void m10312a(NotificationCompat.Builder cVar) {
         if (m10318i().mo7955b()) {
             cVar.setSubText(m10316g());
@@ -97,17 +88,14 @@ class C2254h implements C2247d, C2249a {
         this.f6613b = false;
     }
 
-    /* renamed from: b */
     private String getString(int i) {
         return this.context.getResources().getString(i);
     }
 
-    /* renamed from: g */
     private String m10316g() {
         return C2298d.m10468a((long) m10318i().mo7956c());
     }
 
-    /* renamed from: a */
     public void mo7957a(int i) {
         if (!this.f6613b) {
             this.f6614c = m10315f();
@@ -117,27 +105,22 @@ class C2254h implements C2247d, C2249a {
         m10314b(this.f6614c);
     }
 
-    /* renamed from: d */
     public void mo7958d() {
         m10314b(m10315f());
     }
 
-    /* renamed from: b */
     private void m10314b(NotificationCompat.Builder cVar) {
         getNotificationManager().notify(1, cVar.build());
     }
 
-    /* renamed from: h */
     private NotificationManager getNotificationManager() {
         return (NotificationManager) this.context.getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
-    /* renamed from: i */
     private C2248e m10318i() {
         return C2250f.m10263a().mo7960b();
     }
 
-    /* renamed from: c */
     public void mo7950c() {
         getNotificationManager().cancel(1);
     }

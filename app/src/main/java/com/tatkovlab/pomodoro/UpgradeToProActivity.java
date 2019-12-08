@@ -21,14 +21,12 @@ public class UpgradeToProActivity extends BaseActivity {
         m10116l();
     }
 
-    /* renamed from: k */
     private void m10115k() {
         for (int findViewById : labels) {
             FontHelper.setTypeface((TextView) findViewById(findViewById), Fonts.LATO_BOLD);
         }
     }
 
-    /* renamed from: l */
     private void m10116l() {
         Button button = findViewById(R.id.button_upgrade_to_premium);
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);

@@ -31,25 +31,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TasksActivity extends BaseActivity {
-    /* access modifiers changed from: private */
 
-    /* renamed from: j */
     public DragListView f6465j;
-    /* access modifiers changed from: private */
 
-    /* renamed from: k */
     public TaskAdapter f6466k;
 
-    /* renamed from: l */
     private MaterialDialog f6467l;
     //
-//    /* renamed from: m */
     private MaterialDialog f6468m;
 
-    /* renamed from: n */
     private View f6469n;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_tasks);
@@ -59,13 +51,11 @@ public class TasksActivity extends BaseActivity {
         m10105o();
     }
 
-    /* access modifiers changed from: protected */
     public void onResume() {
         super.onResume();
         m10106p();
     }
 
-    /* access modifiers changed from: protected */
     public void onStop() {
         super.onStop();
         if (this.f6467l != null && this.f6467l.isShowing()) {
@@ -76,19 +66,15 @@ public class TasksActivity extends BaseActivity {
         }
     }
 
-    /* renamed from: k */
     private void m10101k() {
         FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
     }
 
-    /* renamed from: l */
     private void m10102l() {
         this.f6469n = findViewById(R.id.placeholder_no_tasks);
         FontHelper.setTypeface((TextView) findViewById(R.id.placeholder_no_tasks_text), Fonts.PANGOLIN_REGULAR);
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: m */
     public void m10103m() {
         int i = 0;
         boolean z = this.f6466k == null || this.f6466k.getItemCount() == 0;
@@ -99,7 +85,6 @@ public class TasksActivity extends BaseActivity {
         view.setVisibility(i);
     }
 
-    /* renamed from: n */
     private void m10104n() {
         findViewById(R.id.add_task_btn).setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
@@ -108,7 +93,6 @@ public class TasksActivity extends BaseActivity {
         });
     }
 
-    /* renamed from: o */
     private void m10105o() {
         this.f6465j = findViewById(R.id.tasks_list);
         this.f6465j.setLayoutManager(new LinearLayoutManager(this));
@@ -135,15 +119,11 @@ public class TasksActivity extends BaseActivity {
         });
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: b */
     public void m10091b(TaskInfo fVar) {
         m10107q().mo7985a(fVar);
         onBackPressed();
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: c */
     public void m10094c(final TaskInfo fVar) {
         this.f6467l = new MaterialDialog.Builder(this)
                 .title(fVar.getTaskName())
@@ -167,7 +147,6 @@ public class TasksActivity extends BaseActivity {
                 }).show();
     }
 
-    /* renamed from: a */
     public void mo7845a(final TaskInfo fVar) {
         this.f6468m = new MaterialDialog.Builder(this)
                 .title(getString(R.string.delete_task_confirmation_header))
@@ -183,8 +162,6 @@ public class TasksActivity extends BaseActivity {
                 }).show();
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: d */
     public void m10097d(TaskInfo fVar) {
         this.f6466k.getItemList().remove(fVar);
         this.f6466k.notifyDataSetChanged();
@@ -192,23 +169,17 @@ public class TasksActivity extends BaseActivity {
         m10103m();
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: e */
     public void m10099e(TaskInfo fVar) {
         Intent intent = new Intent(this, AddTaskActivity.class);
         intent.putExtra("edit_task_key", fVar);
         startActivity(intent);
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: f */
     public void m10100f(TaskInfo fVar) {
         m10107q().mo7987c(fVar);
         m10106p();
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: a */
     public void m10088a(boolean z, int i) {
         TaskInfo fVar = this.f6466k.getItemList().get(i);
         fVar.setTaskStatus(z ? TaskStatus.FINISHED : TaskStatus.NEW);
@@ -216,26 +187,21 @@ public class TasksActivity extends BaseActivity {
         this.f6466k.notifyDataSetChanged();
     }
 
-    /* renamed from: p */
     private void m10106p() {
         m10107q().mo7984a(new C2220c<TaskInfo>() {
-            /* renamed from: a */
             public void mo7850a(List<TaskInfo> taskInfos) {
                 TasksActivity.this.f6466k = new TaskAdapter(taskInfos, R.layout.list_item_task, R.id.drag_handle, false);
                 TasksActivity.this.f6466k.mo7859a(new C2207a() {
-                    /* renamed from: a */
                     public void mo7851a(TaskInfo fVar) {
                         TasksActivity.this.m10091b(fVar);
                     }
                 });
                 TasksActivity.this.f6466k.mo7862b(new C2207a() {
-                    /* renamed from: a */
                     public void mo7851a(TaskInfo fVar) {
                         TasksActivity.this.m10094c(fVar);
                     }
                 });
                 TasksActivity.this.f6466k.mo7860a(new C2208b() {
-                    /* renamed from: a */
                     public void mo7852a(boolean z, int i) {
                         TasksActivity.this.m10088a(z, i);
                     }
@@ -246,8 +212,6 @@ public class TasksActivity extends BaseActivity {
         });
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: q */
     public C2258j m10107q() {
         return C2250f.m10263a().mo7964f();
     }

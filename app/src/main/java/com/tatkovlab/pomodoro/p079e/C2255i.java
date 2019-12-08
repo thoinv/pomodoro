@@ -12,33 +12,26 @@ import com.tatkovlab.pomodoro.p081g.C2271e.C2272a;
 import java.util.Calendar;
 import java.util.List;
 
-/* renamed from: com.tatkovlab.pomodoro.e.i */
 public class C2255i {
     C2255i() {
         C2250f.m10263a().mo7962d().mo7969a(new C2272a() {
-            /* renamed from: b */
             public void mo7947b() {
             }
 
-            /* renamed from: a */
             public void mo7946a() {
                 PomodoroDatabaseHelper.m10137a(System.currentTimeMillis());
             }
         });
     }
 
-    /* renamed from: a */
     public void mo7982a(final C2221d<C2233g> dVar) {
         PomodoroDatabaseHelper.m10142a(m10327a(), new C2221d<C2234h>() {
-            /* renamed from: a */
             public void mo7844a(C2234h hVar) {
                 dVar.mo7844a(C2255i.this.m10325a(hVar));
             }
         });
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: a */
     public C2233g m10325a(C2234h hVar) {
         C2233g gVar = new C2233g();
         List<Long> list = hVar.f6575a;
@@ -53,7 +46,6 @@ public class C2255i {
         return gVar;
     }
 
-    /* renamed from: a */
     @SuppressLint("WrongConstant")
     private C2228b[] m10327a() {
         Calendar a = C2235a.m10217a();

@@ -10,13 +10,11 @@ import com.tatkovlab.pomodoro.p078d.C2238c;
 import java.util.Locale;
 
 public class BaseActivity extends Activity {
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         init();
     }
 
-    /* renamed from: k */
     private void init() {
         if (C2238c.m10223a()) {
             Resources resources = getResources();

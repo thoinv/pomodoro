@@ -3,7 +3,6 @@ package com.tatkovlab.pomodoro.p077c;
 import com.tatkovlab.pomodorolite.R;
 import java.util.Random;
 
-/* renamed from: com.tatkovlab.pomodoro.c.a */
 public enum C2227a {
     NO_1(R.string.break_header_v1, R.drawable.break_image_1),
     NO_2(R.string.break_header_v2, R.drawable.break_image_2),

@@ -9,6 +9,7 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.Vibrator;
+
 import com.tatkovlab.pomodoro.p077c.C2232f;
 import com.tatkovlab.pomodoro.p083i.PrefManager;
 
@@ -17,24 +18,28 @@ public class RingingService extends Service {
         return null;
     }
 
+    @Override
     public int onStartCommand(Intent intent, int i, int i2) {
-        m10041a();
-        return 2;
+        playRingSound();
+        return START_NOT_STICKY;
     }
 
-    /* renamed from: a */
     @SuppressLint({"InvalidWakeLockTag", "WrongConstant"})
-    private void m10041a() {
+    private void playRingSound() {
         Context baseContext = getBaseContext();
         @SuppressLint("WrongConstant") PowerManager powerManager = (PowerManager) baseContext.getSystemService("power");
-        powerManager.newWakeLock(1, "RING_WAKE_LOCK").acquire(10000);
-        powerManager.newWakeLock(805306394, "SCREEN_WAKE_LOCK").acquire(5000);
+        if (powerManager != null) {
+            powerManager.newWakeLock(1, "RING_WAKE_LOCK").acquire(10000);
+            powerManager.newWakeLock(805306394, "SCREEN_WAKE_LOCK").acquire(5000);
+        }
+
         final MediaPlayer create = MediaPlayer.create(baseContext, C2232f.m10213e().mo7931b());
         if (create != null) {
-            if (PrefManager.getValue(PrefManager.isVibrationTag).booleanValue()) {
-                ((Vibrator) baseContext.getSystemService("vibrator")).vibrate(new long[]{0, 200, 300, 200}, -1);
+            Vibrator vibrator = (Vibrator) baseContext.getSystemService("vibrator");
+            if (PrefManager.getValue(PrefManager.isVibrationTag) && vibrator != null) {
+                vibrator.vibrate(new long[]{0, 200, 300, 200}, -1);
             }
-            float intValue = ((float) PrefManager.getValue(PrefManager.ringSoundTags).intValue()) / 100.0f;
+            float intValue = ((float) PrefManager.getValue(PrefManager.ringSoundTags)) / 100.0f;
             create.setScreenOnWhilePlaying(true);
             create.setVolume(intValue, intValue);
             create.start();
@@ -46,6 +51,7 @@ public class RingingService extends Service {
         }
     }
 
+    @Override
     public void onDestroy() {
         super.onDestroy();
     }

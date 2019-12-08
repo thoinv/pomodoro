@@ -11,23 +11,18 @@ import com.tatkovlab.pomodorolite.R;
 
 import java.util.Locale;
 
-/* renamed from: com.tatkovlab.pomodoro.d.c */
 public class C2238c {
 
-    /* renamed from: a */
     private static final PomodoroLanguage defaultLanguage = PomodoroLanguage.ENGLISH;
 
-    /* renamed from: a */
     public static void m10222a(String str) {
         PrefManager.save(PrefManager.PRESELECTED_LANG, str);
     }
 
-    /* renamed from: a */
     public static boolean m10223a() {
         return PrefManager.getValue(PrefManager.PRESELECTED_LANG) != null;
     }
 
-    /* renamed from: b */
     public static String m10225b() {
         String str = PrefManager.getValue(PrefManager.PRESELECTED_LANG);
         if (str != null) {
@@ -37,12 +32,10 @@ public class C2238c {
         return language.equals("") ? defaultLanguage.mo7920a() : language;
     }
 
-    /* renamed from: c */
     public static int m10226c() {
         return m10224b(m10225b());
     }
 
-    /* renamed from: b */
     public static int m10224b(String str) {
         PomodoroLanguage a = PomodoroLanguage.m10199a(str);
         if (a == null) {
@@ -51,7 +44,6 @@ public class C2238c {
         return a.mo7921b();
     }
 
-    /* renamed from: a */
     public static void showLanguageChooserDialog(final Activity activity) {
         String b = m10225b();
         final PomodoroLanguage[] values = PomodoroLanguage.values();

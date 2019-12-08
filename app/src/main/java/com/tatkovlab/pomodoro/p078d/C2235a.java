@@ -4,9 +4,7 @@ import android.annotation.SuppressLint;
 
 import java.util.Calendar;
 
-/* renamed from: com.tatkovlab.pomodoro.d.a */
 public class C2235a {
-    /* renamed from: a */
     @SuppressLint("WrongConstant")
     public static Calendar m10217a() {
         Calendar instance = Calendar.getInstance();

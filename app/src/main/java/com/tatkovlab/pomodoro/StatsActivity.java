@@ -13,29 +13,23 @@ import com.tatkovlab.pomodorolite.R;
 
 public class StatsActivity extends BaseActivity {
 
-    /* renamed from: j */
     private ViewGroup f6463j;
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_stats);
         m10081k();
         C2250f.m10263a().mo7965g().mo7982a(new C2221d<C2233g>() {
-            /* renamed from: a */
             public void mo7844a(C2233g gVar) {
                 StatsActivity.this.m10080a(gVar);
             }
         });
     }
 
-    /* renamed from: k */
     private void m10081k() {
         FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
     }
 
-    /* access modifiers changed from: private */
-    /* renamed from: a */
     public void m10080a(C2233g gVar) {
         this.f6463j = findViewById(R.id.stats_box);
         LayoutInflater from = LayoutInflater.from(this);
@@ -47,7 +41,6 @@ public class StatsActivity extends BaseActivity {
         m10078a(from, R.string.stats_label_total, gVar.f6574h);
     }
 
-    /* renamed from: a */
     private void m10078a(LayoutInflater layoutInflater, int i, long j) {
         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_single_line, this.f6463j, false);
         TextView textView = viewGroup.findViewById(R.id.label);
@@ -59,7 +52,6 @@ public class StatsActivity extends BaseActivity {
         this.f6463j.addView(viewGroup);
     }
 
-    /* renamed from: a */
     private void m10077a(LayoutInflater layoutInflater, int i, int i2, long j, long j2) {
         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_two_line, this.f6463j, false);
         TextView textView = viewGroup.findViewById(R.id.label_top);

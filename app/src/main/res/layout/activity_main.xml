@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +13,10 @@
         android:layout_height="@dimen/top_bar_height"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/time_line"
@@ -23,7 +28,10 @@
     <View
         android:id="@+id/top_bar_delimiter"
         style="@style/Delimiter"
-        android:layout_below="@+id/top_bar" />
+        android:layout_below="@+id/top_bar"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/indicator_triangle"
@@ -32,22 +40,28 @@
         android:layout_below="@+id/top_bar_delimiter"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
-        android:src="@drawable/indicator_triangle" />
+        android:src="@drawable/indicator_triangle"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <include layout="@layout/note_area" />
+    <include
+        layout="@layout/note_area"
+        android:visibility="gone" />
 
-    <ImageButton
-        android:id="@+id/debug_button"
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/TimerStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/indicator_triangle"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/clickable_background_black_15"
-        android:padding="16dp"
-        android:src="@drawable/brown_circle"
-        android:textColor="@color/dark_brown"
-        android:visibility="gone" />
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons_box"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9:00" />
 
     <LinearLayout
         android:id="@+id/bottom_buttons_box"
@@ -56,7 +70,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="18dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <ImageButton
             android:id="@+id/button_stats"
@@ -86,4 +103,4 @@
             style="@style/ButtonAction"
             android:src="@drawable/button_settings" />
     </LinearLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

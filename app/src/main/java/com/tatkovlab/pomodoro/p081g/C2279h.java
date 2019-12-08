@@ -4,7 +4,6 @@ import android.content.Context;
 import java.util.HashMap;
 import java.util.Map;
 
-/* renamed from: com.tatkovlab.pomodoro.g.h */
 public class C2279h {
 
     /* renamed from: a */

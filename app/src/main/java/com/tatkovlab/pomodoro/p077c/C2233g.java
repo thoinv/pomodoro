@@ -1,30 +1,21 @@
 package com.tatkovlab.pomodoro.p077c;
 
-/* renamed from: com.tatkovlab.pomodoro.c.g */
 public class C2233g {
 
-    /* renamed from: a */
     public long f6567a;
 
-    /* renamed from: b */
     public long f6568b;
 
-    /* renamed from: c */
     public long f6569c;
 
-    /* renamed from: d */
     public long f6570d;
 
-    /* renamed from: e */
     public long f6571e;
 
-    /* renamed from: f */
     public long f6572f;
 
-    /* renamed from: g */
     public long f6573g;
 
-    /* renamed from: h */
     public long f6574h;
 
     public String toString() {

@@ -15,21 +15,16 @@ import com.tatkovlab.pomodorolite.R;
 
 import java.util.ArrayList;
 
-/* renamed from: com.tatkovlab.pomodoro.f.a */
 public enum C2263a {
     POMODORO_TIMER("pomodoro_timer", 2, R.string.app_name);
 
 
-    /* renamed from: b */
     private String channelName;
 
-    /* renamed from: c */
     private int f6629c;
 
-    /* renamed from: d */
     private int f6630d;
 
-    /* renamed from: e */
     private int f6631e;
 
     C2263a(String channelName, int i, int i2) {
@@ -43,22 +38,18 @@ public enum C2263a {
         this.f6631e = i3;
     }
 
-    /* renamed from: a */
     public String getChannelName() {
         return this.channelName;
     }
 
-    /* renamed from: b */
     public int mo7994b() {
         return this.f6629c;
     }
 
-    /* renamed from: c */
     public int mo7995c() {
         return this.f6630d;
     }
 
-    /* renamed from: d */
     public int mo7996d() {
         return this.f6631e;
     }
