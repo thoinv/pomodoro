@@ -77,7 +77,6 @@ public class SettingsActivity extends BaseActivity {
         }
     }
 
-    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_settings);
@@ -92,13 +91,23 @@ public class SettingsActivity extends BaseActivity {
         m10059t();
     }
 
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return 0;
+    }
+
     private void m10050k() {
-        FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
+        FontHelper.setTypeface(findViewById(R.id.text_header), Fonts.LATO_BOLD);
     }
 
     private void m10051l() {
         for (int findViewById : this.f6426j) {
-            FontHelper.setTypeface((TextView) findViewById(findViewById), Fonts.LATO_BOLD);
+            FontHelper.setTypeface(findViewById(findViewById), Fonts.LATO_BOLD);
         }
     }
 

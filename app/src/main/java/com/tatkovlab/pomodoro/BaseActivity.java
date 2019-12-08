@@ -1,21 +1,31 @@
 package com.tatkovlab.pomodoro;
 
-import android.app.Activity;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.tatkovlab.pomodoro.p078d.C2238c;
 import java.util.Locale;
 
-public class BaseActivity extends Activity {
+import butterknife.ButterKnife;
+
+public abstract class BaseActivity extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        init();
+        updateConfiguration();
+        setContentView(getLayoutId());
+        ButterKnife.bind(this);
+        initViews();
     }
 
-    private void init() {
+    protected abstract void initViews();
+
+    public abstract int getLayoutId();
+
+    private void updateConfiguration() {
         if (C2238c.m10223a()) {
             Resources resources = getResources();
             DisplayMetrics displayMetrics = resources.getDisplayMetrics();

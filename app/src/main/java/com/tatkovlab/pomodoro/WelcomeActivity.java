@@ -26,23 +26,31 @@ public class WelcomeActivity extends BaseActivity {
         m10120n();
     }
 
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return 0;
+    }
+
     private void m10117k() {
         Fonts aVar = Fonts.LATO_BOLD;
-        FontHelper.setTypeface((TextView) findViewById(R.id.label_below_logo), aVar);
-        FontHelper.setTypeface((TextView) findViewById(R.id.label_top_header), aVar);
-        FontHelper.setTypeface((TextView) findViewById(R.id.eula_link), aVar);
+        FontHelper.setTypeface(findViewById(R.id.label_below_logo), aVar);
+        FontHelper.setTypeface(findViewById(R.id.label_top_header), aVar);
+        FontHelper.setTypeface(findViewById(R.id.eula_link), aVar);
     }
 
     private void m10118l() {
         Button button = findViewById(R.id.btn_start);
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
-        button.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                PrefManager.save(PrefManager.WAS_WELCOME_SCREEN_SHOWN, Boolean.valueOf(true));
-                C2250f.m10263a().getInstance().mo7938b();
-                WelcomeActivity.this.startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                WelcomeActivity.this.finish();
-            }
+        button.setOnClickListener(view -> {
+            PrefManager.save(PrefManager.WAS_WELCOME_SCREEN_SHOWN, Boolean.TRUE);
+            C2250f.m10263a().getInstance().mo7938b();
+            WelcomeActivity.this.startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+            WelcomeActivity.this.finish();
         });
     }
 
@@ -50,20 +58,12 @@ public class WelcomeActivity extends BaseActivity {
         Button button = findViewById(R.id.btn_language);
         button.setText(getResources().getString(C2238c.m10226c()));
         FontHelper.setTypeface(button, Fonts.LATO_BOLD);
-        button.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                C2238c.showLanguageChooserDialog(WelcomeActivity.this);
-            }
-        });
+        button.setOnClickListener(view -> C2238c.showLanguageChooserDialog(WelcomeActivity.this));
     }
 
     private void m10120n() {
         TextView textView = findViewById(R.id.eula_link);
         FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
-        textView.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                C2240d.m10227a("http://www.relaxio.net/terms-of-use-pomodoro-timer.html", WelcomeActivity.this);
-            }
-        });
+        textView.setOnClickListener(view -> C2240d.m10227a("http://www.relaxio.net/terms-of-use-pomodoro-timer.html", WelcomeActivity.this));
     }
 }

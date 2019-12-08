@@ -1,9 +1,9 @@
 package com.tatkovlab.pomodoro;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.tatkovlab.pomodoro.p076b.C2221d;
 import com.tatkovlab.pomodoro.p077c.C2233g;
 import com.tatkovlab.pomodoro.p078d.FontHelper;
@@ -11,14 +11,18 @@ import com.tatkovlab.pomodoro.p078d.FontHelper.Fonts;
 import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodorolite.R;
 
+import butterknife.BindView;
+
 public class StatsActivity extends BaseActivity {
 
-    private ViewGroup f6463j;
+    @BindView(R.id.stats_box)
+    ViewGroup statsBox;
+
+    @BindView(R.id.text_header)
+    TextView tvHeader;
 
     @Override
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        setContentView(R.layout.activity_stats);
+    protected void initViews() {
         m10081k();
         C2250f.m10263a().mo7965g().mo7982a(new C2221d<C2233g>() {
             public void mo7844a(C2233g gVar) {
@@ -27,12 +31,16 @@ public class StatsActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_stats;
+    }
+
     private void m10081k() {
-        FontHelper.setTypeface((TextView) findViewById(R.id.text_header), Fonts.LATO_BOLD);
+        FontHelper.setTypeface(tvHeader, Fonts.LATO_BOLD);
     }
 
     public void m10080a(C2233g gVar) {
-        this.f6463j = findViewById(R.id.stats_box);
         LayoutInflater from = LayoutInflater.from(this);
         m10078a(from, R.string.stats_label_today, gVar.today);
         m10077a(from, R.string.stats_label_yesterday, R.string.stats_label_yesterday_vs, gVar.yesterday, gVar.yesterdayVsSameDayLastWeek);
@@ -42,18 +50,18 @@ public class StatsActivity extends BaseActivity {
     }
 
     private void m10078a(LayoutInflater layoutInflater, int i, long j) {
-        ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_single_line, this.f6463j, false);
+        ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_single_line, this.statsBox, false);
         TextView textView = viewGroup.findViewById(R.id.label);
         textView.setText(i);
         TextView textView2 = viewGroup.findViewById(R.id.number);
         textView2.setText(String.valueOf(j));
         FontHelper.setTypeface(textView, Fonts.LATO_BOLD);
         FontHelper.setTypeface(textView2, Fonts.LATO_BOLD);
-        this.f6463j.addView(viewGroup);
+        this.statsBox.addView(viewGroup);
     }
 
     private void m10077a(LayoutInflater layoutInflater, int i, int i2, long j, long j2) {
-        ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_two_line, this.f6463j, false);
+        ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.stats_item_two_line, this.statsBox, false);
         TextView textView = viewGroup.findViewById(R.id.label_top);
         textView.setText(i);
         TextView textView2 = viewGroup.findViewById(R.id.label_bottom);
@@ -70,6 +78,6 @@ public class StatsActivity extends BaseActivity {
         FontHelper.setTypeface(textView2, Fonts.LATO_BOLD);
         FontHelper.setTypeface(textView3, Fonts.LATO_BOLD);
         FontHelper.setTypeface(textView4, Fonts.LATO_BOLD);
-        this.f6463j.addView(viewGroup);
+        this.statsBox.addView(viewGroup);
     }
 }

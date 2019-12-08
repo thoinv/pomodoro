@@ -51,6 +51,16 @@ public class TasksActivity extends BaseActivity {
         m10105o();
     }
 
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return 0;
+    }
+
     public void onResume() {
         super.onResume();
         m10106p();

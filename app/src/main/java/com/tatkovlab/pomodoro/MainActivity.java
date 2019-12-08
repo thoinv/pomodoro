@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,51 +34,67 @@ import com.tatkovlab.pomodoro.p083i.AppRateUtils;
 import com.tatkovlab.pomodoro.p083i.PrefManager;
 import com.tatkovlab.pomodorolite.R;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class MainActivity extends BaseActivity {
+
+    @BindView(R.id.button_start_pomodoro)
+    Button btStartPomodoro;
+
+    @BindView(R.id.button_cancel_pomodoro)
+    Button btCancelPomodoro;
+
+    @BindView(R.id.button_stats)
+    ImageButton btStats;
+
+    @BindView(R.id.button_skip_break)
+    Button btSkipBreak;
+
+    @BindView(R.id.task_name_text)
+    TextView tvTaskName;
+
+    @BindView(R.id.box_completed_pomodoros_indicator)
+    ViewGroup layoutCompletedTicks;
+
 
     public C2290e f6406j;
 
     private C2285b f6407k;
 
-    private Button btStartPomodoro;
-
-    private Button btCancelPomodoro;
-
-    private Button btSkipBreak;
-
-    private TextView tvTaskName;
-
-    private ViewGroup layoutCompletedTicks;
-
     private String f6414r;
     private MaterialDialog f6408l;
-    private TextView tvTime;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
 
-    private void m10034t() {
-    }
+    @BindView(R.id.time_line)
+    ImageView ivTimeLine;
 
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
+    @Override
+    protected void initViews() {
         if (!PrefManager.getValue(PrefManager.WAS_WELCOME_SCREEN_SHOWN)) {
             startActivity(new Intent(this, WelcomeActivity.class));
             finish();
             return;
         }
 
-        setContentView(R.layout.activity_main);
         this.f6414r = C2238c.m10225b();
         this.f6407k = new C2285b(this);
         m10030p();
         m10028n();
         m10026l();
         m10032r();
-        m10034t();
         AppRateUtils.checkAndShowRateIfNeed(this);
 
         C2242a h = C2250f.m10263a().getInstance();
         if (h.mo7940c()) {
             h.mo7936a(this);
         }
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
     }
 
     public void onDestroy() {
@@ -121,46 +138,43 @@ public class MainActivity extends BaseActivity {
 
     @SuppressLint("WrongConstant")
     private void m10026l() {
-        this.tvTime = findViewById(R.id.tv_time);
-        this.btStartPomodoro = findViewById(R.id.button_start_pomodoro);
         FontHelper.setTypeface(this.btStartPomodoro, Fonts.LATO_BOLD);
-        this.btStartPomodoro.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                C2250f.m10263a().mo7962d().mo7967a();
-                MainActivity.this.m10027m();
-            }
-        });
-        this.btCancelPomodoro = findViewById(R.id.button_cancel_pomodoro);
         FontHelper.setTypeface(this.btCancelPomodoro, Fonts.LATO_BOLD);
-        this.btCancelPomodoro.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                MainActivity.this.m10033s().mo7971b();
-                MainActivity.this.m10027m();
-            }
-        });
-        this.btSkipBreak = findViewById(R.id.button_skip_break);
         FontHelper.setTypeface(this.btSkipBreak, Fonts.LATO_BOLD);
-        this.btSkipBreak.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                MainActivity.this.m10033s().mo7975g();
-                MainActivity.this.m10027m();
-            }
-        });
-        findViewById(R.id.button_settings).setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-            }
-        });
-        View findViewById = findViewById(R.id.button_stats);
-        if (C2250f.m10263a().getInstance().mo7937a()) {
-            findViewById.setOnClickListener(new OnClickListener() {
-                public void onClick(View view) {
-                    MainActivity.this.startActivity(new Intent(MainActivity.this, StatsActivity.class));
-                }
-            });
-        } else {
-            findViewById.setVisibility(4);
+        if (!C2250f.m10263a().getInstance().mo7937a()) {
+            btStats.setVisibility(4);
         }
+    }
+
+    @OnClick(R.id.button_start_pomodoro)
+    void onButtonStartClicked() {
+        C2250f.m10263a().mo7962d().mo7967a();
+        MainActivity.this.m10027m();
+    }
+
+    @OnClick(R.id.button_cancel_pomodoro)
+    void onButtonCancelClicked() {
+        MainActivity.this.m10033s().mo7971b();
+        MainActivity.this.m10027m();
+    }
+
+    @OnClick(R.id.button_skip_break)
+    void onButtonSkipClicked() {
+        MainActivity.this.m10033s().mo7975g();
+        MainActivity.this.m10027m();
+    }
+
+    @OnClick(R.id.button_settings)
+    void onButtonSettingsClicked() {
+        MainActivity.this.startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+    }
+
+    @OnClick(R.id.button_stats)
+    void onButtonStatsClicked() {
+        if (!C2250f.m10263a().getInstance().mo7937a()) {
+            return;
+        }
+        MainActivity.this.startActivity(new Intent(MainActivity.this, StatsActivity.class));
     }
 
     @SuppressLint("WrongConstant")
@@ -197,16 +211,14 @@ public class MainActivity extends BaseActivity {
     }
 
     private void m10028n() {
-        this.layoutCompletedTicks = findViewById(R.id.box_completed_pomodoros_indicator);
-        this.tvTaskName = findViewById(R.id.task_name_text);
         FontHelper.setTypeface(this.tvTaskName, Fonts.PANGOLIN_REGULAR);
-        findViewById(R.id.note_background).setOnClickListener(new C2287c());
-        C2250f.m10263a().mo7963e().mo7943a(new C2246a() {
-            public void mo7801a() {
-                MainActivity.this.m10029o();
-            }
-        });
+        C2250f.m10263a().mo7963e().mo7943a(MainActivity.this::m10029o);
         m10029o();
+    }
+
+    @OnClick(R.id.note_background)
+    void onNoteBackgroundClicked() {
+        startActivity(new Intent(this, TasksActivity.class));
     }
 
     public void m10029o() {
@@ -232,7 +244,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void m10030p() {
-        this.f6406j = new C2290e(PomodoroTime.MINUTES_25, (ImageView) findViewById(R.id.time_line));
+        this.f6406j = new C2290e(PomodoroTime.MINUTES_25, ivTimeLine);
     }
 
     private void m10031q() {

@@ -1,5 +1,6 @@
 package com.tatkovlab.pomodoro.p078d;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build.VERSION;
@@ -11,7 +12,7 @@ public class C2241e {
     }
 
     public static int m10228a(Context context) {
-        WindowManager windowManager = (WindowManager) context.getSystemService("window");
+        @SuppressLint("WrongConstant") WindowManager windowManager = (WindowManager) context.getSystemService("window");
         if(windowManager == null){
             return 0;
         }

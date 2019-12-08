@@ -1,13 +1,11 @@
 package com.tatkovlab.pomodoro;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+
 import com.tatkovlab.pomodoro.p076b.TaskInfo;
 import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskType;
 import com.tatkovlab.pomodoro.p076b.TaskInfo.TaskStatus;
@@ -17,27 +15,41 @@ import com.tatkovlab.pomodoro.p079e.C2250f;
 import com.tatkovlab.pomodoro.p079e.C2258j;
 import com.tatkovlab.pomodorolite.R;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class AddTaskActivity extends BaseActivity {
 
+    @BindView(R.id.text_header)
+    TextView tvHeader;
+
+    @BindView(R.id.edit_text_task_name)
+    EditText edTaskName;
+
+    @BindView(R.id.text_expected_pomodoros)
+    TextView tvExpectedPromodoros;
+
+    @BindView(R.id.seek_bar_expected_pomodoros)
+    SeekBar sbExpectedPodonoros;
+
+    @BindView(R.id.expected_pomodoros_label)
+    TextView tvExpectedPomodorosLabel;
+
+    @BindView(R.id.task_name_label)
+    TextView tvTaskNameLabel;
+
+    @BindView(R.id.btn_save)
+    Button btSave;
+
     public int f6398j = 4;
+    TaskInfo f6403o = null;
 
-    private TextView tvHeader;
-
-    private EditText edTaskName;
-
-    public TextView tvExpectedPromodoros = null;
-
-    private SeekBar sbExpectedPodonoros;
-
-    private TaskInfo f6403o = null;
-
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        setContentView(R.layout.activity_add_task);
+    @Override
+    protected void initViews() {
         initHeader();
         m10010l();
         m10011m();
-        initSaveButton();
+        FontHelper.setTypeface(btSave, Fonts.LATO_BOLD);
         getWindow().setSoftInputMode(4);
         this.f6403o = getIntent().getParcelableExtra("edit_task_key");
         if (this.f6403o != null) {
@@ -48,24 +60,25 @@ public class AddTaskActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_add_task;
+    }
+
     public void onResume() {
         super.onResume();
     }
 
     private void initHeader() {
-        this.tvHeader = findViewById(R.id.text_header);
         FontHelper.setTypeface(this.tvHeader, Fonts.LATO_BOLD);
     }
 
     private void m10010l() {
-        this.edTaskName = findViewById(R.id.edit_text_task_name);
-        FontHelper.setTypeface((TextView) findViewById(R.id.task_name_label), Fonts.LATO_BOLD);
+        FontHelper.setTypeface(tvTaskNameLabel, Fonts.LATO_BOLD);
     }
 
     private void m10011m() {
-        this.tvExpectedPromodoros = findViewById(R.id.text_expected_pomodoros);
         this.tvExpectedPromodoros.setText(String.valueOf(this.f6398j));
-        this.sbExpectedPodonoros = findViewById(R.id.seek_bar_expected_pomodoros);
         this.sbExpectedPodonoros.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
@@ -78,19 +91,14 @@ public class AddTaskActivity extends BaseActivity {
                 AddTaskActivity.this.tvExpectedPromodoros.setText(String.valueOf(AddTaskActivity.this.f6398j));
             }
         });
-        FontHelper.setTypeface((TextView) findViewById(R.id.expected_pomodoros_label), Fonts.LATO_BOLD);
+        FontHelper.setTypeface(tvExpectedPomodorosLabel, Fonts.LATO_BOLD);
         FontHelper.setTypeface(this.tvExpectedPromodoros, Fonts.LATO_BOLD);
     }
 
-    private void initSaveButton() {
-        Button button = findViewById(R.id.btn_save);
-        button.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                AddTaskActivity.this.m10013o();
-                AddTaskActivity.this.onBackPressed();
-            }
-        });
-        FontHelper.setTypeface(button, Fonts.LATO_BOLD);
+    @OnClick(R.id.btn_save)
+    void onButtonSaveClicked() {
+        AddTaskActivity.this.m10013o();
+        AddTaskActivity.this.onBackPressed();
     }
 
     public void m10013o() {
