@@ -5,7 +5,7 @@ import java.util.List;
 
 public class C2234h {
 
-    public List<Long> f6575a = new ArrayList();
+    public List<Long> f6575a = new ArrayList<>();
 
     public long f6576b;
 }

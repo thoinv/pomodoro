@@ -22,6 +22,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.tatkovlab.pomodoro.p077c.C2232f;
@@ -61,13 +62,14 @@ public class SettingsActivity extends BaseActivity {
             this.f6457b = ContextCompat.getColor(context, R.color.dark_brown);
         }
 
-        public View getView(int i, View view, ViewGroup viewGroup) {
+        @NonNull
+        public View getView(int i, View view, @NonNull ViewGroup viewGroup) {
             TextView textView = (TextView) super.getView(i, view, viewGroup);
             FontHelper.setTypeface(textView, f6456a);
             return textView;
         }
 
-        public View getDropDownView(int i, View view, ViewGroup viewGroup) {
+        public View getDropDownView(int i, View view, @NonNull ViewGroup viewGroup) {
             TextView textView = (TextView) super.getDropDownView(i, view, viewGroup);
             FontHelper.setTypeface(textView, f6456a);
             textView.setTextColor(this.f6457b);
@@ -75,6 +77,7 @@ public class SettingsActivity extends BaseActivity {
         }
     }
 
+    /* access modifiers changed from: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_settings);
@@ -245,6 +248,7 @@ public class SettingsActivity extends BaseActivity {
         });
     }
 
+    /* access modifiers changed from: private */
     public void m10044a(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {
@@ -260,6 +264,7 @@ public class SettingsActivity extends BaseActivity {
         }
     }
 
+    /* access modifiers changed from: private */
     public void m10048b(int i, final C2187b bVar) {
         final MediaPlayer create = MediaPlayer.create(this, i);
         if (create != null) {

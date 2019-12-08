@@ -12,8 +12,8 @@ public class C2241e {
 
     public static int m10228a(Context context) {
         WindowManager windowManager = (WindowManager) context.getSystemService("window");
-        if (VERSION.SDK_INT < 13) {
-            return windowManager.getDefaultDisplay().getWidth();
+        if(windowManager == null){
+            return 0;
         }
         Point point = new Point();
         windowManager.getDefaultDisplay().getSize(point);

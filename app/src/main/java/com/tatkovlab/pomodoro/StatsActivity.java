@@ -15,6 +15,7 @@ public class StatsActivity extends BaseActivity {
 
     private ViewGroup f6463j;
 
+    @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_stats);
@@ -33,11 +34,10 @@ public class StatsActivity extends BaseActivity {
     public void m10080a(C2233g gVar) {
         this.f6463j = findViewById(R.id.stats_box);
         LayoutInflater from = LayoutInflater.from(this);
-        m10078a(from, R.string.stats_label_today, gVar.f6567a);
-        LayoutInflater layoutInflater = from;
-        m10077a(layoutInflater, R.string.stats_label_yesterday, R.string.stats_label_yesterday_vs, gVar.f6568b, gVar.f6569c);
-        m10077a(layoutInflater, R.string.stats_label_this_month, R.string.stats_label_this_month_vs, gVar.f6570d, gVar.f6571e);
-        m10077a(layoutInflater, R.string.stats_label_last_month, R.string.stats_label_last_month_vs, gVar.f6572f, gVar.f6573g);
+        m10078a(from, R.string.stats_label_today, gVar.today);
+        m10077a(from, R.string.stats_label_yesterday, R.string.stats_label_yesterday_vs, gVar.yesterday, gVar.yesterdayVsSameDayLastWeek);
+        m10077a(from, R.string.stats_label_this_month, R.string.stats_label_this_month_vs, gVar.monthSoFar, gVar.f6571e);
+        m10077a(from, R.string.stats_label_last_month, R.string.stats_label_last_month_vs, gVar.f6572f, gVar.f6573g);
         m10078a(from, R.string.stats_label_total, gVar.f6574h);
     }
 

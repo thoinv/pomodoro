@@ -11,7 +11,6 @@ import java.util.Map;
 public enum PomodoroLanguage {
     ENGLISH("en", R.string.native_lang_english),
     PORTUGUESE("pt", R.string.native_lang_portuguese),
-    VIETNAMESE("vi", R.string.native_lang_vietnamese),
     TURKISH("tr", R.string.native_lang_turkish),
     RUSSIAN("ru", R.string.native_lang_russian),
     HINDI("hi", R.string.native_lang_hindi),
@@ -42,9 +41,8 @@ public enum PomodoroLanguage {
     }
 
     public static PomodoroLanguage m10199a(String str) {
-        PomodoroLanguage[] values;
         if (languages == null) {
-            languages = new HashMap();
+            languages = new HashMap<>();
             for (PomodoroLanguage cVar : values()) {
                 languages.put(cVar.mo7920a(), cVar);
             }
